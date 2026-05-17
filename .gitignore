@@ -26,5 +26,9 @@ logs/
 .vscode/
 *.swp
 
+# Inference cache
+outputs/scaler.pkl
+
 # macOS
 .DS_Store
+evaluate/

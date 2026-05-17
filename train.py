@@ -503,6 +503,12 @@ def main():
     (train_graphs, val_graphs, test_graphs,
      scaler, df_train, df_val, df_test) = run_preprocessing(DATA_PATH)
 
+    import pickle as _pkl
+    _scaler_path = os.path.join(OUTPUT_DIR, "scaler.pkl")
+    with open(_scaler_path, "wb") as _f:
+        _pkl.dump(scaler, _f)
+    logger.info(f"Scaler saved to {_scaler_path}")
+
     logger.info(f"Device: {DEVICE}")
 
     df_trainval = pd.concat([df_train, df_val], ignore_index=True)

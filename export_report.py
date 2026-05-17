@@ -259,7 +259,6 @@ def python_to_docx(src: Path, dst: Path) -> bool:
     while i < len(lines):
         line = lines[i]
 
-        # ── Code block ──────────────────────────────────────────────────────
         if line.startswith("```"):
             if not in_code_block:
                 flush_table()
@@ -423,7 +422,6 @@ def main() -> None:
     base   = Path(args.output) if args.output else src.with_suffix("")
     do_all = not (args.docx or args.pdf or args.html)
 
-    # ── Detect pandoc ──────────────────────────────────────────────────────
     has_pandoc = _pandoc_available()
     if not has_pandoc and sys.platform == "darwin":
         print("[setup] pandoc not found — trying 'brew install pandoc' …")
@@ -432,7 +430,6 @@ def main() -> None:
             if has_pandoc:
                 print("[setup] pandoc installed successfully.")
 
-    # ── DOCX ───────────────────────────────────────────────────────────────
     if args.docx or do_all:
         dst = base.with_suffix(".docx")
         print(f"[DOCX] {src.name} → {dst.name}")
@@ -445,7 +442,6 @@ def main() -> None:
             ok = python_to_docx(src, dst)
         print(f"[DOCX] {'✓ done' if ok else '✗ failed'} → {dst}")
 
-    # ── PDF ────────────────────────────────────────────────────────────────
     if args.pdf or do_all:
         dst = base.with_suffix(".pdf")
         print(f"[PDF]  {src.name} → {dst.name}")
@@ -458,14 +454,12 @@ def main() -> None:
             ok = python_to_pdf(src, dst)
         print(f"[PDF]  {'✓ done' if ok else '✗ failed (see HTML fallback above)'} → {dst}")
 
-    # ── HTML ───────────────────────────────────────────────────────────────
-    if args.html or (do_all and False):  # HTML only when explicitly requested
+    if args.html or (do_all and False):
         dst = base.with_suffix(".html")
         print(f"[HTML] {src.name} → {dst.name}")
         ok  = export_html(src, dst)
         print(f"[HTML] {'✓ done' if ok else '✗ failed'} → {dst}")
 
-    # ── Tip: HTML fallback is always safe ─────────────────────────────────
     if do_all or args.pdf:
         html_dst = base.with_suffix(".html")
         if not html_dst.exists():
