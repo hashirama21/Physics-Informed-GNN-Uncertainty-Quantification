@@ -251,15 +251,15 @@ python inference.py --csv samples.csv --output results.json
 ```python
 import pickle
 import torch
-from inference import predict_single, predict_ensemble, _load_or_fit_scaler
+from evaluate.inference import predict_single, predict_ensemble, _load_or_fit_scaler
 from models.models import build_model
 from utils.config import MODEL_CONFIG, DEVICE, OUTPUT_DIR
 
 # Load scaler and model
 scaler = _load_or_fit_scaler()
-model  = build_model(node_in_dim=MODEL_CONFIG["node_in_dim"]).to(DEVICE)
+model = build_model(node_in_dim=MODEL_CONFIG["node_in_dim"]).to(DEVICE)
 model.load_state_dict(torch.load(OUTPUT_DIR / "final_model.pt",
-                                  map_location=DEVICE, weights_only=True))
+                                 map_location=DEVICE, weights_only=True))
 
 # DGA gas concentrations (ppm)
 gases = {"H2": 450, "CH4": 120, "C2H2": 8, "C2H4": 65,
@@ -272,12 +272,12 @@ vits = {"H2": 15, "CH4": 3, "C2H2": 0.8, "C2H4": 4,
 result = predict_single(model, scaler, gases, vits,
                         equip="TR-42B", temperature=0.8919)
 
-print(result["pred_class"])        # "D2"
-print(result["confidence"])        # 0.8412
-print(result["uncertainty"])       # 0.1588
-print(result["probabilities"])     # {"D1": 0.04, "D2": 0.68, ...}
-print(result["health_indices"])    # {"OHI": 0.83, "CDI": 0.15, ...}
-print(result["rul_estimates"])     # {"H2": {"rul_months": 36.7, ...}, ...}
+print(result["pred_class"])  # "D2"
+print(result["confidence"])  # 0.8412
+print(result["uncertainty"])  # 0.1588
+print(result["probabilities"])  # {"D1": 0.04, "D2": 0.68, ...}
+print(result["health_indices"])  # {"OHI": 0.83, "CDI": 0.15, ...}
+print(result["rul_estimates"])  # {"H2": {"rul_months": 36.7, ...}, ...}
 
 # Ensemble inference (more accurate)
 result_ens = predict_ensemble(scaler, gases, vits, equip="TR-42B")
