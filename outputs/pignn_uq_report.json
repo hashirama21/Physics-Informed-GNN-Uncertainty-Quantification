@@ -1,0 +1,341 @@
+{
+  "dataset": {
+    "total": 335,
+    "train": 234,
+    "val": 50,
+    "test": 51
+  },
+  "cross_validation": {
+    "accuracy": {
+      "mean": 0.5669,
+      "std": 0.0726,
+      "min": 0.4483,
+      "max": 0.6897
+    },
+    "f1": {
+      "mean": 0.4899,
+      "std": 0.0747,
+      "min": 0.3677,
+      "max": 0.6159
+    },
+    "precision": {
+      "mean": 0.5382,
+      "std": 0.0942,
+      "min": 0.3389,
+      "max": 0.7004
+    },
+    "recall": {
+      "mean": 0.5156,
+      "std": 0.0757,
+      "min": 0.4292,
+      "max": 0.6819
+    },
+    "kappa": {
+      "mean": 0.4647,
+      "std": 0.086,
+      "min": 0.3501,
+      "max": 0.6122
+    },
+    "brier": {
+      "mean": 0.6868,
+      "std": 0.0555,
+      "min": 0.5686,
+      "max": 0.7573
+    },
+    "ece": {
+      "mean": 0.2355,
+      "std": 0.0859,
+      "min": 0.1096,
+      "max": 0.3844
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.549,
+    "precision": 0.5028,
+    "recall": 0.6253,
+    "f1": 0.5285,
+    "kappa": 0.443,
+    "brier": 0.5838,
+    "ece": 0.1213,
+    "mean_uncertainty": 0.06999663183209943
+  },
+  "ensemble_metrics": {
+    "accuracy": 0.549,
+    "precision": 0.5401,
+    "recall": 0.6157,
+    "f1": 0.56,
+    "kappa": 0.4363,
+    "brier": 0.6472,
+    "ece": 0.178,
+    "mean_uncertainty": 0.0
+  },
+  "temperature": 0.9024173021316528,
+  "targets_met": false,
+  "rul_sample": [
+    {
+      "sample_id": 0,
+      "equipment": "T3",
+      "true_class": "T3",
+      "pred_class": "T2",
+      "correct": false,
+      "probabilities": {
+        "D1": 0.1591,
+        "D2": 0.1674,
+        "T1": 0.1611,
+        "T2": 0.2049,
+        "T3": 0.1895,
+        "DT": 0.118
+      },
+      "uncertainty": 0.1288,
+      "confidence": 0.8712,
+      "rul_estimates": {
+        "H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H4": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "TDCG": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        }
+      },
+      "health_indices": {
+        "CDI": 0.0,
+        "TAI": 1.6176,
+        "DSI": 0.0003,
+        "OHI": 0.5353
+      }
+    },
+    {
+      "sample_id": 1,
+      "equipment": "D2",
+      "true_class": "D2",
+      "pred_class": "D2",
+      "correct": true,
+      "probabilities": {
+        "D1": 0.1566,
+        "D2": 0.2259,
+        "T1": 0.139,
+        "T2": 0.184,
+        "T3": 0.1826,
+        "DT": 0.1119
+      },
+      "uncertainty": 0.1223,
+      "confidence": 0.8777,
+      "rul_estimates": {
+        "H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H4": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "TDCG": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        }
+      },
+      "health_indices": {
+        "CDI": 0.0,
+        "TAI": 9.2805,
+        "DSI": 4.0898,
+        "OHI": 0.3182
+      }
+    },
+    {
+      "sample_id": 2,
+      "equipment": "D2",
+      "true_class": "D2",
+      "pred_class": "T3",
+      "correct": false,
+      "probabilities": {
+        "D1": 0.1574,
+        "D2": 0.2057,
+        "T1": 0.1468,
+        "T2": 0.1707,
+        "T3": 0.2076,
+        "DT": 0.1118
+      },
+      "uncertainty": 0.1176,
+      "confidence": 0.8824,
+      "rul_estimates": {
+        "H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H4": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "TDCG": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        }
+      },
+      "health_indices": {
+        "CDI": 0.0,
+        "TAI": 3.5342,
+        "DSI": 3.6775,
+        "OHI": 0.3851
+      }
+    },
+    {
+      "sample_id": 3,
+      "equipment": "D2",
+      "true_class": "D2",
+      "pred_class": "T3",
+      "correct": false,
+      "probabilities": {
+        "D1": 0.1502,
+        "D2": 0.1954,
+        "T1": 0.1445,
+        "T2": 0.183,
+        "T3": 0.2168,
+        "DT": 0.11
+      },
+      "uncertainty": 0.0904,
+      "confidence": 0.9096,
+      "rul_estimates": {
+        "H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H4": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "TDCG": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        }
+      },
+      "health_indices": {
+        "CDI": 0.0765,
+        "TAI": 10.9766,
+        "DSI": 3.1354,
+        "OHI": 0.322
+      }
+    },
+    {
+      "sample_id": 4,
+      "equipment": "T2",
+      "true_class": "T2",
+      "pred_class": "D1",
+      "correct": false,
+      "probabilities": {
+        "D1": 0.2029,
+        "D2": 0.1528,
+        "T1": 0.1985,
+        "T2": 0.1582,
+        "T3": 0.1799,
+        "DT": 0.1077
+      },
+      "uncertainty": 0.1093,
+      "confidence": 0.8907,
+      "rul_estimates": {
+        "H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H2": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "C2H4": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        },
+        "TDCG": {
+          "rul_months": Infinity,
+          "lower": Infinity,
+          "upper": Infinity,
+          "reliable": false,
+          "decision": "Annual monitoring"
+        }
+      },
+      "health_indices": {
+        "CDI": 1.8125,
+        "TAI": 0.4891,
+        "DSI": 0.0001,
+        "OHI": 0.6619
+      }
+    }
+  ]
+}

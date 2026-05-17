@@ -1,0 +1,1897 @@
+2026-05-17 03:37:28 | INFO | train | ===============================================
+2026-05-17 03:37:28 | INFO | train |   PIGNN-UQ — Full pipeline
+2026-05-17 03:37:28 | INFO | train | ===============================================
+2026-05-17 03:37:29 | INFO | train | Device: cpu
+2026-05-17 03:37:29 | INFO | train | 
+============================================================
+2026-05-17 03:37:29 | INFO | train | FOLD 1/5  train=227  val=57
+2026-05-17 03:37:29 | INFO | train | == Fold 0 — training start ==
+2026-05-17 03:37:30 | INFO | train |   Ep 001/300 | Loss=2.3231 CE=2.3079 Phys=0.0152 | Val F1=0.0058 Acc=0.0175 | LR=1.00e-03 | 0.5s
+2026-05-17 03:37:30 | INFO | train |   Checkpoint saved (F1=0.0058)
+2026-05-17 03:37:30 | INFO | train |   Checkpoint saved (F1=0.2392)
+2026-05-17 03:37:31 | INFO | train |   Checkpoint saved (F1=0.2606)
+2026-05-17 03:37:33 | INFO | train |   Ep 010/300 | Loss=1.9247 CE=1.9100 Phys=0.0148 | Val F1=0.1042 Acc=0.1754 | LR=1.00e-03 | 0.4s
+2026-05-17 03:37:36 | INFO | train |   Ep 020/300 | Loss=1.9058 CE=1.8893 Phys=0.0165 | Val F1=0.0877 Acc=0.1754 | LR=1.00e-03 | 0.2s
+2026-05-17 03:37:38 | INFO | train |   Ep 030/300 | Loss=1.8918 CE=1.8779 Phys=0.0139 | Val F1=0.0922 Acc=0.1404 | LR=7.00e-04 | 0.2s
+2026-05-17 03:37:41 | INFO | train |   Ep 040/300 | Loss=1.9283 CE=1.9139 Phys=0.0143 | Val F1=0.0542 Acc=0.0526 | LR=4.90e-04 | 0.2s
+2026-05-17 03:37:42 | INFO | train |   Early stopping triggered (patience=40)
+2026-05-17 03:37:42 | INFO | train |   Fold 1 results:
+2026-05-17 03:37:42 | INFO | train |     accuracy           = 0.3509
+2026-05-17 03:37:42 | INFO | train |     precision          = 0.2653
+2026-05-17 03:37:42 | INFO | train |     recall             = 0.3319
+2026-05-17 03:37:42 | INFO | train |     f1                 = 0.2606
+2026-05-17 03:37:42 | INFO | train |     kappa              = 0.2045
+2026-05-17 03:37:42 | INFO | train |     brier              = 0.8152
+2026-05-17 03:37:42 | INFO | train |     ece                = 0.1564
+2026-05-17 03:37:42 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 03:37:42 | INFO | train | 
+============================================================
+2026-05-17 03:37:42 | INFO | train | FOLD 2/5  train=227  val=57
+2026-05-17 03:37:42 | INFO | train | == Fold 1 — training start ==
+2026-05-17 03:37:42 | INFO | train |   Ep 001/300 | Loss=2.2496 CE=2.2333 Phys=0.0163 | Val F1=0.0597 Acc=0.2105 | LR=1.00e-03 | 0.3s
+2026-05-17 03:37:42 | INFO | train |   Checkpoint saved (F1=0.0597)
+2026-05-17 03:37:43 | INFO | train |   Checkpoint saved (F1=0.0662)
+2026-05-17 03:37:43 | INFO | train |   Checkpoint saved (F1=0.0989)
+2026-05-17 03:37:43 | INFO | train |   Checkpoint saved (F1=0.1562)
+2026-05-17 03:37:45 | INFO | train |   Ep 010/300 | Loss=1.9557 CE=1.9406 Phys=0.0151 | Val F1=0.0848 Acc=0.1404 | LR=1.00e-03 | 0.4s
+2026-05-17 03:37:48 | INFO | train |   Ep 020/300 | Loss=1.9855 CE=1.9713 Phys=0.0142 | Val F1=0.0743 Acc=0.1228 | LR=7.00e-04 | 0.3s
+2026-05-17 03:37:49 | INFO | train |   Checkpoint saved (F1=0.1609)
+2026-05-17 03:37:51 | INFO | train |   Ep 030/300 | Loss=1.9518 CE=1.9360 Phys=0.0158 | Val F1=0.0896 Acc=0.1228 | LR=7.00e-04 | 0.3s
+2026-05-17 03:37:51 | INFO | train |   Checkpoint saved (F1=0.1716)
+2026-05-17 03:37:53 | INFO | train |   Checkpoint saved (F1=0.2052)
+2026-05-17 03:37:53 | INFO | train |   Ep 040/300 | Loss=1.8926 CE=1.8776 Phys=0.0150 | Val F1=0.1347 Acc=0.2105 | LR=7.00e-04 | 0.3s
+2026-05-17 03:37:56 | INFO | train |   Ep 050/300 | Loss=1.9164 CE=1.9016 Phys=0.0149 | Val F1=0.1340 Acc=0.1930 | LR=7.00e-04 | 0.3s
+2026-05-17 03:37:59 | INFO | train |   Ep 060/300 | Loss=1.8620 CE=1.8470 Phys=0.0150 | Val F1=0.1573 Acc=0.2982 | LR=4.90e-04 | 0.3s
+2026-05-17 03:38:02 | INFO | train |   Ep 070/300 | Loss=1.8695 CE=1.8545 Phys=0.0149 | Val F1=0.1903 Acc=0.2982 | LR=3.43e-04 | 0.3s
+2026-05-17 03:38:03 | INFO | train |   Checkpoint saved (F1=0.2245)
+2026-05-17 03:38:05 | INFO | train |   Ep 080/300 | Loss=1.8678 CE=1.8529 Phys=0.0149 | Val F1=0.2254 Acc=0.3333 | LR=3.43e-04 | 0.3s
+2026-05-17 03:38:05 | INFO | train |   Checkpoint saved (F1=0.2254)
+2026-05-17 03:38:07 | INFO | train |   Checkpoint saved (F1=0.2348)
+2026-05-17 03:38:07 | INFO | train |   Checkpoint saved (F1=0.2674)
+2026-05-17 03:38:08 | INFO | train |   Ep 090/300 | Loss=1.8649 CE=1.8515 Phys=0.0134 | Val F1=0.2167 Acc=0.3333 | LR=3.43e-04 | 0.3s
+2026-05-17 03:38:10 | INFO | train |   Ep 100/300 | Loss=1.8328 CE=1.8184 Phys=0.0143 | Val F1=0.1942 Acc=0.2982 | LR=3.43e-04 | 0.2s
+2026-05-17 03:38:13 | INFO | train |   Ep 110/300 | Loss=1.8702 CE=1.8562 Phys=0.0140 | Val F1=0.1961 Acc=0.3158 | LR=2.40e-04 | 0.3s
+2026-05-17 03:38:16 | INFO | train |   Ep 120/300 | Loss=1.8773 CE=1.8636 Phys=0.0136 | Val F1=0.1982 Acc=0.3158 | LR=2.40e-04 | 0.3s
+2026-05-17 03:38:18 | INFO | train |   Early stopping triggered (patience=40)
+2026-05-17 03:38:18 | INFO | train |   Fold 2 results:
+2026-05-17 03:38:18 | INFO | train |     accuracy           = 0.4035
+2026-05-17 03:38:18 | INFO | train |     precision          = 0.3160
+2026-05-17 03:38:18 | INFO | train |     recall             = 0.3067
+2026-05-17 03:38:18 | INFO | train |     f1                 = 0.2674
+2026-05-17 03:38:18 | INFO | train |     kappa              = 0.2373
+2026-05-17 03:38:18 | INFO | train |     brier              = 0.7856
+2026-05-17 03:38:18 | INFO | train |     ece                = 0.1631
+2026-05-17 03:38:18 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 03:38:18 | INFO | train | 
+============================================================
+2026-05-17 03:38:18 | INFO | train | FOLD 3/5  train=227  val=57
+2026-05-17 03:38:18 | INFO | train | == Fold 2 — training start ==
+2026-05-17 03:38:19 | INFO | train |   Ep 001/300 | Loss=2.3517 CE=2.3362 Phys=0.0155 | Val F1=0.0733 Acc=0.1754 | LR=1.00e-03 | 0.3s
+2026-05-17 03:38:19 | INFO | train |   Checkpoint saved (F1=0.0733)
+2026-05-17 03:38:19 | INFO | train |   Checkpoint saved (F1=0.0815)
+2026-05-17 03:38:19 | INFO | train |   Checkpoint saved (F1=0.2073)
+2026-05-17 03:38:21 | INFO | train |   Ep 010/300 | Loss=1.9728 CE=1.9593 Phys=0.0135 | Val F1=0.2245 Acc=0.3333 | LR=1.00e-03 | 0.3s
+2026-05-17 03:38:21 | INFO | train |   Checkpoint saved (F1=0.2245)
+2026-05-17 03:38:23 | INFO | train |   Checkpoint saved (F1=0.2283)
+2026-05-17 03:38:23 | INFO | train |   Checkpoint saved (F1=0.2392)
+2026-05-17 03:38:23 | INFO | train |   Checkpoint saved (F1=0.2453)
+2026-05-17 03:38:24 | INFO | train |   Ep 020/300 | Loss=1.8971 CE=1.8821 Phys=0.0150 | Val F1=0.2835 Acc=0.3509 | LR=1.00e-03 | 0.3s
+2026-05-17 03:38:24 | INFO | train |   Checkpoint saved (F1=0.2835)
+2026-05-17 03:38:26 | INFO | train |   Ep 030/300 | Loss=1.9038 CE=1.8884 Phys=0.0154 | Val F1=0.2016 Acc=0.2632 | LR=1.00e-03 | 0.2s
+2026-05-17 03:38:29 | INFO | train |   Ep 040/300 | Loss=1.8477 CE=1.8326 Phys=0.0151 | Val F1=0.2312 Acc=0.2456 | LR=7.00e-04 | 0.3s
+2026-05-17 03:38:32 | INFO | train |   Ep 050/300 | Loss=1.8427 CE=1.8285 Phys=0.0143 | Val F1=0.2874 Acc=0.3684 | LR=7.00e-04 | 0.3s
+2026-05-17 03:38:32 | INFO | train |   Checkpoint saved (F1=0.2874)
+2026-05-17 03:38:35 | INFO | train |   Ep 060/300 | Loss=1.8011 CE=1.7876 Phys=0.0135 | Val F1=0.3351 Acc=0.4211 | LR=7.00e-04 | 0.3s
+2026-05-17 03:38:35 | INFO | train |   Checkpoint saved (F1=0.3351)
+2026-05-17 03:38:35 | INFO | train |   Checkpoint saved (F1=0.3373)
+2026-05-17 03:38:37 | INFO | train |   Ep 070/300 | Loss=1.8217 CE=1.8076 Phys=0.0141 | Val F1=0.1903 Acc=0.2281 | LR=7.00e-04 | 0.3s
+2026-05-17 03:38:40 | INFO | train |   Ep 080/300 | Loss=1.7536 CE=1.7393 Phys=0.0143 | Val F1=0.2046 Acc=0.2632 | LR=4.90e-04 | 0.3s
+2026-05-17 03:38:43 | INFO | train |   Ep 090/300 | Loss=1.7722 CE=1.7575 Phys=0.0148 | Val F1=0.2132 Acc=0.2456 | LR=4.90e-04 | 0.3s
+2026-05-17 03:38:45 | INFO | train |   Ep 100/300 | Loss=1.6759 CE=1.6613 Phys=0.0146 | Val F1=0.1941 Acc=0.2456 | LR=3.43e-04 | 0.3s
+2026-05-17 03:38:46 | INFO | train |   Early stopping triggered (patience=40)
+2026-05-17 03:38:46 | INFO | train |   Fold 3 results:
+2026-05-17 03:38:46 | INFO | train |     accuracy           = 0.4211
+2026-05-17 03:38:46 | INFO | train |     precision          = 0.3445
+2026-05-17 03:38:46 | INFO | train |     recall             = 0.3646
+2026-05-17 03:38:46 | INFO | train |     f1                 = 0.3373
+2026-05-17 03:38:46 | INFO | train |     kappa              = 0.2757
+2026-05-17 03:38:46 | INFO | train |     brier              = 0.7504
+2026-05-17 03:38:46 | INFO | train |     ece                = 0.1700
+2026-05-17 03:38:46 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 03:38:46 | INFO | train | 
+============================================================
+2026-05-17 03:38:46 | INFO | train | FOLD 4/5  train=227  val=57
+2026-05-17 03:38:46 | INFO | train | == Fold 3 — training start ==
+2026-05-17 03:38:46 | INFO | train |   Ep 001/300 | Loss=2.2195 CE=2.2049 Phys=0.0145 | Val F1=0.1014 Acc=0.1754 | LR=1.00e-03 | 0.3s
+2026-05-17 03:38:46 | INFO | train |   Checkpoint saved (F1=0.1014)
+2026-05-17 03:38:47 | INFO | train |   Checkpoint saved (F1=0.1292)
+2026-05-17 03:38:49 | INFO | train |   Ep 010/300 | Loss=1.9567 CE=1.9420 Phys=0.0147 | Val F1=0.0438 Acc=0.1053 | LR=1.00e-03 | 0.3s
+2026-05-17 03:38:50 | INFO | train |   Checkpoint saved (F1=0.1350)
+2026-05-17 03:38:52 | INFO | train |   Ep 020/300 | Loss=1.9774 CE=1.9631 Phys=0.0143 | Val F1=0.1202 Acc=0.2456 | LR=1.00e-03 | 0.3s
+2026-05-17 03:38:53 | INFO | train |   Checkpoint saved (F1=0.2240)
+2026-05-17 03:38:54 | INFO | train |   Ep 030/300 | Loss=1.9547 CE=1.9405 Phys=0.0142 | Val F1=0.1345 Acc=0.2632 | LR=1.00e-03 | 0.3s
+2026-05-17 03:38:57 | INFO | train |   Ep 040/300 | Loss=1.9568 CE=1.9431 Phys=0.0137 | Val F1=0.1722 Acc=0.2807 | LR=1.00e-03 | 0.3s
+2026-05-17 03:39:00 | INFO | train |   Ep 050/300 | Loss=1.9211 CE=1.9072 Phys=0.0138 | Val F1=0.2034 Acc=0.2281 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:01 | INFO | train |   Checkpoint saved (F1=0.2352)
+2026-05-17 03:39:01 | INFO | train |   Checkpoint saved (F1=0.2443)
+2026-05-17 03:39:03 | INFO | train |   Checkpoint saved (F1=0.2458)
+2026-05-17 03:39:03 | INFO | train |   Ep 060/300 | Loss=1.9077 CE=1.8934 Phys=0.0143 | Val F1=0.2218 Acc=0.2982 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:05 | INFO | train |   Checkpoint saved (F1=0.2647)
+2026-05-17 03:39:06 | INFO | train |   Ep 070/300 | Loss=1.9118 CE=1.8967 Phys=0.0150 | Val F1=0.2421 Acc=0.3158 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:08 | INFO | train |   Checkpoint saved (F1=0.2892)
+2026-05-17 03:39:09 | INFO | train |   Ep 080/300 | Loss=1.8874 CE=1.8729 Phys=0.0145 | Val F1=0.2873 Acc=0.4035 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:09 | INFO | train |   Checkpoint saved (F1=0.3067)
+2026-05-17 03:39:10 | INFO | train |   Checkpoint saved (F1=0.3411)
+2026-05-17 03:39:11 | INFO | train |   Ep 090/300 | Loss=1.8446 CE=1.8298 Phys=0.0147 | Val F1=0.2620 Acc=0.2982 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:13 | INFO | train |   Checkpoint saved (F1=0.3572)
+2026-05-17 03:39:14 | INFO | train |   Ep 100/300 | Loss=1.8461 CE=1.8322 Phys=0.0139 | Val F1=0.3099 Acc=0.4211 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:15 | INFO | train |   Checkpoint saved (F1=0.3714)
+2026-05-17 03:39:15 | INFO | train |   Checkpoint saved (F1=0.3980)
+2026-05-17 03:39:17 | INFO | train |   Ep 110/300 | Loss=1.8201 CE=1.8060 Phys=0.0141 | Val F1=0.3258 Acc=0.4211 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:20 | INFO | train |   Ep 120/300 | Loss=1.8078 CE=1.7932 Phys=0.0146 | Val F1=0.3592 Acc=0.4737 | LR=4.90e-04 | 0.3s
+2026-05-17 03:39:22 | INFO | train |   Checkpoint saved (F1=0.4174)
+2026-05-17 03:39:23 | INFO | train |   Ep 130/300 | Loss=1.8308 CE=1.8164 Phys=0.0144 | Val F1=0.4174 Acc=0.5439 | LR=4.90e-04 | 0.3s
+2026-05-17 03:39:26 | INFO | train |   Ep 140/300 | Loss=1.8158 CE=1.8020 Phys=0.0138 | Val F1=0.3814 Acc=0.5263 | LR=4.90e-04 | 0.3s
+2026-05-17 03:39:28 | INFO | train |   Ep 150/300 | Loss=1.7822 CE=1.7684 Phys=0.0138 | Val F1=0.3814 Acc=0.5263 | LR=3.43e-04 | 0.3s
+2026-05-17 03:39:31 | INFO | train |   Ep 160/300 | Loss=1.7856 CE=1.7713 Phys=0.0143 | Val F1=0.3814 Acc=0.5263 | LR=2.40e-04 | 0.3s
+2026-05-17 03:39:33 | INFO | train |   Early stopping triggered (patience=40)
+2026-05-17 03:39:33 | INFO | train |   Fold 4 results:
+2026-05-17 03:39:33 | INFO | train |     accuracy           = 0.5439
+2026-05-17 03:39:33 | INFO | train |     precision          = 0.4581
+2026-05-17 03:39:33 | INFO | train |     recall             = 0.4954
+2026-05-17 03:39:33 | INFO | train |     f1                 = 0.4174
+2026-05-17 03:39:33 | INFO | train |     kappa              = 0.4346
+2026-05-17 03:39:33 | INFO | train |     brier              = 0.6872
+2026-05-17 03:39:33 | INFO | train |     ece                = 0.2231
+2026-05-17 03:39:33 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 03:39:33 | INFO | train | 
+============================================================
+2026-05-17 03:39:33 | INFO | train | FOLD 5/5  train=228  val=56
+2026-05-17 03:39:34 | INFO | train | == Fold 4 — training start ==
+2026-05-17 03:39:34 | INFO | train |   Ep 001/300 | Loss=2.3128 CE=2.2958 Phys=0.0169 | Val F1=0.0058 Acc=0.0179 | LR=1.00e-03 | 0.3s
+2026-05-17 03:39:34 | INFO | train |   Checkpoint saved (F1=0.0058)
+2026-05-17 03:39:34 | INFO | train |   Checkpoint saved (F1=0.0370)
+2026-05-17 03:39:34 | INFO | train |   Checkpoint saved (F1=0.0469)
+2026-05-17 03:39:35 | INFO | train |   Checkpoint saved (F1=0.1912)
+2026-05-17 03:39:36 | INFO | train |   Ep 010/300 | Loss=1.9310 CE=1.9160 Phys=0.0149 | Val F1=0.0791 Acc=0.1250 | LR=1.00e-03 | 0.3s
+2026-05-17 03:39:39 | INFO | train |   Ep 020/300 | Loss=1.9252 CE=1.9104 Phys=0.0148 | Val F1=0.1009 Acc=0.1429 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:42 | INFO | train |   Ep 030/300 | Loss=1.8789 CE=1.8637 Phys=0.0152 | Val F1=0.1273 Acc=0.1250 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:45 | INFO | train |   Ep 040/300 | Loss=1.8703 CE=1.8563 Phys=0.0140 | Val F1=0.1802 Acc=0.2500 | LR=4.90e-04 | 0.3s
+2026-05-17 03:39:46 | INFO | train |   Early stopping triggered (patience=40)
+2026-05-17 03:39:46 | INFO | train |   Fold 5 results:
+2026-05-17 03:39:46 | INFO | train |     accuracy           = 0.3571
+2026-05-17 03:39:46 | INFO | train |     precision          = 0.2229
+2026-05-17 03:39:46 | INFO | train |     recall             = 0.2797
+2026-05-17 03:39:46 | INFO | train |     f1                 = 0.1912
+2026-05-17 03:39:46 | INFO | train |     kappa              = 0.1858
+2026-05-17 03:39:46 | INFO | train |     brier              = 0.8267
+2026-05-17 03:39:46 | INFO | train |     ece                = 0.1728
+2026-05-17 03:39:46 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 03:39:46 | INFO | train | 
+== Cross-validation summary ==
+2026-05-17 03:39:46 | INFO | train |   accuracy    : 0.4153 ± 0.0696
+2026-05-17 03:39:46 | INFO | train |   f1          : 0.2948 ± 0.0768
+2026-05-17 03:39:46 | INFO | train |   precision   : 0.3214 ± 0.0801
+2026-05-17 03:39:46 | INFO | train |   recall      : 0.3557 ± 0.0753
+2026-05-17 03:39:46 | INFO | train |   kappa       : 0.2676 ± 0.0889
+2026-05-17 03:39:46 | INFO | train |   brier       : 0.7730 ± 0.0504
+2026-05-17 03:39:46 | INFO | train |   ece         : 0.1771 ± 0.0237
+2026-05-17 03:39:46 | INFO | train | 
+  Targets (Table 3.23): NOT MET
+2026-05-17 03:39:46 | INFO | train | 
+== Final training on train set only ==
+2026-05-17 03:39:46 | INFO | train | == Fold 99 — training start ==
+2026-05-17 03:39:47 | INFO | train |   Ep 001/300 | Loss=2.2808 CE=2.2665 Phys=0.0143 | Val F1=0.1474 Acc=0.3000 | LR=1.00e-03 | 0.3s
+2026-05-17 03:39:47 | INFO | train |   Checkpoint saved (F1=0.1474)
+2026-05-17 03:39:48 | INFO | train |   Checkpoint saved (F1=0.1835)
+2026-05-17 03:39:49 | INFO | train |   Checkpoint saved (F1=0.2886)
+2026-05-17 03:39:49 | INFO | train |   Ep 010/300 | Loss=2.0170 CE=2.0033 Phys=0.0137 | Val F1=0.2053 Acc=0.3200 | LR=1.00e-03 | 0.3s
+2026-05-17 03:39:52 | INFO | train |   Ep 020/300 | Loss=1.9381 CE=1.9240 Phys=0.0141 | Val F1=0.1568 Acc=0.3000 | LR=1.00e-03 | 0.3s
+2026-05-17 03:39:55 | INFO | train |   Ep 030/300 | Loss=1.8846 CE=1.8712 Phys=0.0134 | Val F1=0.1689 Acc=0.2600 | LR=7.00e-04 | 0.3s
+2026-05-17 03:39:58 | INFO | train |   Ep 040/300 | Loss=1.8798 CE=1.8651 Phys=0.0147 | Val F1=0.2028 Acc=0.2600 | LR=4.90e-04 | 0.3s
+2026-05-17 03:40:00 | INFO | train |   Early stopping triggered (patience=40)
+2026-05-17 03:40:01 | INFO | train | 
+== Test set metrics (MC Dropout) ==
+2026-05-17 03:40:01 | INFO | train |   accuracy             = 0.2745 ✗
+2026-05-17 03:40:01 | INFO | train |   precision            = 0.1751 ✗
+2026-05-17 03:40:01 | INFO | train |   recall               = 0.2985 ✗
+2026-05-17 03:40:01 | INFO | train |   f1                   = 0.1626 ✗
+2026-05-17 03:40:01 | INFO | train |   kappa                = 0.1450 ✗
+2026-05-17 03:40:01 | INFO | train |   brier                = 0.8165 ✗
+2026-05-17 03:40:01 | INFO | train |   ece                  = 0.0848 ✗
+2026-05-17 03:40:01 | INFO | train |   mean_uncertainty     = 0.0168
+2026-05-17 03:40:01 | INFO | train | Inference complete — 51 samples — Acc=0.2745
+2026-05-17 03:40:01 | INFO | train | 
+JSON report: /Users/krohn/PycharmProjects/pignn_uq/outputs/pignn_uq_report.json
+2026-05-17 04:00:01 | INFO | train | ===============================================
+2026-05-17 04:00:01 | INFO | train |   PIGNN-UQ — Full pipeline
+2026-05-17 04:00:01 | INFO | train | ===============================================
+2026-05-17 04:00:01 | INFO | train | Device: cpu
+2026-05-17 04:00:01 | INFO | train | 
+============================================================
+2026-05-17 04:00:01 | INFO | train | FOLD 1/5  train=227  val=57
+2026-05-17 04:00:01 | INFO | train | == Fold 0 — training start ==
+2026-05-17 04:00:02 | INFO | train |   Ep 001/300 | Loss=2.2050 CE=2.2025 Phys=0.0025 | Val F1=0.0862 Acc=0.1930 | LR=3.00e-04 | 0.3s
+2026-05-17 04:00:02 | INFO | train |   Checkpoint saved (F1=0.0862)
+2026-05-17 04:00:03 | INFO | train |   Checkpoint saved (F1=0.1042)
+2026-05-17 04:00:03 | INFO | train |   Ep 010/300 | Loss=1.7848 CE=1.7819 Phys=0.0029 | Val F1=0.1525 Acc=0.2281 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:03 | INFO | train |   Checkpoint saved (F1=0.1525)
+2026-05-17 04:00:03 | INFO | train |   Checkpoint saved (F1=0.2023)
+2026-05-17 04:00:03 | INFO | train |   Checkpoint saved (F1=0.2109)
+2026-05-17 04:00:03 | INFO | train |   Checkpoint saved (F1=0.2151)
+2026-05-17 04:00:04 | INFO | train |   Checkpoint saved (F1=0.2183)
+2026-05-17 04:00:04 | INFO | train |   Ep 020/300 | Loss=1.7896 CE=1.7868 Phys=0.0028 | Val F1=0.1796 Acc=0.3158 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:05 | INFO | train |   Checkpoint saved (F1=0.2347)
+2026-05-17 04:00:05 | INFO | train |   Checkpoint saved (F1=0.2472)
+2026-05-17 04:00:05 | INFO | train |   Checkpoint saved (F1=0.2630)
+2026-05-17 04:00:05 | INFO | train |   Ep 030/300 | Loss=1.7039 CE=1.7012 Phys=0.0027 | Val F1=0.2563 Acc=0.3860 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:06 | INFO | train |   Checkpoint saved (F1=0.2735)
+2026-05-17 04:00:07 | INFO | train |   Ep 040/300 | Loss=1.6166 CE=1.6138 Phys=0.0028 | Val F1=0.2434 Acc=0.3684 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:08 | INFO | train |   Ep 050/300 | Loss=1.6199 CE=1.6175 Phys=0.0024 | Val F1=0.2298 Acc=0.3509 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:09 | INFO | train |   Ep 060/300 | Loss=1.5421 CE=1.5395 Phys=0.0026 | Val F1=0.1975 Acc=0.2982 | LR=1.50e-04 | 0.1s
+2026-05-17 04:00:10 | INFO | train |   Ep 070/300 | Loss=1.5057 CE=1.5031 Phys=0.0026 | Val F1=0.2034 Acc=0.2982 | LR=1.50e-04 | 0.1s
+2026-05-17 04:00:12 | INFO | train |   Ep 080/300 | Loss=1.5849 CE=1.5822 Phys=0.0028 | Val F1=0.2060 Acc=0.2982 | LR=1.50e-04 | 0.1s
+2026-05-17 04:00:13 | INFO | train |   Ep 090/300 | Loss=1.5890 CE=1.5867 Phys=0.0023 | Val F1=0.2341 Acc=0.3333 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:14 | INFO | train |   Ep 100/300 | Loss=1.4247 CE=1.4218 Phys=0.0030 | Val F1=0.2143 Acc=0.3158 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:15 | INFO | train |   Ep 110/300 | Loss=1.5208 CE=1.5178 Phys=0.0030 | Val F1=0.2333 Acc=0.3333 | LR=3.75e-05 | 0.1s
+2026-05-17 04:00:15 | INFO | train |   Early stopping triggered (patience=80)
+2026-05-17 04:00:15 | INFO | train |   Fold 1 results:
+2026-05-17 04:00:15 | INFO | train |     accuracy           = 0.3860
+2026-05-17 04:00:15 | INFO | train |     precision          = 0.2741
+2026-05-17 04:00:15 | INFO | train |     recall             = 0.3132
+2026-05-17 04:00:15 | INFO | train |     f1                 = 0.2735
+2026-05-17 04:00:15 | INFO | train |     kappa              = 0.2449
+2026-05-17 04:00:15 | INFO | train |     brier              = 0.7874
+2026-05-17 04:00:15 | INFO | train |     ece                = 0.1569
+2026-05-17 04:00:15 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:00:15 | INFO | train | 
+============================================================
+2026-05-17 04:00:15 | INFO | train | FOLD 2/5  train=227  val=57
+2026-05-17 04:00:16 | INFO | train | == Fold 1 — training start ==
+2026-05-17 04:00:16 | INFO | train |   Ep 001/300 | Loss=2.2898 CE=2.2869 Phys=0.0029 | Val F1=0.0615 Acc=0.1404 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:16 | INFO | train |   Checkpoint saved (F1=0.0615)
+2026-05-17 04:00:16 | INFO | train |   Checkpoint saved (F1=0.0746)
+2026-05-17 04:00:16 | INFO | train |   Checkpoint saved (F1=0.1073)
+2026-05-17 04:00:16 | INFO | train |   Checkpoint saved (F1=0.2115)
+2026-05-17 04:00:17 | INFO | train |   Ep 010/300 | Loss=1.8307 CE=1.8282 Phys=0.0025 | Val F1=0.1523 Acc=0.2807 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:18 | INFO | train |   Ep 020/300 | Loss=1.6806 CE=1.6783 Phys=0.0023 | Val F1=0.1920 Acc=0.2456 | LR=3.00e-04 | 0.2s
+2026-05-17 04:00:19 | INFO | train |   Checkpoint saved (F1=0.2186)
+2026-05-17 04:00:19 | INFO | train |   Checkpoint saved (F1=0.2904)
+2026-05-17 04:00:19 | INFO | train |   Ep 030/300 | Loss=1.7097 CE=1.7071 Phys=0.0026 | Val F1=0.1484 Acc=0.2105 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:20 | INFO | train |   Ep 040/300 | Loss=1.6892 CE=1.6867 Phys=0.0025 | Val F1=0.1518 Acc=0.1930 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:21 | INFO | train |   Ep 050/300 | Loss=1.6689 CE=1.6664 Phys=0.0025 | Val F1=0.1677 Acc=0.2281 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:23 | INFO | train |   Ep 060/300 | Loss=1.6977 CE=1.6950 Phys=0.0027 | Val F1=0.2053 Acc=0.2807 | LR=1.50e-04 | 0.1s
+2026-05-17 04:00:24 | INFO | train |   Ep 070/300 | Loss=1.6525 CE=1.6498 Phys=0.0027 | Val F1=0.2266 Acc=0.3509 | LR=1.50e-04 | 0.1s
+2026-05-17 04:00:25 | INFO | train |   Ep 080/300 | Loss=1.5936 CE=1.5910 Phys=0.0026 | Val F1=0.2065 Acc=0.3333 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:26 | INFO | train |   Ep 090/300 | Loss=1.6422 CE=1.6398 Phys=0.0024 | Val F1=0.2237 Acc=0.3509 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:27 | INFO | train |   Ep 100/300 | Loss=1.4809 CE=1.4784 Phys=0.0025 | Val F1=0.2231 Acc=0.3509 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:28 | INFO | train |   Checkpoint saved (F1=0.3362)
+2026-05-17 04:00:28 | INFO | train |   Checkpoint saved (F1=0.3658)
+2026-05-17 04:00:28 | INFO | train |   Ep 110/300 | Loss=1.6841 CE=1.6815 Phys=0.0026 | Val F1=0.3632 Acc=0.3860 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:29 | INFO | train |   Checkpoint saved (F1=0.3664)
+2026-05-17 04:00:30 | INFO | train |   Ep 120/300 | Loss=1.4048 CE=1.4023 Phys=0.0025 | Val F1=0.2268 Acc=0.3509 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:31 | INFO | train |   Ep 130/300 | Loss=1.5568 CE=1.5544 Phys=0.0025 | Val F1=0.2985 Acc=0.3684 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:32 | INFO | train |   Ep 140/300 | Loss=1.5019 CE=1.4993 Phys=0.0026 | Val F1=0.3388 Acc=0.3860 | LR=3.75e-05 | 0.1s
+2026-05-17 04:00:32 | INFO | train |   Checkpoint saved (F1=0.4007)
+2026-05-17 04:00:33 | INFO | train |   Checkpoint saved (F1=0.4107)
+2026-05-17 04:00:33 | INFO | train |   Ep 150/300 | Loss=1.5133 CE=1.5107 Phys=0.0026 | Val F1=0.4107 Acc=0.4035 | LR=3.75e-05 | 0.1s
+2026-05-17 04:00:33 | INFO | train |   Checkpoint saved (F1=0.4112)
+2026-05-17 04:00:33 | INFO | train |   Checkpoint saved (F1=0.4121)
+2026-05-17 04:00:34 | INFO | train |   Ep 160/300 | Loss=1.4134 CE=1.4109 Phys=0.0026 | Val F1=0.3219 Acc=0.3860 | LR=3.75e-05 | 0.1s
+2026-05-17 04:00:35 | INFO | train |   Checkpoint saved (F1=0.4136)
+2026-05-17 04:00:35 | INFO | train |   Ep 170/300 | Loss=1.5626 CE=1.5602 Phys=0.0024 | Val F1=0.4136 Acc=0.4035 | LR=3.75e-05 | 0.1s
+2026-05-17 04:00:35 | INFO | train |   Checkpoint saved (F1=0.4144)
+2026-05-17 04:00:36 | INFO | train |   Ep 180/300 | Loss=1.5413 CE=1.5390 Phys=0.0024 | Val F1=0.3501 Acc=0.4035 | LR=3.75e-05 | 0.1s
+2026-05-17 04:00:37 | INFO | train |   Ep 190/300 | Loss=1.5301 CE=1.5276 Phys=0.0025 | Val F1=0.3501 Acc=0.4035 | LR=3.75e-05 | 0.1s
+2026-05-17 04:00:39 | INFO | train |   Ep 200/300 | Loss=1.6223 CE=1.6199 Phys=0.0024 | Val F1=0.4144 Acc=0.4035 | LR=1.87e-05 | 0.1s
+2026-05-17 04:00:40 | INFO | train |   Ep 210/300 | Loss=1.5570 CE=1.5539 Phys=0.0031 | Val F1=0.3505 Acc=0.4035 | LR=1.87e-05 | 0.1s
+2026-05-17 04:00:41 | INFO | train |   Ep 220/300 | Loss=1.4897 CE=1.4872 Phys=0.0025 | Val F1=0.3632 Acc=0.4035 | LR=1.87e-05 | 0.1s
+2026-05-17 04:00:42 | INFO | train |   Ep 230/300 | Loss=1.5137 CE=1.5109 Phys=0.0028 | Val F1=0.3632 Acc=0.4035 | LR=9.37e-06 | 0.1s
+2026-05-17 04:00:43 | INFO | train |   Ep 240/300 | Loss=1.5107 CE=1.5081 Phys=0.0025 | Val F1=0.3632 Acc=0.4035 | LR=9.37e-06 | 0.1s
+2026-05-17 04:00:44 | INFO | train |   Ep 250/300 | Loss=1.7329 CE=1.7304 Phys=0.0025 | Val F1=0.3632 Acc=0.4035 | LR=4.69e-06 | 0.1s
+2026-05-17 04:00:44 | INFO | train |   Early stopping triggered (patience=80)
+2026-05-17 04:00:44 | INFO | train |   Fold 2 results:
+2026-05-17 04:00:44 | INFO | train |     accuracy           = 0.4035
+2026-05-17 04:00:44 | INFO | train |     precision          = 0.3811
+2026-05-17 04:00:44 | INFO | train |     recall             = 0.4769
+2026-05-17 04:00:44 | INFO | train |     f1                 = 0.4144
+2026-05-17 04:00:44 | INFO | train |     kappa              = 0.2681
+2026-05-17 04:00:44 | INFO | train |     brier              = 0.7446
+2026-05-17 04:00:44 | INFO | train |     ece                = 0.1058
+2026-05-17 04:00:44 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:00:44 | INFO | train | 
+============================================================
+2026-05-17 04:00:44 | INFO | train | FOLD 3/5  train=227  val=57
+2026-05-17 04:00:44 | INFO | train | == Fold 2 — training start ==
+2026-05-17 04:00:44 | INFO | train |   Ep 001/300 | Loss=2.0826 CE=2.0801 Phys=0.0025 | Val F1=0.0971 Acc=0.1930 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:44 | INFO | train |   Checkpoint saved (F1=0.0971)
+2026-05-17 04:00:44 | INFO | train |   Checkpoint saved (F1=0.1304)
+2026-05-17 04:00:45 | INFO | train |   Checkpoint saved (F1=0.1317)
+2026-05-17 04:00:45 | INFO | train |   Checkpoint saved (F1=0.1790)
+2026-05-17 04:00:45 | INFO | train |   Ep 010/300 | Loss=1.7937 CE=1.7910 Phys=0.0027 | Val F1=0.1361 Acc=0.2105 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:45 | INFO | train |   Checkpoint saved (F1=0.2566)
+2026-05-17 04:00:46 | INFO | train |   Ep 020/300 | Loss=1.6990 CE=1.6957 Phys=0.0033 | Val F1=0.2599 Acc=0.3509 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:46 | INFO | train |   Checkpoint saved (F1=0.2599)
+2026-05-17 04:00:47 | INFO | train |   Checkpoint saved (F1=0.3039)
+2026-05-17 04:00:48 | INFO | train |   Ep 030/300 | Loss=1.7070 CE=1.7043 Phys=0.0026 | Val F1=0.2643 Acc=0.3509 | LR=3.00e-04 | 0.2s
+2026-05-17 04:00:49 | INFO | train |   Ep 040/300 | Loss=1.6566 CE=1.6537 Phys=0.0028 | Val F1=0.2499 Acc=0.3158 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:50 | INFO | train |   Ep 050/300 | Loss=1.8358 CE=1.8334 Phys=0.0024 | Val F1=0.2772 Acc=0.3333 | LR=1.50e-04 | 0.1s
+2026-05-17 04:00:51 | INFO | train |   Ep 060/300 | Loss=1.5905 CE=1.5878 Phys=0.0026 | Val F1=0.2764 Acc=0.3333 | LR=1.50e-04 | 0.1s
+2026-05-17 04:00:53 | INFO | train |   Ep 070/300 | Loss=1.5079 CE=1.5054 Phys=0.0025 | Val F1=0.2744 Acc=0.3333 | LR=1.50e-04 | 0.2s
+2026-05-17 04:00:54 | INFO | train |   Ep 080/300 | Loss=1.5503 CE=1.5477 Phys=0.0027 | Val F1=0.2744 Acc=0.3333 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:55 | INFO | train |   Ep 090/300 | Loss=1.5297 CE=1.5274 Phys=0.0023 | Val F1=0.2730 Acc=0.3333 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:56 | INFO | train |   Ep 100/300 | Loss=1.6145 CE=1.6120 Phys=0.0025 | Val F1=0.2697 Acc=0.3333 | LR=7.50e-05 | 0.1s
+2026-05-17 04:00:56 | INFO | train |   Early stopping triggered (patience=80)
+2026-05-17 04:00:56 | INFO | train |   Fold 3 results:
+2026-05-17 04:00:56 | INFO | train |     accuracy           = 0.3860
+2026-05-17 04:00:56 | INFO | train |     precision          = 0.5229
+2026-05-17 04:00:56 | INFO | train |     recall             = 0.3485
+2026-05-17 04:00:56 | INFO | train |     f1                 = 0.3039
+2026-05-17 04:00:56 | INFO | train |     kappa              = 0.2497
+2026-05-17 04:00:56 | INFO | train |     brier              = 0.7857
+2026-05-17 04:00:56 | INFO | train |     ece                = 0.1148
+2026-05-17 04:00:56 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:00:56 | INFO | train | 
+============================================================
+2026-05-17 04:00:56 | INFO | train | FOLD 4/5  train=227  val=57
+2026-05-17 04:00:57 | INFO | train | == Fold 3 — training start ==
+2026-05-17 04:00:57 | INFO | train |   Ep 001/300 | Loss=2.2795 CE=2.2771 Phys=0.0024 | Val F1=0.0847 Acc=0.1754 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:57 | INFO | train |   Checkpoint saved (F1=0.0847)
+2026-05-17 04:00:57 | INFO | train |   Checkpoint saved (F1=0.1158)
+2026-05-17 04:00:57 | INFO | train |   Checkpoint saved (F1=0.2165)
+2026-05-17 04:00:57 | INFO | train |   Checkpoint saved (F1=0.3209)
+2026-05-17 04:00:58 | INFO | train |   Ep 010/300 | Loss=1.7985 CE=1.7958 Phys=0.0027 | Val F1=0.2548 Acc=0.4035 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:58 | INFO | train |   Checkpoint saved (F1=0.3285)
+2026-05-17 04:00:58 | INFO | train |   Checkpoint saved (F1=0.3326)
+2026-05-17 04:00:59 | INFO | train |   Checkpoint saved (F1=0.3452)
+2026-05-17 04:00:59 | INFO | train |   Ep 020/300 | Loss=1.7534 CE=1.7509 Phys=0.0025 | Val F1=0.3176 Acc=0.3860 | LR=3.00e-04 | 0.1s
+2026-05-17 04:00:59 | INFO | train |   Checkpoint saved (F1=0.3606)
+2026-05-17 04:00:59 | INFO | train |   Checkpoint saved (F1=0.3795)
+2026-05-17 04:01:00 | INFO | train |   Checkpoint saved (F1=0.3913)
+2026-05-17 04:01:00 | INFO | train |   Ep 030/300 | Loss=1.7156 CE=1.7128 Phys=0.0029 | Val F1=0.2639 Acc=0.3333 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:01 | INFO | train |   Checkpoint saved (F1=0.4006)
+2026-05-17 04:01:01 | INFO | train |   Ep 040/300 | Loss=1.7028 CE=1.7003 Phys=0.0024 | Val F1=0.3294 Acc=0.4561 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:02 | INFO | train |   Checkpoint saved (F1=0.4415)
+2026-05-17 04:01:02 | INFO | train |   Ep 050/300 | Loss=1.7427 CE=1.7400 Phys=0.0027 | Val F1=0.4174 Acc=0.4737 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:03 | INFO | train |   Ep 060/300 | Loss=1.6288 CE=1.6262 Phys=0.0026 | Val F1=0.4259 Acc=0.5088 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:04 | INFO | train |   Checkpoint saved (F1=0.4560)
+2026-05-17 04:01:04 | INFO | train |   Ep 070/300 | Loss=1.6773 CE=1.6746 Phys=0.0027 | Val F1=0.4002 Acc=0.4737 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:05 | INFO | train |   Ep 080/300 | Loss=1.6165 CE=1.6140 Phys=0.0025 | Val F1=0.4026 Acc=0.4912 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:06 | INFO | train |   Checkpoint saved (F1=0.4597)
+2026-05-17 04:01:06 | INFO | train |   Checkpoint saved (F1=0.4678)
+2026-05-17 04:01:06 | INFO | train |   Checkpoint saved (F1=0.4688)
+2026-05-17 04:01:07 | INFO | train |   Ep 090/300 | Loss=1.5503 CE=1.5478 Phys=0.0025 | Val F1=0.4103 Acc=0.4737 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:08 | INFO | train |   Ep 100/300 | Loss=1.5444 CE=1.5418 Phys=0.0026 | Val F1=0.4432 Acc=0.4912 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:08 | INFO | train |   Checkpoint saved (F1=0.4901)
+2026-05-17 04:01:09 | INFO | train |   Ep 110/300 | Loss=1.4668 CE=1.4641 Phys=0.0027 | Val F1=0.4602 Acc=0.5263 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:09 | INFO | train |   Checkpoint saved (F1=0.4936)
+2026-05-17 04:01:10 | INFO | train |   Ep 120/300 | Loss=1.5771 CE=1.5745 Phys=0.0026 | Val F1=0.4547 Acc=0.5263 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:11 | INFO | train |   Ep 130/300 | Loss=1.5865 CE=1.5839 Phys=0.0026 | Val F1=0.4365 Acc=0.5263 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:12 | INFO | train |   Checkpoint saved (F1=0.5393)
+2026-05-17 04:01:12 | INFO | train |   Ep 140/300 | Loss=1.5258 CE=1.5230 Phys=0.0027 | Val F1=0.4415 Acc=0.5088 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:13 | INFO | train |   Ep 150/300 | Loss=1.6361 CE=1.6337 Phys=0.0024 | Val F1=0.5082 Acc=0.5614 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:14 | INFO | train |   Ep 160/300 | Loss=1.4437 CE=1.4411 Phys=0.0026 | Val F1=0.4597 Acc=0.5263 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:16 | INFO | train |   Ep 170/300 | Loss=1.5623 CE=1.5597 Phys=0.0027 | Val F1=0.4789 Acc=0.5614 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:17 | INFO | train |   Ep 180/300 | Loss=1.4861 CE=1.4836 Phys=0.0025 | Val F1=0.4923 Acc=0.5614 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:18 | INFO | train |   Ep 190/300 | Loss=1.3766 CE=1.3742 Phys=0.0024 | Val F1=0.4668 Acc=0.5439 | LR=7.50e-05 | 0.1s
+2026-05-17 04:01:19 | INFO | train |   Ep 200/300 | Loss=1.2637 CE=1.2609 Phys=0.0028 | Val F1=0.4681 Acc=0.5439 | LR=7.50e-05 | 0.1s
+2026-05-17 04:01:20 | INFO | train |   Ep 210/300 | Loss=1.3820 CE=1.3796 Phys=0.0025 | Val F1=0.4919 Acc=0.5439 | LR=7.50e-05 | 0.1s
+2026-05-17 04:01:21 | INFO | train |   Early stopping triggered (patience=80)
+2026-05-17 04:01:21 | INFO | train |   Fold 4 results:
+2026-05-17 04:01:21 | INFO | train |     accuracy           = 0.5965
+2026-05-17 04:01:21 | INFO | train |     precision          = 0.5994
+2026-05-17 04:01:21 | INFO | train |     recall             = 0.5974
+2026-05-17 04:01:21 | INFO | train |     f1                 = 0.5393
+2026-05-17 04:01:21 | INFO | train |     kappa              = 0.5084
+2026-05-17 04:01:21 | INFO | train |     brier              = 0.6209
+2026-05-17 04:01:21 | INFO | train |     ece                = 0.1853
+2026-05-17 04:01:21 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:01:21 | INFO | train | 
+============================================================
+2026-05-17 04:01:21 | INFO | train | FOLD 5/5  train=228  val=56
+2026-05-17 04:01:21 | INFO | train | == Fold 4 — training start ==
+2026-05-17 04:01:21 | INFO | train |   Ep 001/300 | Loss=2.2586 CE=2.2560 Phys=0.0026 | Val F1=0.0540 Acc=0.1071 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:21 | INFO | train |   Checkpoint saved (F1=0.0540)
+2026-05-17 04:01:21 | INFO | train |   Checkpoint saved (F1=0.1050)
+2026-05-17 04:01:21 | INFO | train |   Checkpoint saved (F1=0.1326)
+2026-05-17 04:01:21 | INFO | train |   Checkpoint saved (F1=0.1346)
+2026-05-17 04:01:21 | INFO | train |   Checkpoint saved (F1=0.1458)
+2026-05-17 04:01:22 | INFO | train |   Ep 010/300 | Loss=1.7767 CE=1.7741 Phys=0.0026 | Val F1=0.1194 Acc=0.2321 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:22 | INFO | train |   Checkpoint saved (F1=0.1465)
+2026-05-17 04:01:22 | INFO | train |   Checkpoint saved (F1=0.1764)
+2026-05-17 04:01:23 | INFO | train |   Checkpoint saved (F1=0.1797)
+2026-05-17 04:01:23 | INFO | train |   Checkpoint saved (F1=0.1924)
+2026-05-17 04:01:23 | INFO | train |   Ep 020/300 | Loss=1.7011 CE=1.6985 Phys=0.0026 | Val F1=0.1710 Acc=0.2321 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:24 | INFO | train |   Checkpoint saved (F1=0.2230)
+2026-05-17 04:01:24 | INFO | train |   Ep 030/300 | Loss=1.7158 CE=1.7131 Phys=0.0027 | Val F1=0.1923 Acc=0.2857 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:25 | INFO | train |   Checkpoint saved (F1=0.2366)
+2026-05-17 04:01:25 | INFO | train |   Checkpoint saved (F1=0.2629)
+2026-05-17 04:01:25 | INFO | train |   Ep 040/300 | Loss=1.7628 CE=1.7602 Phys=0.0027 | Val F1=0.2188 Acc=0.3214 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:27 | INFO | train |   Ep 050/300 | Loss=1.6763 CE=1.6736 Phys=0.0027 | Val F1=0.2183 Acc=0.3214 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:28 | INFO | train |   Ep 060/300 | Loss=1.5954 CE=1.5929 Phys=0.0025 | Val F1=0.2246 Acc=0.3214 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:29 | INFO | train |   Ep 070/300 | Loss=1.5204 CE=1.5179 Phys=0.0025 | Val F1=0.1951 Acc=0.2857 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:30 | INFO | train |   Ep 080/300 | Loss=1.5453 CE=1.5427 Phys=0.0026 | Val F1=0.1988 Acc=0.2679 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:31 | INFO | train |   Checkpoint saved (F1=0.2666)
+2026-05-17 04:01:31 | INFO | train |   Ep 090/300 | Loss=1.6034 CE=1.6008 Phys=0.0026 | Val F1=0.2174 Acc=0.3214 | LR=1.50e-04 | 0.2s
+2026-05-17 04:01:32 | INFO | train |   Checkpoint saved (F1=0.2955)
+2026-05-17 04:01:33 | INFO | train |   Ep 100/300 | Loss=1.5197 CE=1.5172 Phys=0.0025 | Val F1=0.2139 Acc=0.2857 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:34 | INFO | train |   Checkpoint saved (F1=0.3032)
+2026-05-17 04:01:35 | INFO | train |   Ep 110/300 | Loss=1.5423 CE=1.5397 Phys=0.0026 | Val F1=0.2072 Acc=0.2857 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:36 | INFO | train |   Ep 120/300 | Loss=1.5486 CE=1.5459 Phys=0.0027 | Val F1=0.2501 Acc=0.3393 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:38 | INFO | train |   Ep 130/300 | Loss=1.4971 CE=1.4946 Phys=0.0025 | Val F1=0.2136 Acc=0.2857 | LR=1.50e-04 | 0.1s
+2026-05-17 04:01:38 | INFO | train |   Checkpoint saved (F1=0.3134)
+2026-05-17 04:01:39 | INFO | train |   Ep 140/300 | Loss=1.4706 CE=1.4681 Phys=0.0025 | Val F1=0.2844 Acc=0.3571 | LR=7.50e-05 | 0.1s
+2026-05-17 04:01:40 | INFO | train |   Ep 150/300 | Loss=1.4538 CE=1.4512 Phys=0.0026 | Val F1=0.2341 Acc=0.3036 | LR=7.50e-05 | 0.1s
+2026-05-17 04:01:41 | INFO | train |   Ep 160/300 | Loss=1.4096 CE=1.4070 Phys=0.0027 | Val F1=0.2601 Acc=0.3393 | LR=3.75e-05 | 0.1s
+2026-05-17 04:01:42 | INFO | train |   Ep 170/300 | Loss=1.3686 CE=1.3660 Phys=0.0026 | Val F1=0.2837 Acc=0.3571 | LR=3.75e-05 | 0.1s
+2026-05-17 04:01:44 | INFO | train |   Ep 180/300 | Loss=1.5417 CE=1.5392 Phys=0.0025 | Val F1=0.2837 Acc=0.3571 | LR=3.75e-05 | 0.1s
+2026-05-17 04:01:45 | INFO | train |   Ep 190/300 | Loss=1.5652 CE=1.5624 Phys=0.0028 | Val F1=0.2837 Acc=0.3571 | LR=1.87e-05 | 0.2s
+2026-05-17 04:01:47 | INFO | train |   Ep 200/300 | Loss=1.4338 CE=1.4313 Phys=0.0025 | Val F1=0.2837 Acc=0.3571 | LR=1.87e-05 | 0.1s
+2026-05-17 04:01:48 | INFO | train |   Ep 210/300 | Loss=1.4746 CE=1.4722 Phys=0.0024 | Val F1=0.2837 Acc=0.3571 | LR=1.87e-05 | 0.2s
+2026-05-17 04:01:49 | INFO | train |   Early stopping triggered (patience=80)
+2026-05-17 04:01:49 | INFO | train |   Fold 5 results:
+2026-05-17 04:01:49 | INFO | train |     accuracy           = 0.3750
+2026-05-17 04:01:49 | INFO | train |     precision          = 0.4532
+2026-05-17 04:01:49 | INFO | train |     recall             = 0.3329
+2026-05-17 04:01:49 | INFO | train |     f1                 = 0.3134
+2026-05-17 04:01:49 | INFO | train |     kappa              = 0.2502
+2026-05-17 04:01:49 | INFO | train |     brier              = 0.7834
+2026-05-17 04:01:49 | INFO | train |     ece                = 0.1188
+2026-05-17 04:01:49 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:01:49 | INFO | train | 
+== Cross-validation summary ==
+2026-05-17 04:01:49 | INFO | train |   accuracy    : 0.4294 ± 0.0840
+2026-05-17 04:01:49 | INFO | train |   f1          : 0.3689 ± 0.0975
+2026-05-17 04:01:49 | INFO | train |   precision   : 0.4461 ± 0.1125
+2026-05-17 04:01:49 | INFO | train |   recall      : 0.4138 ± 0.1083
+2026-05-17 04:01:49 | INFO | train |   kappa       : 0.3043 ± 0.1024
+2026-05-17 04:01:49 | INFO | train |   brier       : 0.7444 ± 0.0638
+2026-05-17 04:01:49 | INFO | train |   ece         : 0.1363 ± 0.0301
+2026-05-17 04:01:49 | INFO | train | 
+  Targets (Table 3.23): NOT MET
+2026-05-17 04:01:49 | INFO | train | 
+== Final training on train set only ==
+2026-05-17 04:01:49 | INFO | train | == Fold 99 — training start ==
+2026-05-17 04:01:49 | INFO | train |   Ep 001/300 | Loss=2.2614 CE=2.2589 Phys=0.0025 | Val F1=0.1032 Acc=0.2000 | LR=3.00e-04 | 0.2s
+2026-05-17 04:01:49 | INFO | train |   Checkpoint saved (F1=0.1032)
+2026-05-17 04:01:49 | INFO | train |   Checkpoint saved (F1=0.1191)
+2026-05-17 04:01:49 | INFO | train |   Checkpoint saved (F1=0.2072)
+2026-05-17 04:01:49 | INFO | train |   Checkpoint saved (F1=0.2330)
+2026-05-17 04:01:50 | INFO | train |   Ep 010/300 | Loss=1.7737 CE=1.7709 Phys=0.0027 | Val F1=0.1940 Acc=0.2400 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:51 | INFO | train |   Checkpoint saved (F1=0.2908)
+2026-05-17 04:01:51 | INFO | train |   Checkpoint saved (F1=0.2963)
+2026-05-17 04:01:51 | INFO | train |   Checkpoint saved (F1=0.2987)
+2026-05-17 04:01:51 | INFO | train |   Ep 020/300 | Loss=1.7464 CE=1.7440 Phys=0.0024 | Val F1=0.2534 Acc=0.3400 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:53 | INFO | train |   Ep 030/300 | Loss=1.7343 CE=1.7315 Phys=0.0028 | Val F1=0.2665 Acc=0.3400 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:53 | INFO | train |   Checkpoint saved (F1=0.4080)
+2026-05-17 04:01:54 | INFO | train |   Ep 040/300 | Loss=1.6778 CE=1.6753 Phys=0.0025 | Val F1=0.3210 Acc=0.4000 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:55 | INFO | train |   Checkpoint saved (F1=0.4598)
+2026-05-17 04:01:55 | INFO | train |   Ep 050/300 | Loss=1.6782 CE=1.6754 Phys=0.0028 | Val F1=0.4236 Acc=0.4200 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:56 | INFO | train |   Ep 060/300 | Loss=1.6136 CE=1.6110 Phys=0.0027 | Val F1=0.4173 Acc=0.4000 | LR=3.00e-04 | 0.1s
+2026-05-17 04:01:57 | INFO | train |   Ep 070/300 | Loss=1.6749 CE=1.6722 Phys=0.0027 | Val F1=0.3492 Acc=0.4000 | LR=3.00e-04 | 0.2s
+2026-05-17 04:01:59 | INFO | train |   Ep 080/300 | Loss=1.5407 CE=1.5382 Phys=0.0024 | Val F1=0.4093 Acc=0.4200 | LR=1.50e-04 | 0.1s
+2026-05-17 04:02:00 | INFO | train |   Ep 090/300 | Loss=1.5575 CE=1.5549 Phys=0.0026 | Val F1=0.3963 Acc=0.4000 | LR=1.50e-04 | 0.1s
+2026-05-17 04:02:01 | INFO | train |   Ep 100/300 | Loss=1.6238 CE=1.6212 Phys=0.0026 | Val F1=0.3810 Acc=0.4000 | LR=7.50e-05 | 0.1s
+2026-05-17 04:02:02 | INFO | train |   Ep 110/300 | Loss=1.5519 CE=1.5494 Phys=0.0024 | Val F1=0.3947 Acc=0.4200 | LR=7.50e-05 | 0.1s
+2026-05-17 04:02:03 | INFO | train |   Ep 120/300 | Loss=1.5634 CE=1.5608 Phys=0.0026 | Val F1=0.3737 Acc=0.4000 | LR=7.50e-05 | 0.1s
+2026-05-17 04:02:04 | INFO | train |   Early stopping triggered (patience=80)
+2026-05-17 04:02:05 | INFO | train | 
+== Test set metrics (MC Dropout) ==
+2026-05-17 04:02:05 | INFO | train |   accuracy             = 0.4118 ✗
+2026-05-17 04:02:05 | INFO | train |   precision            = 0.2810 ✗
+2026-05-17 04:02:05 | INFO | train |   recall               = 0.3620 ✗
+2026-05-17 04:02:05 | INFO | train |   f1                   = 0.2972 ✗
+2026-05-17 04:02:05 | INFO | train |   kappa                = 0.2686 ✗
+2026-05-17 04:02:05 | INFO | train |   brier                = 0.7366 ✗
+2026-05-17 04:02:05 | INFO | train |   ece                  = 0.1108 ✗
+2026-05-17 04:02:05 | INFO | train |   mean_uncertainty     = 0.0297
+2026-05-17 04:02:05 | INFO | train | Inference complete — 51 samples — Acc=0.3922
+2026-05-17 04:02:05 | INFO | train | 
+JSON report: /Users/krohn/PycharmProjects/pignn_uq/outputs/pignn_uq_report.json
+2026-05-17 04:09:57 | INFO | train | ===============================================
+2026-05-17 04:09:57 | INFO | train |   PIGNN-UQ — Full pipeline
+2026-05-17 04:09:57 | INFO | train | ===============================================
+2026-05-17 04:09:58 | INFO | train | Device: cpu
+2026-05-17 04:09:58 | INFO | train | 
+============================================================
+2026-05-17 04:09:58 | INFO | train | FOLD 1/5  train=227  val=57
+2026-05-17 04:09:58 | INFO | train | == Fold 0 — training start ==
+2026-05-17 04:09:58 | INFO | train |   Ep 001/400 | Loss=1.6523 CE=1.6486 Phys=0.0036 | Val F1=0.1790 Acc=0.2807 | LR=3.00e-04 | 0.2s
+2026-05-17 04:09:58 | INFO | train |   Checkpoint saved (F1=0.1790)
+2026-05-17 04:09:58 | INFO | train |   Checkpoint saved (F1=0.2190)
+2026-05-17 04:09:59 | INFO | train |   Checkpoint saved (F1=0.2233)
+2026-05-17 04:10:00 | INFO | train |   Ep 010/400 | Loss=1.3182 CE=1.3154 Phys=0.0028 | Val F1=0.1548 Acc=0.2456 | LR=3.00e-04 | 0.1s
+2026-05-17 04:10:01 | INFO | train |   Checkpoint saved (F1=0.2605)
+2026-05-17 04:10:02 | INFO | train |   Ep 020/400 | Loss=1.1973 CE=1.1944 Phys=0.0029 | Val F1=0.1842 Acc=0.3158 | LR=2.98e-04 | 0.2s
+2026-05-17 04:10:03 | INFO | train |   Ep 030/400 | Loss=1.1591 CE=1.1562 Phys=0.0028 | Val F1=0.2319 Acc=0.3684 | LR=2.96e-04 | 0.2s
+2026-05-17 04:10:05 | INFO | train |   Ep 040/400 | Loss=1.1013 CE=1.0985 Phys=0.0028 | Val F1=0.1567 Acc=0.2281 | LR=2.93e-04 | 0.2s
+2026-05-17 04:10:09 | INFO | train |   Ep 050/400 | Loss=1.1029 CE=1.1001 Phys=0.0028 | Val F1=0.2305 Acc=0.3158 | LR=2.89e-04 | 0.3s
+2026-05-17 04:10:11 | INFO | train |   Ep 060/400 | Loss=1.4720 CE=1.4692 Phys=0.0028 | Val F1=0.2218 Acc=0.3333 | LR=2.84e-04 | 0.3s
+2026-05-17 04:10:11 | INFO | train |   Checkpoint saved (F1=0.2675)
+2026-05-17 04:10:11 | INFO | train |   Checkpoint saved (F1=0.2998)
+2026-05-17 04:10:13 | INFO | train |   Ep 070/400 | Loss=0.9909 CE=0.9882 Phys=0.0027 | Val F1=0.3005 Acc=0.3860 | LR=2.78e-04 | 0.1s
+2026-05-17 04:10:13 | INFO | train |   Checkpoint saved (F1=0.3005)
+2026-05-17 04:10:15 | INFO | train |   Ep 080/400 | Loss=1.0499 CE=1.0471 Phys=0.0028 | Val F1=0.2366 Acc=0.2982 | LR=2.71e-04 | 0.1s
+2026-05-17 04:10:16 | INFO | train |   Checkpoint saved (F1=0.3157)
+2026-05-17 04:10:16 | INFO | train |   Ep 090/400 | Loss=0.8917 CE=0.8889 Phys=0.0028 | Val F1=0.3007 Acc=0.3860 | LR=2.64e-04 | 0.1s
+2026-05-17 04:10:16 | INFO | train |   Checkpoint saved (F1=0.3207)
+2026-05-17 04:10:18 | INFO | train |   Ep 100/400 | Loss=0.8966 CE=0.8940 Phys=0.0026 | Val F1=0.2915 Acc=0.3684 | LR=2.56e-04 | 0.1s
+2026-05-17 04:10:19 | INFO | train |   Checkpoint saved (F1=0.3254)
+2026-05-17 04:10:19 | INFO | train |   Ep 110/400 | Loss=1.0272 CE=1.0247 Phys=0.0026 | Val F1=0.3175 Acc=0.4035 | LR=2.48e-04 | 0.2s
+2026-05-17 04:10:21 | INFO | train |   Ep 120/400 | Loss=0.9630 CE=0.9601 Phys=0.0029 | Val F1=0.2918 Acc=0.3684 | LR=2.38e-04 | 0.1s
+2026-05-17 04:10:22 | INFO | train |   Ep 130/400 | Loss=0.8415 CE=0.8386 Phys=0.0029 | Val F1=0.2795 Acc=0.3333 | LR=2.29e-04 | 0.1s
+2026-05-17 04:10:24 | INFO | train |   Ep 140/400 | Loss=0.8344 CE=0.8316 Phys=0.0028 | Val F1=0.2362 Acc=0.2807 | LR=2.18e-04 | 0.1s
+2026-05-17 04:10:25 | INFO | train |   Ep 150/400 | Loss=0.8752 CE=0.8722 Phys=0.0030 | Val F1=0.2998 Acc=0.3684 | LR=2.08e-04 | 0.2s
+2026-05-17 04:10:27 | INFO | train |   Ep 160/400 | Loss=1.2166 CE=1.2137 Phys=0.0029 | Val F1=0.3092 Acc=0.3860 | LR=1.97e-04 | 0.2s
+2026-05-17 04:10:28 | INFO | train |   Ep 170/400 | Loss=0.7804 CE=0.7774 Phys=0.0030 | Val F1=0.2962 Acc=0.3684 | LR=1.85e-04 | 0.1s
+2026-05-17 04:10:30 | INFO | train |   Ep 180/400 | Loss=0.8609 CE=0.8581 Phys=0.0028 | Val F1=0.2924 Acc=0.3509 | LR=1.74e-04 | 0.2s
+2026-05-17 04:10:32 | INFO | train |   Ep 190/400 | Loss=0.9304 CE=0.9277 Phys=0.0028 | Val F1=0.3386 Acc=0.4035 | LR=1.62e-04 | 0.1s
+2026-05-17 04:10:32 | INFO | train |   Checkpoint saved (F1=0.3386)
+2026-05-17 04:10:32 | INFO | train |   Checkpoint saved (F1=0.3396)
+2026-05-17 04:10:33 | INFO | train |   Ep 200/400 | Loss=0.8778 CE=0.8745 Phys=0.0033 | Val F1=0.3010 Acc=0.3509 | LR=1.51e-04 | 0.1s
+2026-05-17 04:10:34 | INFO | train |   Ep 210/400 | Loss=0.7612 CE=0.7582 Phys=0.0030 | Val F1=0.3222 Acc=0.3860 | LR=1.39e-04 | 0.1s
+2026-05-17 04:10:36 | INFO | train |   Ep 220/400 | Loss=0.8166 CE=0.8136 Phys=0.0030 | Val F1=0.2650 Acc=0.3158 | LR=1.27e-04 | 0.1s
+2026-05-17 04:10:37 | INFO | train |   Ep 230/400 | Loss=0.8252 CE=0.8225 Phys=0.0027 | Val F1=0.3210 Acc=0.3860 | LR=1.16e-04 | 0.2s
+2026-05-17 04:10:38 | INFO | train |   Ep 240/400 | Loss=0.8423 CE=0.8397 Phys=0.0027 | Val F1=0.3173 Acc=0.3860 | LR=1.04e-04 | 0.1s
+2026-05-17 04:10:40 | INFO | train |   Ep 250/400 | Loss=0.8147 CE=0.8121 Phys=0.0026 | Val F1=0.3106 Acc=0.3684 | LR=9.33e-05 | 0.1s
+2026-05-17 04:10:41 | INFO | train |   Ep 260/400 | Loss=0.7799 CE=0.7770 Phys=0.0029 | Val F1=0.2885 Acc=0.3333 | LR=8.26e-05 | 0.1s
+2026-05-17 04:10:43 | INFO | train |   Ep 270/400 | Loss=0.6767 CE=0.6741 Phys=0.0026 | Val F1=0.2910 Acc=0.3333 | LR=7.24e-05 | 0.1s
+2026-05-17 04:10:44 | INFO | train |   Ep 280/400 | Loss=0.8570 CE=0.8540 Phys=0.0030 | Val F1=0.2885 Acc=0.3333 | LR=6.26e-05 | 0.1s
+2026-05-17 04:10:45 | INFO | train |   Ep 290/400 | Loss=0.8459 CE=0.8431 Phys=0.0028 | Val F1=0.2910 Acc=0.3333 | LR=5.34e-05 | 0.1s
+2026-05-17 04:10:46 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:10:46 | INFO | train |   Fold 1 results:
+2026-05-17 04:10:46 | INFO | train |     accuracy           = 0.4035
+2026-05-17 04:10:46 | INFO | train |     precision          = 0.4776
+2026-05-17 04:10:46 | INFO | train |     recall             = 0.3660
+2026-05-17 04:10:46 | INFO | train |     f1                 = 0.3396
+2026-05-17 04:10:46 | INFO | train |     kappa              = 0.2937
+2026-05-17 04:10:46 | INFO | train |     brier              = 0.7494
+2026-05-17 04:10:46 | INFO | train |     ece                = 0.0650
+2026-05-17 04:10:46 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:10:46 | INFO | train | 
+============================================================
+2026-05-17 04:10:46 | INFO | train | FOLD 2/5  train=227  val=57
+2026-05-17 04:10:46 | INFO | train | == Fold 1 — training start ==
+2026-05-17 04:10:46 | INFO | train |   Ep 001/400 | Loss=1.6196 CE=1.6164 Phys=0.0032 | Val F1=0.1377 Acc=0.1930 | LR=3.00e-04 | 0.1s
+2026-05-17 04:10:46 | INFO | train |   Checkpoint saved (F1=0.1377)
+2026-05-17 04:10:46 | INFO | train |   Checkpoint saved (F1=0.2651)
+2026-05-17 04:10:47 | INFO | train |   Ep 010/400 | Loss=1.2352 CE=1.2325 Phys=0.0027 | Val F1=0.1873 Acc=0.2632 | LR=3.00e-04 | 0.1s
+2026-05-17 04:10:49 | INFO | train |   Ep 020/400 | Loss=1.1116 CE=1.1087 Phys=0.0029 | Val F1=0.2675 Acc=0.3860 | LR=2.98e-04 | 0.1s
+2026-05-17 04:10:49 | INFO | train |   Checkpoint saved (F1=0.2675)
+2026-05-17 04:10:49 | INFO | train |   Checkpoint saved (F1=0.2688)
+2026-05-17 04:10:50 | INFO | train |   Ep 030/400 | Loss=1.5574 CE=1.5540 Phys=0.0034 | Val F1=0.2016 Acc=0.2456 | LR=2.96e-04 | 0.1s
+2026-05-17 04:10:50 | INFO | train |   Checkpoint saved (F1=0.2894)
+2026-05-17 04:10:51 | INFO | train |   Checkpoint saved (F1=0.3306)
+2026-05-17 04:10:51 | INFO | train |   Ep 040/400 | Loss=1.2116 CE=1.2087 Phys=0.0030 | Val F1=0.2651 Acc=0.3158 | LR=2.93e-04 | 0.1s
+2026-05-17 04:10:53 | INFO | train |   Ep 050/400 | Loss=1.5201 CE=1.5169 Phys=0.0032 | Val F1=0.2885 Acc=0.3860 | LR=2.89e-04 | 0.1s
+2026-05-17 04:10:54 | INFO | train |   Ep 060/400 | Loss=1.0984 CE=1.0957 Phys=0.0027 | Val F1=0.2713 Acc=0.3684 | LR=2.84e-04 | 0.1s
+2026-05-17 04:10:55 | INFO | train |   Ep 070/400 | Loss=1.0237 CE=1.0209 Phys=0.0028 | Val F1=0.3152 Acc=0.4211 | LR=2.78e-04 | 0.1s
+2026-05-17 04:10:57 | INFO | train |   Ep 080/400 | Loss=1.0516 CE=1.0486 Phys=0.0030 | Val F1=0.3104 Acc=0.3860 | LR=2.71e-04 | 0.1s
+2026-05-17 04:10:59 | INFO | train |   Ep 090/400 | Loss=1.0780 CE=1.0753 Phys=0.0027 | Val F1=0.2943 Acc=0.3509 | LR=2.64e-04 | 0.2s
+2026-05-17 04:11:00 | INFO | train |   Ep 100/400 | Loss=1.2830 CE=1.2798 Phys=0.0032 | Val F1=0.2940 Acc=0.3684 | LR=2.56e-04 | 0.1s
+2026-05-17 04:11:01 | INFO | train |   Ep 110/400 | Loss=0.9865 CE=0.9837 Phys=0.0028 | Val F1=0.2621 Acc=0.3158 | LR=2.48e-04 | 0.1s
+2026-05-17 04:11:03 | INFO | train |   Ep 120/400 | Loss=0.9931 CE=0.9902 Phys=0.0028 | Val F1=0.3092 Acc=0.3860 | LR=2.38e-04 | 0.1s
+2026-05-17 04:11:04 | INFO | train |   Ep 130/400 | Loss=0.9819 CE=0.9788 Phys=0.0031 | Val F1=0.2624 Acc=0.3333 | LR=2.29e-04 | 0.1s
+2026-05-17 04:11:05 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:11:05 | INFO | train |   Fold 2 results:
+2026-05-17 04:11:05 | INFO | train |     accuracy           = 0.4211
+2026-05-17 04:11:05 | INFO | train |     precision          = 0.3722
+2026-05-17 04:11:05 | INFO | train |     recall             = 0.3472
+2026-05-17 04:11:05 | INFO | train |     f1                 = 0.3306
+2026-05-17 04:11:05 | INFO | train |     kappa              = 0.2859
+2026-05-17 04:11:05 | INFO | train |     brier              = 0.7762
+2026-05-17 04:11:05 | INFO | train |     ece                = 0.1653
+2026-05-17 04:11:05 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:11:05 | INFO | train | 
+============================================================
+2026-05-17 04:11:05 | INFO | train | FOLD 3/5  train=227  val=57
+2026-05-17 04:11:05 | INFO | train | == Fold 2 — training start ==
+2026-05-17 04:11:05 | INFO | train |   Ep 001/400 | Loss=1.5244 CE=1.5205 Phys=0.0040 | Val F1=0.1347 Acc=0.1754 | LR=3.00e-04 | 0.2s
+2026-05-17 04:11:05 | INFO | train |   Checkpoint saved (F1=0.1347)
+2026-05-17 04:11:05 | INFO | train |   Checkpoint saved (F1=0.1629)
+2026-05-17 04:11:05 | INFO | train |   Checkpoint saved (F1=0.1653)
+2026-05-17 04:11:06 | INFO | train |   Checkpoint saved (F1=0.1699)
+2026-05-17 04:11:06 | INFO | train |   Ep 010/400 | Loss=1.1388 CE=1.1359 Phys=0.0029 | Val F1=0.1852 Acc=0.2632 | LR=3.00e-04 | 0.1s
+2026-05-17 04:11:06 | INFO | train |   Checkpoint saved (F1=0.1852)
+2026-05-17 04:11:07 | INFO | train |   Checkpoint saved (F1=0.1892)
+2026-05-17 04:11:07 | INFO | train |   Checkpoint saved (F1=0.2103)
+2026-05-17 04:11:07 | INFO | train |   Checkpoint saved (F1=0.2269)
+2026-05-17 04:11:07 | INFO | train |   Checkpoint saved (F1=0.2270)
+2026-05-17 04:11:08 | INFO | train |   Ep 020/400 | Loss=1.1266 CE=1.1241 Phys=0.0025 | Val F1=0.1917 Acc=0.2632 | LR=2.98e-04 | 0.2s
+2026-05-17 04:11:09 | INFO | train |   Checkpoint saved (F1=0.2633)
+2026-05-17 04:11:09 | INFO | train |   Ep 030/400 | Loss=1.1072 CE=1.1042 Phys=0.0030 | Val F1=0.1959 Acc=0.2456 | LR=2.96e-04 | 0.1s
+2026-05-17 04:11:09 | INFO | train |   Checkpoint saved (F1=0.2983)
+2026-05-17 04:11:10 | INFO | train |   Checkpoint saved (F1=0.3127)
+2026-05-17 04:11:10 | INFO | train |   Ep 040/400 | Loss=1.0766 CE=1.0737 Phys=0.0029 | Val F1=0.2516 Acc=0.2632 | LR=2.93e-04 | 0.1s
+2026-05-17 04:11:11 | INFO | train |   Checkpoint saved (F1=0.3150)
+2026-05-17 04:11:12 | INFO | train |   Ep 050/400 | Loss=1.0353 CE=1.0324 Phys=0.0029 | Val F1=0.2879 Acc=0.3684 | LR=2.89e-04 | 0.2s
+2026-05-17 04:11:13 | INFO | train |   Ep 060/400 | Loss=0.9805 CE=0.9778 Phys=0.0027 | Val F1=0.2862 Acc=0.3684 | LR=2.84e-04 | 0.1s
+2026-05-17 04:11:14 | INFO | train |   Checkpoint saved (F1=0.3216)
+2026-05-17 04:11:15 | INFO | train |   Ep 070/400 | Loss=1.0169 CE=1.0140 Phys=0.0028 | Val F1=0.2646 Acc=0.2807 | LR=2.78e-04 | 0.2s
+2026-05-17 04:11:16 | INFO | train |   Ep 080/400 | Loss=0.9572 CE=0.9546 Phys=0.0026 | Val F1=0.2853 Acc=0.3333 | LR=2.71e-04 | 0.1s
+2026-05-17 04:11:18 | INFO | train |   Ep 090/400 | Loss=1.0283 CE=1.0254 Phys=0.0029 | Val F1=0.3080 Acc=0.3509 | LR=2.64e-04 | 0.1s
+2026-05-17 04:11:19 | INFO | train |   Checkpoint saved (F1=0.3288)
+2026-05-17 04:11:19 | INFO | train |   Ep 100/400 | Loss=0.9272 CE=0.9244 Phys=0.0029 | Val F1=0.2740 Acc=0.3333 | LR=2.56e-04 | 0.1s
+2026-05-17 04:11:20 | INFO | train |   Ep 110/400 | Loss=0.9440 CE=0.9414 Phys=0.0027 | Val F1=0.3040 Acc=0.3509 | LR=2.48e-04 | 0.2s
+2026-05-17 04:11:22 | INFO | train |   Ep 120/400 | Loss=0.9309 CE=0.9282 Phys=0.0027 | Val F1=0.3081 Acc=0.3684 | LR=2.38e-04 | 0.2s
+2026-05-17 04:11:23 | INFO | train |   Ep 130/400 | Loss=0.9208 CE=0.9179 Phys=0.0029 | Val F1=0.2856 Acc=0.3509 | LR=2.29e-04 | 0.1s
+2026-05-17 04:11:25 | INFO | train |   Ep 140/400 | Loss=0.8614 CE=0.8581 Phys=0.0033 | Val F1=0.3069 Acc=0.3684 | LR=2.18e-04 | 0.1s
+2026-05-17 04:11:26 | INFO | train |   Ep 150/400 | Loss=0.8783 CE=0.8756 Phys=0.0027 | Val F1=0.2972 Acc=0.3509 | LR=2.08e-04 | 0.1s
+2026-05-17 04:11:26 | INFO | train |   Checkpoint saved (F1=0.3523)
+2026-05-17 04:11:27 | INFO | train |   Ep 160/400 | Loss=0.9098 CE=0.9071 Phys=0.0027 | Val F1=0.2984 Acc=0.3509 | LR=1.97e-04 | 0.1s
+2026-05-17 04:11:28 | INFO | train |   Ep 170/400 | Loss=0.8992 CE=0.8963 Phys=0.0029 | Val F1=0.2908 Acc=0.3509 | LR=1.85e-04 | 0.1s
+2026-05-17 04:11:30 | INFO | train |   Ep 180/400 | Loss=0.8264 CE=0.8238 Phys=0.0026 | Val F1=0.2720 Acc=0.3333 | LR=1.74e-04 | 0.1s
+2026-05-17 04:11:32 | INFO | train |   Ep 190/400 | Loss=0.9605 CE=0.9579 Phys=0.0026 | Val F1=0.3138 Acc=0.3684 | LR=1.62e-04 | 0.3s
+2026-05-17 04:11:33 | INFO | train |   Ep 200/400 | Loss=0.8557 CE=0.8527 Phys=0.0029 | Val F1=0.2967 Acc=0.3684 | LR=1.51e-04 | 0.1s
+2026-05-17 04:11:34 | INFO | train |   Ep 210/400 | Loss=0.7910 CE=0.7886 Phys=0.0025 | Val F1=0.2997 Acc=0.3684 | LR=1.39e-04 | 0.1s
+2026-05-17 04:11:35 | INFO | train |   Ep 220/400 | Loss=0.7255 CE=0.7231 Phys=0.0024 | Val F1=0.2952 Acc=0.3509 | LR=1.27e-04 | 0.1s
+2026-05-17 04:11:37 | INFO | train |   Ep 230/400 | Loss=0.7559 CE=0.7531 Phys=0.0028 | Val F1=0.3096 Acc=0.3684 | LR=1.16e-04 | 0.1s
+2026-05-17 04:11:38 | INFO | train |   Ep 240/400 | Loss=0.7794 CE=0.7766 Phys=0.0027 | Val F1=0.3060 Acc=0.3684 | LR=1.04e-04 | 0.1s
+2026-05-17 04:11:40 | INFO | train |   Ep 250/400 | Loss=0.7365 CE=0.7337 Phys=0.0028 | Val F1=0.3339 Acc=0.3860 | LR=9.33e-05 | 0.2s
+2026-05-17 04:11:40 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:11:40 | INFO | train |   Fold 3 results:
+2026-05-17 04:11:40 | INFO | train |     accuracy           = 0.4035
+2026-05-17 04:11:40 | INFO | train |     precision          = 0.3768
+2026-05-17 04:11:40 | INFO | train |     recall             = 0.3741
+2026-05-17 04:11:40 | INFO | train |     f1                 = 0.3523
+2026-05-17 04:11:40 | INFO | train |     kappa              = 0.2766
+2026-05-17 04:11:40 | INFO | train |     brier              = 0.7249
+2026-05-17 04:11:40 | INFO | train |     ece                = 0.0803
+2026-05-17 04:11:40 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:11:40 | INFO | train | 
+============================================================
+2026-05-17 04:11:40 | INFO | train | FOLD 4/5  train=227  val=57
+2026-05-17 04:11:40 | INFO | train | == Fold 3 — training start ==
+2026-05-17 04:11:40 | INFO | train |   Ep 001/400 | Loss=1.4699 CE=1.4666 Phys=0.0033 | Val F1=0.2227 Acc=0.2632 | LR=3.00e-04 | 0.1s
+2026-05-17 04:11:40 | INFO | train |   Checkpoint saved (F1=0.2227)
+2026-05-17 04:11:40 | INFO | train |   Checkpoint saved (F1=0.2313)
+2026-05-17 04:11:41 | INFO | train |   Checkpoint saved (F1=0.2483)
+2026-05-17 04:11:41 | INFO | train |   Checkpoint saved (F1=0.3162)
+2026-05-17 04:11:42 | INFO | train |   Ep 010/400 | Loss=1.6820 CE=1.6791 Phys=0.0029 | Val F1=0.2699 Acc=0.3158 | LR=3.00e-04 | 0.1s
+2026-05-17 04:11:43 | INFO | train |   Ep 020/400 | Loss=1.1767 CE=1.1738 Phys=0.0029 | Val F1=0.2395 Acc=0.4211 | LR=2.98e-04 | 0.1s
+2026-05-17 04:11:44 | INFO | train |   Checkpoint saved (F1=0.3192)
+2026-05-17 04:11:45 | INFO | train |   Ep 030/400 | Loss=1.1135 CE=1.1104 Phys=0.0031 | Val F1=0.2660 Acc=0.3333 | LR=2.96e-04 | 0.2s
+2026-05-17 04:11:45 | INFO | train |   Checkpoint saved (F1=0.3326)
+2026-05-17 04:11:46 | INFO | train |   Ep 040/400 | Loss=1.1162 CE=1.1136 Phys=0.0026 | Val F1=0.3048 Acc=0.3684 | LR=2.93e-04 | 0.1s
+2026-05-17 04:11:47 | INFO | train |   Checkpoint saved (F1=0.3373)
+2026-05-17 04:11:47 | INFO | train |   Checkpoint saved (F1=0.3592)
+2026-05-17 04:11:48 | INFO | train |   Ep 050/400 | Loss=1.0395 CE=1.0367 Phys=0.0028 | Val F1=0.3924 Acc=0.5088 | LR=2.89e-04 | 0.1s
+2026-05-17 04:11:48 | INFO | train |   Checkpoint saved (F1=0.3924)
+2026-05-17 04:11:49 | INFO | train |   Ep 060/400 | Loss=1.1052 CE=1.1026 Phys=0.0026 | Val F1=0.3261 Acc=0.4211 | LR=2.84e-04 | 0.1s
+2026-05-17 04:11:50 | INFO | train |   Ep 070/400 | Loss=1.0988 CE=1.0961 Phys=0.0027 | Val F1=0.3190 Acc=0.4035 | LR=2.78e-04 | 0.2s
+2026-05-17 04:11:52 | INFO | train |   Ep 080/400 | Loss=1.1941 CE=1.1912 Phys=0.0029 | Val F1=0.3154 Acc=0.4035 | LR=2.71e-04 | 0.1s
+2026-05-17 04:11:52 | INFO | train |   Checkpoint saved (F1=0.4073)
+2026-05-17 04:11:53 | INFO | train |   Checkpoint saved (F1=0.4537)
+2026-05-17 04:11:53 | INFO | train |   Ep 090/400 | Loss=1.0629 CE=1.0601 Phys=0.0028 | Val F1=0.4707 Acc=0.5965 | LR=2.64e-04 | 0.1s
+2026-05-17 04:11:53 | INFO | train |   Checkpoint saved (F1=0.4707)
+2026-05-17 04:11:55 | INFO | train |   Ep 100/400 | Loss=0.9811 CE=0.9783 Phys=0.0028 | Val F1=0.3276 Acc=0.4211 | LR=2.56e-04 | 0.1s
+2026-05-17 04:11:56 | INFO | train |   Ep 110/400 | Loss=1.0377 CE=1.0352 Phys=0.0026 | Val F1=0.2900 Acc=0.3860 | LR=2.48e-04 | 0.1s
+2026-05-17 04:11:58 | INFO | train |   Ep 120/400 | Loss=1.0045 CE=1.0014 Phys=0.0030 | Val F1=0.4450 Acc=0.4561 | LR=2.38e-04 | 0.1s
+2026-05-17 04:11:59 | INFO | train |   Ep 130/400 | Loss=0.9126 CE=0.9099 Phys=0.0028 | Val F1=0.3368 Acc=0.4561 | LR=2.29e-04 | 0.1s
+2026-05-17 04:12:00 | INFO | train |   Ep 140/400 | Loss=0.9915 CE=0.9886 Phys=0.0029 | Val F1=0.3952 Acc=0.4561 | LR=2.18e-04 | 0.1s
+2026-05-17 04:12:02 | INFO | train |   Ep 150/400 | Loss=1.0343 CE=1.0314 Phys=0.0029 | Val F1=0.3954 Acc=0.4386 | LR=2.08e-04 | 0.2s
+2026-05-17 04:12:04 | INFO | train |   Ep 160/400 | Loss=0.9651 CE=0.9622 Phys=0.0029 | Val F1=0.4061 Acc=0.4211 | LR=1.97e-04 | 0.1s
+2026-05-17 04:12:05 | INFO | train |   Ep 170/400 | Loss=0.9730 CE=0.9702 Phys=0.0028 | Val F1=0.3821 Acc=0.4035 | LR=1.85e-04 | 0.1s
+2026-05-17 04:12:07 | INFO | train |   Ep 180/400 | Loss=0.8733 CE=0.8706 Phys=0.0027 | Val F1=0.3950 Acc=0.4386 | LR=1.74e-04 | 0.2s
+2026-05-17 04:12:09 | INFO | train |   Ep 190/400 | Loss=1.1788 CE=1.1762 Phys=0.0027 | Val F1=0.3789 Acc=0.4035 | LR=1.62e-04 | 0.3s
+2026-05-17 04:12:09 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:12:09 | INFO | train |   Fold 4 results:
+2026-05-17 04:12:09 | INFO | train |     accuracy           = 0.5965
+2026-05-17 04:12:09 | INFO | train |     precision          = 0.5867
+2026-05-17 04:12:09 | INFO | train |     recall             = 0.5063
+2026-05-17 04:12:09 | INFO | train |     f1                 = 0.4707
+2026-05-17 04:12:09 | INFO | train |     kappa              = 0.4956
+2026-05-17 04:12:09 | INFO | train |     brier              = 0.7026
+2026-05-17 04:12:09 | INFO | train |     ece                = 0.2932
+2026-05-17 04:12:09 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:12:09 | INFO | train | 
+============================================================
+2026-05-17 04:12:09 | INFO | train | FOLD 5/5  train=228  val=56
+2026-05-17 04:12:09 | INFO | train | == Fold 4 — training start ==
+2026-05-17 04:12:09 | INFO | train |   Ep 001/400 | Loss=1.5484 CE=1.5447 Phys=0.0037 | Val F1=0.1375 Acc=0.1786 | LR=3.00e-04 | 0.2s
+2026-05-17 04:12:09 | INFO | train |   Checkpoint saved (F1=0.1375)
+2026-05-17 04:12:10 | INFO | train |   Checkpoint saved (F1=0.1750)
+2026-05-17 04:12:11 | INFO | train |   Checkpoint saved (F1=0.1753)
+2026-05-17 04:12:11 | INFO | train |   Ep 010/400 | Loss=1.1821 CE=1.1791 Phys=0.0031 | Val F1=0.1927 Acc=0.2679 | LR=3.00e-04 | 0.2s
+2026-05-17 04:12:11 | INFO | train |   Checkpoint saved (F1=0.1927)
+2026-05-17 04:12:11 | INFO | train |   Checkpoint saved (F1=0.2339)
+2026-05-17 04:12:12 | INFO | train |   Ep 020/400 | Loss=1.1810 CE=1.1783 Phys=0.0027 | Val F1=0.1354 Acc=0.2143 | LR=2.98e-04 | 0.2s
+2026-05-17 04:12:14 | INFO | train |   Ep 030/400 | Loss=1.1444 CE=1.1416 Phys=0.0028 | Val F1=0.1550 Acc=0.1964 | LR=2.96e-04 | 0.1s
+2026-05-17 04:12:15 | INFO | train |   Ep 040/400 | Loss=1.1179 CE=1.1152 Phys=0.0027 | Val F1=0.1466 Acc=0.1964 | LR=2.93e-04 | 0.1s
+2026-05-17 04:12:17 | INFO | train |   Ep 050/400 | Loss=1.1621 CE=1.1593 Phys=0.0028 | Val F1=0.2115 Acc=0.2679 | LR=2.89e-04 | 0.1s
+2026-05-17 04:12:18 | INFO | train |   Checkpoint saved (F1=0.2356)
+2026-05-17 04:12:18 | INFO | train |   Ep 060/400 | Loss=1.0765 CE=1.0737 Phys=0.0029 | Val F1=0.1575 Acc=0.2500 | LR=2.84e-04 | 0.2s
+2026-05-17 04:12:20 | INFO | train |   Ep 070/400 | Loss=1.2500 CE=1.2473 Phys=0.0027 | Val F1=0.1564 Acc=0.2143 | LR=2.78e-04 | 0.1s
+2026-05-17 04:12:22 | INFO | train |   Ep 080/400 | Loss=1.0382 CE=1.0354 Phys=0.0028 | Val F1=0.1845 Acc=0.2143 | LR=2.71e-04 | 0.2s
+2026-05-17 04:12:23 | INFO | train |   Ep 090/400 | Loss=1.0282 CE=1.0256 Phys=0.0026 | Val F1=0.2006 Acc=0.2500 | LR=2.64e-04 | 0.1s
+2026-05-17 04:12:25 | INFO | train |   Ep 100/400 | Loss=1.0281 CE=1.0255 Phys=0.0027 | Val F1=0.1090 Acc=0.1429 | LR=2.56e-04 | 0.1s
+2026-05-17 04:12:26 | INFO | train |   Ep 110/400 | Loss=0.9609 CE=0.9581 Phys=0.0029 | Val F1=0.1858 Acc=0.2321 | LR=2.48e-04 | 0.2s
+2026-05-17 04:12:27 | INFO | train |   Checkpoint saved (F1=0.2513)
+2026-05-17 04:12:28 | INFO | train |   Ep 120/400 | Loss=1.0379 CE=1.0356 Phys=0.0023 | Val F1=0.1770 Acc=0.2857 | LR=2.38e-04 | 0.1s
+2026-05-17 04:12:29 | INFO | train |   Ep 130/400 | Loss=1.1912 CE=1.1884 Phys=0.0028 | Val F1=0.2278 Acc=0.2857 | LR=2.29e-04 | 0.1s
+2026-05-17 04:12:31 | INFO | train |   Checkpoint saved (F1=0.2533)
+2026-05-17 04:12:31 | INFO | train |   Ep 140/400 | Loss=1.0058 CE=1.0029 Phys=0.0028 | Val F1=0.2183 Acc=0.2679 | LR=2.18e-04 | 0.2s
+2026-05-17 04:12:31 | INFO | train |   Checkpoint saved (F1=0.2784)
+2026-05-17 04:12:31 | INFO | train |   Checkpoint saved (F1=0.2962)
+2026-05-17 04:12:32 | INFO | train |   Ep 150/400 | Loss=0.9060 CE=0.9032 Phys=0.0028 | Val F1=0.2507 Acc=0.3214 | LR=2.08e-04 | 0.2s
+2026-05-17 04:12:34 | INFO | train |   Ep 160/400 | Loss=0.9788 CE=0.9759 Phys=0.0029 | Val F1=0.2767 Acc=0.3214 | LR=1.97e-04 | 0.1s
+2026-05-17 04:12:34 | INFO | train |   Checkpoint saved (F1=0.2998)
+2026-05-17 04:12:35 | INFO | train |   Checkpoint saved (F1=0.3245)
+2026-05-17 04:12:35 | INFO | train |   Ep 170/400 | Loss=0.9636 CE=0.9610 Phys=0.0026 | Val F1=0.2847 Acc=0.3036 | LR=1.85e-04 | 0.1s
+2026-05-17 04:12:37 | INFO | train |   Ep 180/400 | Loss=0.9728 CE=0.9700 Phys=0.0028 | Val F1=0.2511 Acc=0.3036 | LR=1.74e-04 | 0.1s
+2026-05-17 04:12:38 | INFO | train |   Ep 190/400 | Loss=0.8216 CE=0.8188 Phys=0.0027 | Val F1=0.2559 Acc=0.3036 | LR=1.62e-04 | 0.1s
+2026-05-17 04:12:40 | INFO | train |   Ep 200/400 | Loss=0.8691 CE=0.8664 Phys=0.0027 | Val F1=0.3067 Acc=0.3571 | LR=1.51e-04 | 0.1s
+2026-05-17 04:12:41 | INFO | train |   Ep 210/400 | Loss=0.8290 CE=0.8263 Phys=0.0026 | Val F1=0.2521 Acc=0.2857 | LR=1.39e-04 | 0.1s
+2026-05-17 04:12:42 | INFO | train |   Ep 220/400 | Loss=0.9368 CE=0.9340 Phys=0.0028 | Val F1=0.2294 Acc=0.2679 | LR=1.27e-04 | 0.1s
+2026-05-17 04:12:44 | INFO | train |   Ep 230/400 | Loss=0.8891 CE=0.8864 Phys=0.0027 | Val F1=0.2921 Acc=0.3393 | LR=1.16e-04 | 0.1s
+2026-05-17 04:12:45 | INFO | train |   Ep 240/400 | Loss=0.8554 CE=0.8527 Phys=0.0027 | Val F1=0.2167 Acc=0.2500 | LR=1.04e-04 | 0.1s
+2026-05-17 04:12:46 | INFO | train |   Ep 250/400 | Loss=0.8286 CE=0.8258 Phys=0.0028 | Val F1=0.2508 Acc=0.2857 | LR=9.33e-05 | 0.1s
+2026-05-17 04:12:48 | INFO | train |   Ep 260/400 | Loss=0.8136 CE=0.8108 Phys=0.0028 | Val F1=0.2661 Acc=0.3036 | LR=8.26e-05 | 0.1s
+2026-05-17 04:12:49 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:12:49 | INFO | train |   Fold 5 results:
+2026-05-17 04:12:49 | INFO | train |     accuracy           = 0.3750
+2026-05-17 04:12:49 | INFO | train |     precision          = 0.3795
+2026-05-17 04:12:49 | INFO | train |     recall             = 0.3432
+2026-05-17 04:12:49 | INFO | train |     f1                 = 0.3245
+2026-05-17 04:12:49 | INFO | train |     kappa              = 0.2587
+2026-05-17 04:12:49 | INFO | train |     brier              = 0.8182
+2026-05-17 04:12:49 | INFO | train |     ece                = 0.1618
+2026-05-17 04:12:49 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:12:49 | INFO | train | 
+== Cross-validation summary ==
+2026-05-17 04:12:49 | INFO | train |   accuracy    : 0.4399 ± 0.0797
+2026-05-17 04:12:49 | INFO | train |   f1          : 0.3635 ± 0.0544
+2026-05-17 04:12:49 | INFO | train |   precision   : 0.4386 ± 0.0839
+2026-05-17 04:12:49 | INFO | train |   recall      : 0.3874 ± 0.0606
+2026-05-17 04:12:49 | INFO | train |   kappa       : 0.3221 ± 0.0875
+2026-05-17 04:12:49 | INFO | train |   brier       : 0.7543 ± 0.0403
+2026-05-17 04:12:49 | INFO | train |   ece         : 0.1531 ± 0.0811
+2026-05-17 04:12:49 | INFO | train | 
+  Targets (Table 3.23): NOT MET
+2026-05-17 04:12:49 | INFO | train | 
+== Final training on train set only ==
+2026-05-17 04:12:49 | INFO | train | == Fold 99 — training start ==
+2026-05-17 04:12:49 | INFO | train |   Ep 001/400 | Loss=1.5821 CE=1.5786 Phys=0.0035 | Val F1=0.1216 Acc=0.1600 | LR=3.00e-04 | 0.1s
+2026-05-17 04:12:49 | INFO | train |   Checkpoint saved (F1=0.1216)
+2026-05-17 04:12:49 | INFO | train |   Checkpoint saved (F1=0.2455)
+2026-05-17 04:12:49 | INFO | train |   Checkpoint saved (F1=0.2959)
+2026-05-17 04:12:50 | INFO | train |   Ep 010/400 | Loss=1.1718 CE=1.1689 Phys=0.0029 | Val F1=0.2616 Acc=0.3600 | LR=3.00e-04 | 0.1s
+2026-05-17 04:12:51 | INFO | train |   Checkpoint saved (F1=0.3108)
+2026-05-17 04:12:52 | INFO | train |   Ep 020/400 | Loss=1.1718 CE=1.1690 Phys=0.0028 | Val F1=0.2959 Acc=0.3800 | LR=2.98e-04 | 0.2s
+2026-05-17 04:12:53 | INFO | train |   Ep 030/400 | Loss=1.0750 CE=1.0721 Phys=0.0029 | Val F1=0.2720 Acc=0.3600 | LR=2.96e-04 | 0.1s
+2026-05-17 04:12:55 | INFO | train |   Ep 040/400 | Loss=1.1370 CE=1.1340 Phys=0.0030 | Val F1=0.2352 Acc=0.3200 | LR=2.93e-04 | 0.2s
+2026-05-17 04:12:56 | INFO | train |   Checkpoint saved (F1=0.3473)
+2026-05-17 04:12:56 | INFO | train |   Ep 050/400 | Loss=1.1898 CE=1.1869 Phys=0.0030 | Val F1=0.3656 Acc=0.4200 | LR=2.89e-04 | 0.2s
+2026-05-17 04:12:56 | INFO | train |   Checkpoint saved (F1=0.3656)
+2026-05-17 04:12:58 | INFO | train |   Ep 060/400 | Loss=1.0854 CE=1.0825 Phys=0.0029 | Val F1=0.3456 Acc=0.4200 | LR=2.84e-04 | 0.1s
+2026-05-17 04:12:59 | INFO | train |   Ep 070/400 | Loss=1.0815 CE=1.0786 Phys=0.0029 | Val F1=0.2736 Acc=0.3600 | LR=2.78e-04 | 0.2s
+2026-05-17 04:13:01 | INFO | train |   Checkpoint saved (F1=0.3707)
+2026-05-17 04:13:01 | INFO | train |   Ep 080/400 | Loss=1.0248 CE=1.0221 Phys=0.0027 | Val F1=0.1979 Acc=0.2800 | LR=2.71e-04 | 0.2s
+2026-05-17 04:13:03 | INFO | train |   Ep 090/400 | Loss=1.0077 CE=1.0049 Phys=0.0028 | Val F1=0.2427 Acc=0.3200 | LR=2.64e-04 | 0.2s
+2026-05-17 04:13:04 | INFO | train |   Ep 100/400 | Loss=1.0120 CE=1.0093 Phys=0.0028 | Val F1=0.2461 Acc=0.3200 | LR=2.56e-04 | 0.2s
+2026-05-17 04:13:05 | INFO | train |   Ep 110/400 | Loss=0.8983 CE=0.8956 Phys=0.0027 | Val F1=0.2564 Acc=0.3400 | LR=2.48e-04 | 0.2s
+2026-05-17 04:13:07 | INFO | train |   Ep 120/400 | Loss=1.0424 CE=1.0397 Phys=0.0028 | Val F1=0.2918 Acc=0.3600 | LR=2.38e-04 | 0.2s
+2026-05-17 04:13:09 | INFO | train |   Ep 130/400 | Loss=0.9212 CE=0.9185 Phys=0.0027 | Val F1=0.2637 Acc=0.3200 | LR=2.29e-04 | 0.1s
+2026-05-17 04:13:10 | INFO | train |   Ep 140/400 | Loss=0.9333 CE=0.9304 Phys=0.0028 | Val F1=0.2820 Acc=0.3400 | LR=2.18e-04 | 0.2s
+2026-05-17 04:13:11 | INFO | train |   Checkpoint saved (F1=0.4127)
+2026-05-17 04:13:12 | INFO | train |   Ep 150/400 | Loss=0.8423 CE=0.8395 Phys=0.0028 | Val F1=0.3644 Acc=0.3600 | LR=2.08e-04 | 0.1s
+2026-05-17 04:13:13 | INFO | train |   Ep 160/400 | Loss=1.0134 CE=1.0105 Phys=0.0029 | Val F1=0.3144 Acc=0.3800 | LR=1.97e-04 | 0.2s
+2026-05-17 04:13:15 | INFO | train |   Ep 170/400 | Loss=0.9286 CE=0.9258 Phys=0.0028 | Val F1=0.3586 Acc=0.3800 | LR=1.85e-04 | 0.1s
+2026-05-17 04:13:17 | INFO | train |   Ep 180/400 | Loss=0.8698 CE=0.8672 Phys=0.0027 | Val F1=0.3811 Acc=0.4000 | LR=1.74e-04 | 0.1s
+2026-05-17 04:13:18 | INFO | train |   Ep 190/400 | Loss=0.9832 CE=0.9802 Phys=0.0030 | Val F1=0.3982 Acc=0.4200 | LR=1.62e-04 | 0.1s
+2026-05-17 04:13:19 | INFO | train |   Ep 200/400 | Loss=0.8968 CE=0.8938 Phys=0.0030 | Val F1=0.3841 Acc=0.4000 | LR=1.51e-04 | 0.2s
+2026-05-17 04:13:21 | INFO | train |   Ep 210/400 | Loss=0.8071 CE=0.8044 Phys=0.0028 | Val F1=0.4031 Acc=0.4200 | LR=1.39e-04 | 0.1s
+2026-05-17 04:13:22 | INFO | train |   Checkpoint saved (F1=0.4262)
+2026-05-17 04:13:23 | INFO | train |   Ep 220/400 | Loss=0.8144 CE=0.8116 Phys=0.0028 | Val F1=0.4242 Acc=0.4400 | LR=1.27e-04 | 0.2s
+2026-05-17 04:13:25 | INFO | train |   Ep 230/400 | Loss=0.8405 CE=0.8377 Phys=0.0028 | Val F1=0.4170 Acc=0.4400 | LR=1.16e-04 | 0.2s
+2026-05-17 04:13:25 | INFO | train |   Checkpoint saved (F1=0.4360)
+2026-05-17 04:13:26 | INFO | train |   Ep 240/400 | Loss=0.9119 CE=0.9092 Phys=0.0027 | Val F1=0.4015 Acc=0.4200 | LR=1.04e-04 | 0.1s
+2026-05-17 04:13:28 | INFO | train |   Ep 250/400 | Loss=0.8745 CE=0.8716 Phys=0.0028 | Val F1=0.4149 Acc=0.4400 | LR=9.33e-05 | 0.2s
+2026-05-17 04:13:29 | INFO | train |   Ep 260/400 | Loss=0.8067 CE=0.8039 Phys=0.0028 | Val F1=0.4232 Acc=0.4400 | LR=8.26e-05 | 0.1s
+2026-05-17 04:13:31 | INFO | train |   Ep 270/400 | Loss=0.7400 CE=0.7371 Phys=0.0028 | Val F1=0.4210 Acc=0.4400 | LR=7.24e-05 | 0.1s
+2026-05-17 04:13:32 | INFO | train |   Checkpoint saved (F1=0.4404)
+2026-05-17 04:13:32 | INFO | train |   Ep 280/400 | Loss=0.8333 CE=0.8306 Phys=0.0027 | Val F1=0.4210 Acc=0.4400 | LR=6.26e-05 | 0.1s
+2026-05-17 04:13:34 | INFO | train |   Ep 290/400 | Loss=0.8418 CE=0.8392 Phys=0.0027 | Val F1=0.4170 Acc=0.4400 | LR=5.34e-05 | 0.1s
+2026-05-17 04:13:36 | INFO | train |   Ep 300/400 | Loss=0.7897 CE=0.7869 Phys=0.0028 | Val F1=0.4170 Acc=0.4400 | LR=4.48e-05 | 0.2s
+2026-05-17 04:13:37 | INFO | train |   Ep 310/400 | Loss=0.7667 CE=0.7639 Phys=0.0028 | Val F1=0.4170 Acc=0.4400 | LR=3.68e-05 | 0.1s
+2026-05-17 04:13:39 | INFO | train |   Ep 320/400 | Loss=0.8341 CE=0.8313 Phys=0.0028 | Val F1=0.3969 Acc=0.4200 | LR=2.96e-05 | 0.2s
+2026-05-17 04:13:40 | INFO | train |   Ep 330/400 | Loss=0.8390 CE=0.8362 Phys=0.0028 | Val F1=0.4170 Acc=0.4400 | LR=2.30e-05 | 0.1s
+2026-05-17 04:13:42 | INFO | train |   Ep 340/400 | Loss=0.8405 CE=0.8377 Phys=0.0028 | Val F1=0.4242 Acc=0.4400 | LR=1.73e-05 | 0.2s
+2026-05-17 04:13:43 | INFO | train |   Ep 350/400 | Loss=0.7299 CE=0.7271 Phys=0.0028 | Val F1=0.4242 Acc=0.4400 | LR=1.24e-05 | 0.1s
+2026-05-17 04:13:45 | INFO | train |   Ep 360/400 | Loss=0.7890 CE=0.7862 Phys=0.0028 | Val F1=0.4242 Acc=0.4400 | LR=8.32e-06 | 0.1s
+2026-05-17 04:13:46 | INFO | train |   Ep 370/400 | Loss=0.7889 CE=0.7862 Phys=0.0027 | Val F1=0.4242 Acc=0.4400 | LR=5.13e-06 | 0.1s
+2026-05-17 04:13:47 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:13:48 | INFO | train | 
+== Test set metrics (MC Dropout) ==
+2026-05-17 04:13:48 | INFO | train |   accuracy             = 0.4314 ✗
+2026-05-17 04:13:48 | INFO | train |   precision            = 0.4672 ✗
+2026-05-17 04:13:48 | INFO | train |   recall               = 0.4027 ✗
+2026-05-17 04:13:48 | INFO | train |   f1                   = 0.3611 ✗
+2026-05-17 04:13:48 | INFO | train |   kappa                = 0.3191 ✗
+2026-05-17 04:13:48 | INFO | train |   brier                = 0.6987 ✗
+2026-05-17 04:13:48 | INFO | train |   ece                  = 0.1127 ✗
+2026-05-17 04:13:48 | INFO | train |   mean_uncertainty     = 0.0433
+2026-05-17 04:13:49 | INFO | train | Inference complete — 51 samples — Acc=0.3922
+2026-05-17 04:13:49 | INFO | train | 
+JSON report: /Users/krohn/PycharmProjects/pignn_uq/outputs/pignn_uq_report.json
+2026-05-17 04:19:29 | INFO | train | ===============================================
+2026-05-17 04:19:29 | INFO | train |   PIGNN-UQ — Full pipeline
+2026-05-17 04:19:29 | INFO | train | ===============================================
+2026-05-17 04:19:30 | INFO | train | Device: cpu
+2026-05-17 04:19:30 | INFO | train | 
+============================================================
+2026-05-17 04:19:30 | INFO | train | FOLD 1/5  train=227  val=57
+2026-05-17 04:19:30 | INFO | train | == Fold 0 — training start ==
+2026-05-17 04:19:30 | INFO | train |   Ep 001/400 | Loss=2.4902 CE=2.4863 Phys=0.0039 | Val F1=0.0911 Acc=0.1053 | LR=3.00e-04 | 0.2s
+2026-05-17 04:19:30 | INFO | train |   Checkpoint saved (F1=0.0911)
+2026-05-17 04:19:31 | INFO | train |   Ep 010/400 | Loss=2.0654 CE=2.0607 Phys=0.0046 | Val F1=0.0058 Acc=0.0175 | LR=3.00e-04 | 0.1s
+2026-05-17 04:19:33 | INFO | train |   Ep 020/400 | Loss=2.0100 CE=2.0054 Phys=0.0046 | Val F1=0.0058 Acc=0.0175 | LR=2.98e-04 | 0.2s
+2026-05-17 04:19:34 | INFO | train |   Ep 030/400 | Loss=1.9475 CE=1.9419 Phys=0.0056 | Val F1=0.0060 Acc=0.0175 | LR=2.96e-04 | 0.1s
+2026-05-17 04:19:35 | INFO | train |   Checkpoint saved (F1=0.1159)
+2026-05-17 04:19:36 | INFO | train |   Ep 040/400 | Loss=1.9509 CE=1.9469 Phys=0.0040 | Val F1=0.1159 Acc=0.1404 | LR=2.93e-04 | 0.1s
+2026-05-17 04:19:37 | INFO | train |   Ep 050/400 | Loss=1.9169 CE=1.9124 Phys=0.0044 | Val F1=0.0906 Acc=0.0877 | LR=2.89e-04 | 0.1s
+2026-05-17 04:19:37 | INFO | train |   Checkpoint saved (F1=0.1270)
+2026-05-17 04:19:38 | INFO | train |   Ep 060/400 | Loss=1.7532 CE=1.7488 Phys=0.0044 | Val F1=0.0171 Acc=0.0351 | LR=2.84e-04 | 0.1s
+2026-05-17 04:19:40 | INFO | train |   Ep 070/400 | Loss=1.6981 CE=1.6935 Phys=0.0046 | Val F1=0.1018 Acc=0.1228 | LR=2.78e-04 | 0.2s
+2026-05-17 04:19:41 | INFO | train |   Ep 080/400 | Loss=1.4729 CE=1.4688 Phys=0.0041 | Val F1=0.0859 Acc=0.1053 | LR=2.71e-04 | 0.1s
+2026-05-17 04:19:43 | INFO | train |   Ep 090/400 | Loss=1.9588 CE=1.9541 Phys=0.0047 | Val F1=0.1386 Acc=0.1228 | LR=2.64e-04 | 0.1s
+2026-05-17 04:19:43 | INFO | train |   Checkpoint saved (F1=0.1386)
+2026-05-17 04:19:43 | INFO | train |   Checkpoint saved (F1=0.1593)
+2026-05-17 04:19:44 | INFO | train |   Ep 100/400 | Loss=1.4656 CE=1.4611 Phys=0.0044 | Val F1=0.1885 Acc=0.1930 | LR=2.56e-04 | 0.1s
+2026-05-17 04:19:44 | INFO | train |   Checkpoint saved (F1=0.1885)
+2026-05-17 04:19:45 | INFO | train |   Ep 110/400 | Loss=1.6006 CE=1.5963 Phys=0.0043 | Val F1=0.0679 Acc=0.0877 | LR=2.48e-04 | 0.1s
+2026-05-17 04:19:47 | INFO | train |   Ep 120/400 | Loss=1.5424 CE=1.5381 Phys=0.0043 | Val F1=0.1327 Acc=0.1228 | LR=2.38e-04 | 0.1s
+2026-05-17 04:19:48 | INFO | train |   Ep 130/400 | Loss=1.3723 CE=1.3683 Phys=0.0040 | Val F1=0.2095 Acc=0.2105 | LR=2.29e-04 | 0.2s
+2026-05-17 04:19:48 | INFO | train |   Checkpoint saved (F1=0.2095)
+2026-05-17 04:19:49 | INFO | train |   Checkpoint saved (F1=0.2264)
+2026-05-17 04:19:50 | INFO | train |   Ep 140/400 | Loss=1.4273 CE=1.4228 Phys=0.0045 | Val F1=0.1028 Acc=0.0877 | LR=2.18e-04 | 0.2s
+2026-05-17 04:19:51 | INFO | train |   Ep 150/400 | Loss=1.2500 CE=1.2463 Phys=0.0038 | Val F1=0.2003 Acc=0.2105 | LR=2.08e-04 | 0.1s
+2026-05-17 04:19:52 | INFO | train |   Ep 160/400 | Loss=1.3617 CE=1.3576 Phys=0.0042 | Val F1=0.1410 Acc=0.1404 | LR=1.97e-04 | 0.1s
+2026-05-17 04:19:54 | INFO | train |   Ep 170/400 | Loss=1.6141 CE=1.6096 Phys=0.0045 | Val F1=0.1485 Acc=0.1404 | LR=1.85e-04 | 0.1s
+2026-05-17 04:19:55 | INFO | train |   Ep 180/400 | Loss=1.3290 CE=1.3249 Phys=0.0041 | Val F1=0.1485 Acc=0.1579 | LR=1.74e-04 | 0.1s
+2026-05-17 04:19:57 | INFO | train |   Ep 190/400 | Loss=1.3055 CE=1.3014 Phys=0.0042 | Val F1=0.1941 Acc=0.1930 | LR=1.62e-04 | 0.2s
+2026-05-17 04:19:58 | INFO | train |   Ep 200/400 | Loss=1.2661 CE=1.2620 Phys=0.0040 | Val F1=0.1415 Acc=0.1404 | LR=1.51e-04 | 0.1s
+2026-05-17 04:19:59 | INFO | train |   Ep 210/400 | Loss=1.3110 CE=1.3073 Phys=0.0037 | Val F1=0.1816 Acc=0.1754 | LR=1.39e-04 | 0.1s
+2026-05-17 04:20:01 | INFO | train |   Ep 220/400 | Loss=1.5401 CE=1.5354 Phys=0.0046 | Val F1=0.2256 Acc=0.2105 | LR=1.27e-04 | 0.1s
+2026-05-17 04:20:02 | INFO | train |   Ep 230/400 | Loss=1.2915 CE=1.2876 Phys=0.0039 | Val F1=0.1896 Acc=0.1930 | LR=1.16e-04 | 0.1s
+2026-05-17 04:20:03 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:20:03 | INFO | train |   Fold 1 results:
+2026-05-17 04:20:03 | INFO | train |     accuracy           = 0.2281
+2026-05-17 04:20:03 | INFO | train |     precision          = 0.3958
+2026-05-17 04:20:03 | INFO | train |     recall             = 0.2139
+2026-05-17 04:20:03 | INFO | train |     f1                 = 0.2264
+2026-05-17 04:20:03 | INFO | train |     kappa              = 0.1443
+2026-05-17 04:20:03 | INFO | train |     brier              = 0.9752
+2026-05-17 04:20:03 | INFO | train |     ece                = 0.2354
+2026-05-17 04:20:03 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:20:03 | INFO | train | 
+============================================================
+2026-05-17 04:20:03 | INFO | train | FOLD 2/5  train=227  val=57
+2026-05-17 04:20:03 | INFO | train | == Fold 1 — training start ==
+2026-05-17 04:20:03 | INFO | train |   Ep 001/400 | Loss=3.1247 CE=3.1206 Phys=0.0041 | Val F1=0.0113 Acc=0.0351 | LR=3.00e-04 | 0.1s
+2026-05-17 04:20:03 | INFO | train |   Checkpoint saved (F1=0.0113)
+2026-05-17 04:20:04 | INFO | train |   Checkpoint saved (F1=0.0115)
+2026-05-17 04:20:05 | INFO | train |   Checkpoint saved (F1=0.0117)
+2026-05-17 04:20:05 | INFO | train |   Ep 010/400 | Loss=2.5255 CE=2.5213 Phys=0.0041 | Val F1=0.0119 Acc=0.0351 | LR=3.00e-04 | 0.1s
+2026-05-17 04:20:05 | INFO | train |   Checkpoint saved (F1=0.0119)
+2026-05-17 04:20:05 | INFO | train |   Checkpoint saved (F1=0.0330)
+2026-05-17 04:20:05 | INFO | train |   Checkpoint saved (F1=0.0595)
+2026-05-17 04:20:05 | INFO | train |   Checkpoint saved (F1=0.0820)
+2026-05-17 04:20:06 | INFO | train |   Ep 020/400 | Loss=1.8911 CE=1.8879 Phys=0.0032 | Val F1=0.0330 Acc=0.0526 | LR=2.98e-04 | 0.1s
+2026-05-17 04:20:06 | INFO | train |   Checkpoint saved (F1=0.0975)
+2026-05-17 04:20:07 | INFO | train |   Ep 030/400 | Loss=2.1267 CE=2.1223 Phys=0.0044 | Val F1=0.0595 Acc=0.0526 | LR=2.96e-04 | 0.1s
+2026-05-17 04:20:08 | INFO | train |   Ep 040/400 | Loss=2.0759 CE=2.0721 Phys=0.0038 | Val F1=0.0595 Acc=0.0526 | LR=2.93e-04 | 0.1s
+2026-05-17 04:20:09 | INFO | train |   Ep 050/400 | Loss=1.8716 CE=1.8672 Phys=0.0044 | Val F1=0.0634 Acc=0.0702 | LR=2.89e-04 | 0.1s
+2026-05-17 04:20:10 | INFO | train |   Checkpoint saved (F1=0.0980)
+2026-05-17 04:20:10 | INFO | train |   Checkpoint saved (F1=0.1292)
+2026-05-17 04:20:11 | INFO | train |   Ep 060/400 | Loss=1.9226 CE=1.9183 Phys=0.0042 | Val F1=0.0652 Acc=0.0702 | LR=2.84e-04 | 0.1s
+2026-05-17 04:20:12 | INFO | train |   Checkpoint saved (F1=0.1337)
+2026-05-17 04:20:12 | INFO | train |   Ep 070/400 | Loss=1.5873 CE=1.5831 Phys=0.0042 | Val F1=0.1334 Acc=0.1228 | LR=2.78e-04 | 0.1s
+2026-05-17 04:20:13 | INFO | train |   Checkpoint saved (F1=0.1561)
+2026-05-17 04:20:13 | INFO | train |   Ep 080/400 | Loss=1.5774 CE=1.5731 Phys=0.0043 | Val F1=0.1313 Acc=0.1228 | LR=2.71e-04 | 0.1s
+2026-05-17 04:20:14 | INFO | train |   Checkpoint saved (F1=0.1654)
+2026-05-17 04:20:14 | INFO | train |   Checkpoint saved (F1=0.1752)
+2026-05-17 04:20:14 | INFO | train |   Ep 090/400 | Loss=1.7529 CE=1.7490 Phys=0.0039 | Val F1=0.1233 Acc=0.1404 | LR=2.64e-04 | 0.1s
+2026-05-17 04:20:15 | INFO | train |   Checkpoint saved (F1=0.2032)
+2026-05-17 04:20:15 | INFO | train |   Ep 100/400 | Loss=1.5150 CE=1.5106 Phys=0.0044 | Val F1=0.1855 Acc=0.1930 | LR=2.56e-04 | 0.1s
+2026-05-17 04:20:16 | INFO | train |   Checkpoint saved (F1=0.2235)
+2026-05-17 04:21:05 | INFO | train | ===============================================
+2026-05-17 04:21:05 | INFO | train |   PIGNN-UQ — Full pipeline
+2026-05-17 04:21:05 | INFO | train | ===============================================
+2026-05-17 04:21:06 | INFO | train | Device: cpu
+2026-05-17 04:21:06 | INFO | train | 
+============================================================
+2026-05-17 04:21:06 | INFO | train | FOLD 1/5  train=227  val=57
+2026-05-17 04:21:06 | INFO | train | == Fold 0 — training start ==
+2026-05-17 04:21:07 | INFO | train |   Ep 001/400 | Loss=1.7779 CE=1.7743 Phys=0.0036 | Val F1=0.1532 Acc=0.2456 | LR=3.00e-04 | 0.3s
+2026-05-17 04:21:07 | INFO | train |   Checkpoint saved (F1=0.1532)
+2026-05-17 04:21:07 | INFO | train |   Checkpoint saved (F1=0.2194)
+2026-05-17 04:21:08 | INFO | train |   Ep 010/400 | Loss=1.4023 CE=1.3991 Phys=0.0032 | Val F1=0.1127 Acc=0.1754 | LR=3.00e-04 | 0.2s
+2026-05-17 04:21:09 | INFO | train |   Ep 020/400 | Loss=1.3091 CE=1.3061 Phys=0.0030 | Val F1=0.1762 Acc=0.2632 | LR=2.98e-04 | 0.1s
+2026-05-17 04:21:10 | INFO | train |   Checkpoint saved (F1=0.2249)
+2026-05-17 04:21:11 | INFO | train |   Checkpoint saved (F1=0.2322)
+2026-05-17 04:21:11 | INFO | train |   Ep 030/400 | Loss=1.3606 CE=1.3577 Phys=0.0029 | Val F1=0.1649 Acc=0.2281 | LR=2.96e-04 | 0.1s
+2026-05-17 04:21:12 | INFO | train |   Ep 040/400 | Loss=1.1771 CE=1.1744 Phys=0.0027 | Val F1=0.2451 Acc=0.3509 | LR=2.93e-04 | 0.2s
+2026-05-17 04:21:12 | INFO | train |   Checkpoint saved (F1=0.2451)
+2026-05-17 04:21:12 | INFO | train |   Checkpoint saved (F1=0.2554)
+2026-05-17 04:21:13 | INFO | train |   Checkpoint saved (F1=0.2582)
+2026-05-17 04:21:14 | INFO | train |   Ep 050/400 | Loss=1.2259 CE=1.2231 Phys=0.0028 | Val F1=0.2200 Acc=0.3333 | LR=2.89e-04 | 0.1s
+2026-05-17 04:21:15 | INFO | train |   Ep 060/400 | Loss=1.2047 CE=1.2016 Phys=0.0031 | Val F1=0.2483 Acc=0.3158 | LR=2.84e-04 | 0.2s
+2026-05-17 04:21:17 | INFO | train |   Ep 070/400 | Loss=1.1146 CE=1.1117 Phys=0.0030 | Val F1=0.1743 Acc=0.2281 | LR=2.78e-04 | 0.2s
+2026-05-17 04:21:18 | INFO | train |   Ep 080/400 | Loss=1.1269 CE=1.1241 Phys=0.0028 | Val F1=0.2276 Acc=0.3333 | LR=2.71e-04 | 0.1s
+2026-05-17 04:21:19 | INFO | train |   Checkpoint saved (F1=0.2764)
+2026-05-17 04:21:19 | INFO | train |   Ep 090/400 | Loss=1.1215 CE=1.1184 Phys=0.0031 | Val F1=0.2335 Acc=0.3509 | LR=2.64e-04 | 0.1s
+2026-05-17 04:21:21 | INFO | train |   Ep 100/400 | Loss=1.0744 CE=1.0713 Phys=0.0032 | Val F1=0.2857 Acc=0.3684 | LR=2.56e-04 | 0.2s
+2026-05-17 04:21:21 | INFO | train |   Checkpoint saved (F1=0.2857)
+2026-05-17 04:21:22 | INFO | train |   Ep 110/400 | Loss=1.2040 CE=1.2012 Phys=0.0028 | Val F1=0.2481 Acc=0.3158 | LR=2.48e-04 | 0.2s
+2026-05-17 04:21:24 | INFO | train |   Ep 120/400 | Loss=1.2037 CE=1.2009 Phys=0.0028 | Val F1=0.2268 Acc=0.3158 | LR=2.38e-04 | 0.1s
+2026-05-17 04:21:25 | INFO | train |   Ep 130/400 | Loss=1.0820 CE=1.0791 Phys=0.0029 | Val F1=0.2784 Acc=0.3684 | LR=2.29e-04 | 0.2s
+2026-05-17 04:21:26 | INFO | train |   Checkpoint saved (F1=0.2925)
+2026-05-17 04:21:26 | INFO | train |   Checkpoint saved (F1=0.3031)
+2026-05-17 04:21:27 | INFO | train |   Ep 140/400 | Loss=1.0665 CE=1.0640 Phys=0.0025 | Val F1=0.2548 Acc=0.3333 | LR=2.18e-04 | 0.1s
+2026-05-17 04:21:28 | INFO | train |   Ep 150/400 | Loss=1.0926 CE=1.0898 Phys=0.0028 | Val F1=0.2673 Acc=0.3333 | LR=2.08e-04 | 0.1s
+2026-05-17 04:21:30 | INFO | train |   Ep 160/400 | Loss=1.0857 CE=1.0827 Phys=0.0030 | Val F1=0.2664 Acc=0.3333 | LR=1.97e-04 | 0.1s
+2026-05-17 04:21:31 | INFO | train |   Ep 170/400 | Loss=1.0228 CE=1.0200 Phys=0.0027 | Val F1=0.2959 Acc=0.3860 | LR=1.85e-04 | 0.1s
+2026-05-17 04:21:33 | INFO | train |   Ep 180/400 | Loss=1.1417 CE=1.1389 Phys=0.0028 | Val F1=0.2559 Acc=0.3333 | LR=1.74e-04 | 0.1s
+2026-05-17 04:21:34 | INFO | train |   Ep 190/400 | Loss=1.1796 CE=1.1765 Phys=0.0031 | Val F1=0.2184 Acc=0.2982 | LR=1.62e-04 | 0.2s
+2026-05-17 04:21:36 | INFO | train |   Ep 200/400 | Loss=0.9673 CE=0.9643 Phys=0.0031 | Val F1=0.2718 Acc=0.3509 | LR=1.51e-04 | 0.1s
+2026-05-17 04:21:37 | INFO | train |   Ep 210/400 | Loss=1.0570 CE=1.0543 Phys=0.0027 | Val F1=0.2427 Acc=0.3158 | LR=1.39e-04 | 0.1s
+2026-05-17 04:21:39 | INFO | train |   Ep 220/400 | Loss=0.9993 CE=0.9964 Phys=0.0029 | Val F1=0.2334 Acc=0.3158 | LR=1.27e-04 | 0.1s
+2026-05-17 04:21:40 | INFO | train |   Ep 230/400 | Loss=0.9493 CE=0.9463 Phys=0.0030 | Val F1=0.2894 Acc=0.3684 | LR=1.16e-04 | 0.2s
+2026-05-17 04:21:41 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:21:41 | INFO | train |   Fold 1 results:
+2026-05-17 04:21:41 | INFO | train |     accuracy           = 0.3684
+2026-05-17 04:21:41 | INFO | train |     precision          = 0.2924
+2026-05-17 04:21:41 | INFO | train |     recall             = 0.3306
+2026-05-17 04:21:41 | INFO | train |     f1                 = 0.3031
+2026-05-17 04:21:41 | INFO | train |     kappa              = 0.2505
+2026-05-17 04:21:41 | INFO | train |     brier              = 0.7787
+2026-05-17 04:21:41 | INFO | train |     ece                = 0.0698
+2026-05-17 04:21:41 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:21:41 | INFO | train | 
+============================================================
+2026-05-17 04:21:41 | INFO | train | FOLD 2/5  train=227  val=57
+2026-05-17 04:21:41 | INFO | train | == Fold 1 — training start ==
+2026-05-17 04:21:41 | INFO | train |   Ep 001/400 | Loss=1.6649 CE=1.6615 Phys=0.0034 | Val F1=0.1386 Acc=0.1930 | LR=3.00e-04 | 0.2s
+2026-05-17 04:21:41 | INFO | train |   Checkpoint saved (F1=0.1386)
+2026-05-17 04:21:42 | INFO | train |   Checkpoint saved (F1=0.1629)
+2026-05-17 04:21:42 | INFO | train |   Checkpoint saved (F1=0.1808)
+2026-05-17 04:21:43 | INFO | train |   Ep 010/400 | Loss=1.3627 CE=1.3599 Phys=0.0028 | Val F1=0.2437 Acc=0.2982 | LR=3.00e-04 | 0.1s
+2026-05-17 04:21:43 | INFO | train |   Checkpoint saved (F1=0.2437)
+2026-05-17 04:21:43 | INFO | train |   Checkpoint saved (F1=0.2668)
+2026-05-17 04:21:44 | INFO | train |   Ep 020/400 | Loss=1.2647 CE=1.2619 Phys=0.0029 | Val F1=0.3333 Acc=0.4561 | LR=2.98e-04 | 0.1s
+2026-05-17 04:21:44 | INFO | train |   Checkpoint saved (F1=0.3333)
+2026-05-17 04:21:46 | INFO | train |   Ep 030/400 | Loss=1.2079 CE=1.2051 Phys=0.0029 | Val F1=0.2361 Acc=0.3333 | LR=2.96e-04 | 0.1s
+2026-05-17 04:21:47 | INFO | train |   Ep 040/400 | Loss=1.1878 CE=1.1849 Phys=0.0029 | Val F1=0.2397 Acc=0.3158 | LR=2.93e-04 | 0.1s
+2026-05-17 04:21:49 | INFO | train |   Ep 050/400 | Loss=1.7023 CE=1.6999 Phys=0.0025 | Val F1=0.1604 Acc=0.2807 | LR=2.89e-04 | 0.1s
+2026-05-17 04:21:50 | INFO | train |   Ep 060/400 | Loss=1.7253 CE=1.7225 Phys=0.0028 | Val F1=0.2259 Acc=0.2807 | LR=2.84e-04 | 0.1s
+2026-05-17 04:21:52 | INFO | train |   Ep 070/400 | Loss=1.2500 CE=1.2471 Phys=0.0029 | Val F1=0.1971 Acc=0.2456 | LR=2.78e-04 | 0.2s
+2026-05-17 04:21:53 | INFO | train |   Ep 080/400 | Loss=1.2670 CE=1.2642 Phys=0.0028 | Val F1=0.2593 Acc=0.3509 | LR=2.71e-04 | 0.1s
+2026-05-17 04:21:54 | INFO | train |   Ep 090/400 | Loss=1.2256 CE=1.2226 Phys=0.0030 | Val F1=0.2542 Acc=0.3333 | LR=2.64e-04 | 0.1s
+2026-05-17 04:21:56 | INFO | train |   Ep 100/400 | Loss=1.1354 CE=1.1327 Phys=0.0027 | Val F1=0.2501 Acc=0.3509 | LR=2.56e-04 | 0.2s
+2026-05-17 04:21:58 | INFO | train |   Ep 110/400 | Loss=1.1582 CE=1.1554 Phys=0.0028 | Val F1=0.2547 Acc=0.3333 | LR=2.48e-04 | 0.1s
+2026-05-17 04:21:59 | INFO | train |   Ep 120/400 | Loss=1.1646 CE=1.1619 Phys=0.0027 | Val F1=0.2689 Acc=0.3684 | LR=2.38e-04 | 0.1s
+2026-05-17 04:21:59 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:21:59 | INFO | train |   Fold 2 results:
+2026-05-17 04:21:59 | INFO | train |     accuracy           = 0.4561
+2026-05-17 04:21:59 | INFO | train |     precision          = 0.5581
+2026-05-17 04:21:59 | INFO | train |     recall             = 0.3484
+2026-05-17 04:21:59 | INFO | train |     f1                 = 0.3333
+2026-05-17 04:21:59 | INFO | train |     kappa              = 0.2926
+2026-05-17 04:21:59 | INFO | train |     brier              = 0.7839
+2026-05-17 04:21:59 | INFO | train |     ece                = 0.2444
+2026-05-17 04:21:59 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:21:59 | INFO | train | 
+============================================================
+2026-05-17 04:21:59 | INFO | train | FOLD 3/5  train=227  val=57
+2026-05-17 04:21:59 | INFO | train | == Fold 2 — training start ==
+2026-05-17 04:21:59 | INFO | train |   Ep 001/400 | Loss=1.6244 CE=1.6204 Phys=0.0040 | Val F1=0.0854 Acc=0.1228 | LR=3.00e-04 | 0.2s
+2026-05-17 04:21:59 | INFO | train |   Checkpoint saved (F1=0.0854)
+2026-05-17 04:22:00 | INFO | train |   Checkpoint saved (F1=0.1711)
+2026-05-17 04:22:00 | INFO | train |   Checkpoint saved (F1=0.1878)
+2026-05-17 04:22:00 | INFO | train |   Checkpoint saved (F1=0.2082)
+2026-05-17 04:22:01 | INFO | train |   Ep 010/400 | Loss=1.7906 CE=1.7877 Phys=0.0029 | Val F1=0.2177 Acc=0.3333 | LR=3.00e-04 | 0.1s
+2026-05-17 04:22:01 | INFO | train |   Checkpoint saved (F1=0.2177)
+2026-05-17 04:22:01 | INFO | train |   Checkpoint saved (F1=0.2276)
+2026-05-17 04:22:02 | INFO | train |   Checkpoint saved (F1=0.2423)
+2026-05-17 04:22:02 | INFO | train |   Checkpoint saved (F1=0.2465)
+2026-05-17 04:22:02 | INFO | train |   Checkpoint saved (F1=0.2520)
+2026-05-17 04:22:02 | INFO | train |   Ep 020/400 | Loss=1.1953 CE=1.1929 Phys=0.0024 | Val F1=0.2390 Acc=0.2982 | LR=2.98e-04 | 0.1s
+2026-05-17 04:22:02 | INFO | train |   Checkpoint saved (F1=0.2762)
+2026-05-17 04:22:03 | INFO | train |   Checkpoint saved (F1=0.2771)
+2026-05-17 04:22:03 | INFO | train |   Checkpoint saved (F1=0.3475)
+2026-05-17 04:22:04 | INFO | train |   Ep 030/400 | Loss=1.2164 CE=1.2135 Phys=0.0029 | Val F1=0.1957 Acc=0.2632 | LR=2.96e-04 | 0.2s
+2026-05-17 04:22:05 | INFO | train |   Checkpoint saved (F1=0.4153)
+2026-05-17 04:22:05 | INFO | train |   Ep 040/400 | Loss=1.1713 CE=1.1684 Phys=0.0029 | Val F1=0.2642 Acc=0.3509 | LR=2.93e-04 | 0.2s
+2026-05-17 04:22:07 | INFO | train |   Ep 050/400 | Loss=1.2519 CE=1.2492 Phys=0.0027 | Val F1=0.1944 Acc=0.2281 | LR=2.89e-04 | 0.1s
+2026-05-17 04:22:08 | INFO | train |   Ep 060/400 | Loss=1.1266 CE=1.1239 Phys=0.0027 | Val F1=0.2571 Acc=0.3158 | LR=2.84e-04 | 0.2s
+2026-05-17 04:22:10 | INFO | train |   Ep 070/400 | Loss=1.2025 CE=1.1997 Phys=0.0028 | Val F1=0.2590 Acc=0.2807 | LR=2.78e-04 | 0.1s
+2026-05-17 04:22:11 | INFO | train |   Ep 080/400 | Loss=1.0703 CE=1.0674 Phys=0.0029 | Val F1=0.2743 Acc=0.3333 | LR=2.71e-04 | 0.1s
+2026-05-17 04:22:13 | INFO | train |   Ep 090/400 | Loss=1.1145 CE=1.1116 Phys=0.0029 | Val F1=0.2892 Acc=0.3333 | LR=2.64e-04 | 0.1s
+2026-05-17 04:22:14 | INFO | train |   Ep 100/400 | Loss=1.0037 CE=1.0009 Phys=0.0028 | Val F1=0.2571 Acc=0.2982 | LR=2.56e-04 | 0.2s
+2026-05-17 04:22:15 | INFO | train |   Ep 110/400 | Loss=1.0703 CE=1.0676 Phys=0.0027 | Val F1=0.2919 Acc=0.3509 | LR=2.48e-04 | 0.1s
+2026-05-17 04:22:16 | INFO | train |   Ep 120/400 | Loss=0.9646 CE=0.9618 Phys=0.0028 | Val F1=0.2945 Acc=0.3509 | LR=2.38e-04 | 0.1s
+2026-05-17 04:22:18 | INFO | train |   Ep 130/400 | Loss=1.0478 CE=1.0448 Phys=0.0030 | Val F1=0.2718 Acc=0.3333 | LR=2.29e-04 | 0.1s
+2026-05-17 04:22:19 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:22:19 | INFO | train |   Fold 3 results:
+2026-05-17 04:22:19 | INFO | train |     accuracy           = 0.4912
+2026-05-17 04:22:19 | INFO | train |     precision          = 0.5056
+2026-05-17 04:22:19 | INFO | train |     recall             = 0.4210
+2026-05-17 04:22:19 | INFO | train |     f1                 = 0.4153
+2026-05-17 04:22:19 | INFO | train |     kappa              = 0.3623
+2026-05-17 04:22:19 | INFO | train |     brier              = 0.7700
+2026-05-17 04:22:19 | INFO | train |     ece                = 0.2315
+2026-05-17 04:22:19 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:22:19 | INFO | train | 
+============================================================
+2026-05-17 04:22:19 | INFO | train | FOLD 4/5  train=227  val=57
+2026-05-17 04:22:19 | INFO | train | == Fold 3 — training start ==
+2026-05-17 04:22:19 | INFO | train |   Ep 001/400 | Loss=1.5335 CE=1.5302 Phys=0.0033 | Val F1=0.1614 Acc=0.2281 | LR=3.00e-04 | 0.1s
+2026-05-17 04:22:19 | INFO | train |   Checkpoint saved (F1=0.1614)
+2026-05-17 04:22:19 | INFO | train |   Checkpoint saved (F1=0.2060)
+2026-05-17 04:22:20 | INFO | train |   Checkpoint saved (F1=0.2680)
+2026-05-17 04:22:20 | INFO | train |   Ep 010/400 | Loss=1.9191 CE=1.9166 Phys=0.0026 | Val F1=0.2830 Acc=0.3509 | LR=3.00e-04 | 0.1s
+2026-05-17 04:22:20 | INFO | train |   Checkpoint saved (F1=0.2830)
+2026-05-17 04:22:21 | INFO | train |   Checkpoint saved (F1=0.3250)
+2026-05-17 04:22:21 | INFO | train |   Ep 020/400 | Loss=1.2335 CE=1.2305 Phys=0.0029 | Val F1=0.2817 Acc=0.4211 | LR=2.98e-04 | 0.1s
+2026-05-17 04:22:23 | INFO | train |   Ep 030/400 | Loss=1.2368 CE=1.2339 Phys=0.0029 | Val F1=0.3306 Acc=0.4211 | LR=2.96e-04 | 0.2s
+2026-05-17 04:22:23 | INFO | train |   Checkpoint saved (F1=0.3306)
+2026-05-17 04:22:23 | INFO | train |   Checkpoint saved (F1=0.3331)
+2026-05-17 04:22:23 | INFO | train |   Checkpoint saved (F1=0.3370)
+2026-05-17 04:22:24 | INFO | train |   Checkpoint saved (F1=0.3426)
+2026-05-17 04:22:24 | INFO | train |   Ep 040/400 | Loss=1.2316 CE=1.2289 Phys=0.0026 | Val F1=0.3020 Acc=0.3860 | LR=2.93e-04 | 0.1s
+2026-05-17 04:22:25 | INFO | train |   Checkpoint saved (F1=0.3901)
+2026-05-17 04:22:25 | INFO | train |   Ep 050/400 | Loss=1.2186 CE=1.2159 Phys=0.0028 | Val F1=0.3496 Acc=0.4912 | LR=2.89e-04 | 0.1s
+2026-05-17 04:22:27 | INFO | train |   Ep 060/400 | Loss=1.1645 CE=1.1619 Phys=0.0026 | Val F1=0.3561 Acc=0.4211 | LR=2.84e-04 | 0.1s
+2026-05-17 04:22:27 | INFO | train |   Checkpoint saved (F1=0.3911)
+2026-05-17 04:22:28 | INFO | train |   Ep 070/400 | Loss=1.6857 CE=1.6831 Phys=0.0026 | Val F1=0.3545 Acc=0.4912 | LR=2.78e-04 | 0.1s
+2026-05-17 04:22:29 | INFO | train |   Ep 080/400 | Loss=1.1230 CE=1.1202 Phys=0.0028 | Val F1=0.3466 Acc=0.4737 | LR=2.71e-04 | 0.1s
+2026-05-17 04:22:31 | INFO | train |   Ep 090/400 | Loss=1.1501 CE=1.1475 Phys=0.0026 | Val F1=0.3987 Acc=0.5263 | LR=2.64e-04 | 0.1s
+2026-05-17 04:22:31 | INFO | train |   Checkpoint saved (F1=0.3987)
+2026-05-17 04:22:32 | INFO | train |   Ep 100/400 | Loss=1.1089 CE=1.1062 Phys=0.0027 | Val F1=0.3352 Acc=0.4211 | LR=2.56e-04 | 0.1s
+2026-05-17 04:22:33 | INFO | train |   Ep 110/400 | Loss=1.1503 CE=1.1478 Phys=0.0025 | Val F1=0.3796 Acc=0.4737 | LR=2.48e-04 | 0.1s
+2026-05-17 04:22:34 | INFO | train |   Checkpoint saved (F1=0.4030)
+2026-05-17 04:22:35 | INFO | train |   Ep 120/400 | Loss=1.1691 CE=1.1663 Phys=0.0027 | Val F1=0.3236 Acc=0.4386 | LR=2.38e-04 | 0.1s
+2026-05-17 04:22:36 | INFO | train |   Ep 130/400 | Loss=1.0800 CE=1.0772 Phys=0.0027 | Val F1=0.3633 Acc=0.4912 | LR=2.29e-04 | 0.1s
+2026-05-17 04:22:36 | INFO | train |   Checkpoint saved (F1=0.4201)
+2026-05-17 04:22:36 | INFO | train |   Checkpoint saved (F1=0.4284)
+2026-05-17 04:22:37 | INFO | train |   Checkpoint saved (F1=0.4645)
+2026-05-17 04:22:37 | INFO | train |   Ep 140/400 | Loss=1.1076 CE=1.1050 Phys=0.0026 | Val F1=0.3306 Acc=0.4561 | LR=2.18e-04 | 0.1s
+2026-05-17 04:22:38 | INFO | train |   Ep 150/400 | Loss=1.0439 CE=1.0411 Phys=0.0028 | Val F1=0.3291 Acc=0.4561 | LR=2.08e-04 | 0.1s
+2026-05-17 04:22:40 | INFO | train |   Ep 160/400 | Loss=1.0170 CE=1.0143 Phys=0.0027 | Val F1=0.3945 Acc=0.4386 | LR=1.97e-04 | 0.1s
+2026-05-17 04:22:41 | INFO | train |   Checkpoint saved (F1=0.4727)
+2026-05-17 04:22:42 | INFO | train |   Ep 170/400 | Loss=1.2791 CE=1.2764 Phys=0.0027 | Val F1=0.3424 Acc=0.4737 | LR=1.85e-04 | 0.2s
+2026-05-17 04:22:43 | INFO | train |   Checkpoint saved (F1=0.4748)
+2026-05-17 04:22:44 | INFO | train |   Ep 180/400 | Loss=1.0891 CE=1.0864 Phys=0.0027 | Val F1=0.4192 Acc=0.4912 | LR=1.74e-04 | 0.2s
+2026-05-17 04:22:46 | INFO | train |   Ep 190/400 | Loss=1.0209 CE=1.0183 Phys=0.0026 | Val F1=0.4639 Acc=0.5088 | LR=1.62e-04 | 0.2s
+2026-05-17 04:22:48 | INFO | train |   Ep 200/400 | Loss=1.0860 CE=1.0831 Phys=0.0029 | Val F1=0.3624 Acc=0.3860 | LR=1.51e-04 | 0.2s
+2026-05-17 04:22:50 | INFO | train |   Ep 210/400 | Loss=1.0110 CE=1.0082 Phys=0.0027 | Val F1=0.3601 Acc=0.4737 | LR=1.39e-04 | 0.2s
+2026-05-17 04:22:52 | INFO | train |   Ep 220/400 | Loss=0.9623 CE=0.9594 Phys=0.0029 | Val F1=0.4457 Acc=0.4912 | LR=1.27e-04 | 0.3s
+2026-05-17 04:22:53 | INFO | train |   Checkpoint saved (F1=0.4799)
+2026-05-17 04:22:54 | INFO | train |   Ep 230/400 | Loss=0.9672 CE=0.9643 Phys=0.0029 | Val F1=0.5005 Acc=0.5263 | LR=1.16e-04 | 0.1s
+2026-05-17 04:22:54 | INFO | train |   Checkpoint saved (F1=0.5005)
+2026-05-17 04:22:56 | INFO | train |   Ep 240/400 | Loss=0.9686 CE=0.9659 Phys=0.0026 | Val F1=0.3703 Acc=0.4035 | LR=1.04e-04 | 0.1s
+2026-05-17 04:22:57 | INFO | train |   Ep 250/400 | Loss=1.0636 CE=1.0607 Phys=0.0029 | Val F1=0.3959 Acc=0.4211 | LR=9.33e-05 | 0.1s
+2026-05-17 04:22:59 | INFO | train |   Ep 260/400 | Loss=1.0351 CE=1.0325 Phys=0.0026 | Val F1=0.4237 Acc=0.4561 | LR=8.26e-05 | 0.2s
+2026-05-17 04:23:00 | INFO | train |   Ep 270/400 | Loss=1.1345 CE=1.1317 Phys=0.0028 | Val F1=0.4076 Acc=0.4561 | LR=7.24e-05 | 0.2s
+2026-05-17 04:23:02 | INFO | train |   Ep 280/400 | Loss=1.1126 CE=1.1098 Phys=0.0028 | Val F1=0.4595 Acc=0.5088 | LR=6.26e-05 | 0.1s
+2026-05-17 04:23:04 | INFO | train |   Ep 290/400 | Loss=1.0181 CE=1.0155 Phys=0.0025 | Val F1=0.4710 Acc=0.5263 | LR=5.34e-05 | 0.2s
+2026-05-17 04:23:05 | INFO | train |   Ep 300/400 | Loss=0.9614 CE=0.9583 Phys=0.0030 | Val F1=0.4127 Acc=0.4561 | LR=4.48e-05 | 0.2s
+2026-05-17 04:23:07 | INFO | train |   Ep 310/400 | Loss=0.9855 CE=0.9828 Phys=0.0027 | Val F1=0.4021 Acc=0.4561 | LR=3.68e-05 | 0.2s
+2026-05-17 04:23:08 | INFO | train |   Ep 320/400 | Loss=0.9231 CE=0.9206 Phys=0.0025 | Val F1=0.4485 Acc=0.4912 | LR=2.96e-05 | 0.2s
+2026-05-17 04:23:10 | INFO | train |   Ep 330/400 | Loss=0.9249 CE=0.9221 Phys=0.0028 | Val F1=0.4194 Acc=0.4737 | LR=2.30e-05 | 0.2s
+2026-05-17 04:23:10 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:23:10 | INFO | train |   Fold 4 results:
+2026-05-17 04:23:10 | INFO | train |     accuracy           = 0.5263
+2026-05-17 04:23:10 | INFO | train |     precision          = 0.5110
+2026-05-17 04:23:10 | INFO | train |     recall             = 0.5510
+2026-05-17 04:23:10 | INFO | train |     f1                 = 0.5005
+2026-05-17 04:23:10 | INFO | train |     kappa              = 0.4206
+2026-05-17 04:23:10 | INFO | train |     brier              = 0.6717
+2026-05-17 04:23:10 | INFO | train |     ece                = 0.1538
+2026-05-17 04:23:10 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:23:10 | INFO | train | 
+============================================================
+2026-05-17 04:23:10 | INFO | train | FOLD 5/5  train=228  val=56
+2026-05-17 04:23:10 | INFO | train | == Fold 4 — training start ==
+2026-05-17 04:23:10 | INFO | train |   Ep 001/400 | Loss=1.6334 CE=1.6298 Phys=0.0037 | Val F1=0.1492 Acc=0.2321 | LR=3.00e-04 | 0.2s
+2026-05-17 04:23:10 | INFO | train |   Checkpoint saved (F1=0.1492)
+2026-05-17 04:23:10 | INFO | train |   Checkpoint saved (F1=0.1695)
+2026-05-17 04:23:11 | INFO | train |   Checkpoint saved (F1=0.2017)
+2026-05-17 04:23:11 | INFO | train |   Ep 010/400 | Loss=1.3214 CE=1.3185 Phys=0.0029 | Val F1=0.1158 Acc=0.2500 | LR=3.00e-04 | 0.2s
+2026-05-17 04:23:13 | INFO | train |   Ep 020/400 | Loss=1.2788 CE=1.2759 Phys=0.0028 | Val F1=0.1730 Acc=0.2143 | LR=2.98e-04 | 0.1s
+2026-05-17 04:23:14 | INFO | train |   Checkpoint saved (F1=0.2068)
+2026-05-17 04:23:14 | INFO | train |   Ep 030/400 | Loss=1.2376 CE=1.2348 Phys=0.0028 | Val F1=0.1351 Acc=0.1964 | LR=2.96e-04 | 0.1s
+2026-05-17 04:23:16 | INFO | train |   Ep 040/400 | Loss=1.2129 CE=1.2103 Phys=0.0027 | Val F1=0.1287 Acc=0.2321 | LR=2.93e-04 | 0.1s
+2026-05-17 04:23:17 | INFO | train |   Checkpoint saved (F1=0.2148)
+2026-05-17 04:23:17 | INFO | train |   Ep 050/400 | Loss=1.2509 CE=1.2480 Phys=0.0029 | Val F1=0.1682 Acc=0.2500 | LR=2.89e-04 | 0.2s
+2026-05-17 04:23:19 | INFO | train |   Ep 060/400 | Loss=1.2369 CE=1.2340 Phys=0.0030 | Val F1=0.1398 Acc=0.2500 | LR=2.84e-04 | 0.2s
+2026-05-17 04:23:20 | INFO | train |   Ep 070/400 | Loss=1.4978 CE=1.4949 Phys=0.0029 | Val F1=0.1346 Acc=0.2143 | LR=2.78e-04 | 0.2s
+2026-05-17 04:23:22 | INFO | train |   Ep 080/400 | Loss=1.1749 CE=1.1720 Phys=0.0029 | Val F1=0.1760 Acc=0.2321 | LR=2.71e-04 | 0.1s
+2026-05-17 04:23:23 | INFO | train |   Checkpoint saved (F1=0.2524)
+2026-05-17 04:23:24 | INFO | train |   Ep 090/400 | Loss=1.2645 CE=1.2615 Phys=0.0030 | Val F1=0.1861 Acc=0.2321 | LR=2.64e-04 | 0.2s
+2026-05-17 04:23:24 | INFO | train |   Checkpoint saved (F1=0.2569)
+2026-05-17 04:23:25 | INFO | train |   Checkpoint saved (F1=0.2711)
+2026-05-17 04:23:25 | INFO | train |   Checkpoint saved (F1=0.2729)
+2026-05-17 04:23:25 | INFO | train |   Checkpoint saved (F1=0.2760)
+2026-05-17 04:23:25 | INFO | train |   Ep 100/400 | Loss=1.1564 CE=1.1534 Phys=0.0030 | Val F1=0.2443 Acc=0.3036 | LR=2.56e-04 | 0.2s
+2026-05-17 04:23:27 | INFO | train |   Ep 110/400 | Loss=1.1744 CE=1.1719 Phys=0.0024 | Val F1=0.2432 Acc=0.3393 | LR=2.48e-04 | 0.2s
+2026-05-17 04:23:28 | INFO | train |   Ep 120/400 | Loss=1.2278 CE=1.2249 Phys=0.0028 | Val F1=0.1835 Acc=0.2321 | LR=2.38e-04 | 0.2s
+2026-05-17 04:23:30 | INFO | train |   Ep 130/400 | Loss=1.2627 CE=1.2601 Phys=0.0027 | Val F1=0.2315 Acc=0.3214 | LR=2.29e-04 | 0.2s
+2026-05-17 04:23:31 | INFO | train |   Ep 140/400 | Loss=1.1688 CE=1.1662 Phys=0.0026 | Val F1=0.2652 Acc=0.3214 | LR=2.18e-04 | 0.1s
+2026-05-17 04:23:32 | INFO | train |   Checkpoint saved (F1=0.2792)
+2026-05-17 04:23:32 | INFO | train |   Checkpoint saved (F1=0.2833)
+2026-05-17 04:23:33 | INFO | train |   Ep 150/400 | Loss=1.1994 CE=1.1967 Phys=0.0027 | Val F1=0.2186 Acc=0.2857 | LR=2.08e-04 | 0.1s
+2026-05-17 04:23:34 | INFO | train |   Ep 160/400 | Loss=1.4237 CE=1.4208 Phys=0.0029 | Val F1=0.1921 Acc=0.2500 | LR=1.97e-04 | 0.1s
+2026-05-17 04:23:36 | INFO | train |   Ep 170/400 | Loss=1.1472 CE=1.1440 Phys=0.0032 | Val F1=0.2145 Acc=0.2857 | LR=1.85e-04 | 0.1s
+2026-05-17 04:23:37 | INFO | train |   Ep 180/400 | Loss=1.1044 CE=1.1016 Phys=0.0028 | Val F1=0.2169 Acc=0.2679 | LR=1.74e-04 | 0.1s
+2026-05-17 04:23:39 | INFO | train |   Ep 190/400 | Loss=1.1242 CE=1.1215 Phys=0.0026 | Val F1=0.2327 Acc=0.3036 | LR=1.62e-04 | 0.2s
+2026-05-17 04:23:40 | INFO | train |   Ep 200/400 | Loss=1.1618 CE=1.1589 Phys=0.0029 | Val F1=0.2243 Acc=0.3214 | LR=1.51e-04 | 0.1s
+2026-05-17 04:23:42 | INFO | train |   Ep 210/400 | Loss=1.6962 CE=1.6934 Phys=0.0028 | Val F1=0.2291 Acc=0.3036 | LR=1.39e-04 | 0.2s
+2026-05-17 04:23:43 | INFO | train |   Ep 220/400 | Loss=1.1551 CE=1.1523 Phys=0.0028 | Val F1=0.2576 Acc=0.3214 | LR=1.27e-04 | 0.1s
+2026-05-17 04:23:45 | INFO | train |   Ep 230/400 | Loss=1.1132 CE=1.1105 Phys=0.0027 | Val F1=0.2023 Acc=0.3036 | LR=1.16e-04 | 0.1s
+2026-05-17 04:23:46 | INFO | train |   Ep 240/400 | Loss=1.0894 CE=1.0867 Phys=0.0028 | Val F1=0.2204 Acc=0.3214 | LR=1.04e-04 | 0.2s
+2026-05-17 04:23:47 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:23:47 | INFO | train |   Fold 5 results:
+2026-05-17 04:23:47 | INFO | train |     accuracy           = 0.3571
+2026-05-17 04:23:47 | INFO | train |     precision          = 0.2976
+2026-05-17 04:23:47 | INFO | train |     recall             = 0.2986
+2026-05-17 04:23:47 | INFO | train |     f1                 = 0.2833
+2026-05-17 04:23:47 | INFO | train |     kappa              = 0.2022
+2026-05-17 04:23:47 | INFO | train |     brier              = 0.8045
+2026-05-17 04:23:47 | INFO | train |     ece                = 0.1564
+2026-05-17 04:23:47 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:23:47 | INFO | train | 
+== Cross-validation summary ==
+2026-05-17 04:23:47 | INFO | train |   accuracy    : 0.4398 ± 0.0668
+2026-05-17 04:23:47 | INFO | train |   f1          : 0.3671 ± 0.0805
+2026-05-17 04:23:47 | INFO | train |   precision   : 0.4329 ± 0.1141
+2026-05-17 04:23:47 | INFO | train |   recall      : 0.3899 ± 0.0900
+2026-05-17 04:23:47 | INFO | train |   kappa       : 0.3056 ± 0.0779
+2026-05-17 04:23:47 | INFO | train |   brier       : 0.7618 ± 0.0464
+2026-05-17 04:23:47 | INFO | train |   ece         : 0.1712 ± 0.0629
+2026-05-17 04:23:47 | INFO | train | 
+  Targets (Table 3.23): NOT MET
+2026-05-17 04:23:47 | INFO | train | 
+== Final training on train set only ==
+2026-05-17 04:23:47 | INFO | train | == Fold 99 — training start ==
+2026-05-17 04:23:47 | INFO | train |   Ep 001/400 | Loss=1.7493 CE=1.7456 Phys=0.0037 | Val F1=0.1414 Acc=0.1800 | LR=3.00e-04 | 0.2s
+2026-05-17 04:23:47 | INFO | train |   Checkpoint saved (F1=0.1414)
+2026-05-17 04:23:47 | INFO | train |   Checkpoint saved (F1=0.2285)
+2026-05-17 04:23:49 | INFO | train |   Ep 010/400 | Loss=1.4366 CE=1.4338 Phys=0.0029 | Val F1=0.2477 Acc=0.3200 | LR=3.00e-04 | 0.1s
+2026-05-17 04:23:49 | INFO | train |   Checkpoint saved (F1=0.2477)
+2026-05-17 04:23:49 | INFO | train |   Checkpoint saved (F1=0.2832)
+2026-05-17 04:23:49 | INFO | train |   Checkpoint saved (F1=0.2882)
+2026-05-17 04:23:50 | INFO | train |   Ep 020/400 | Loss=1.2626 CE=1.2599 Phys=0.0027 | Val F1=0.1850 Acc=0.2800 | LR=2.98e-04 | 0.1s
+2026-05-17 04:23:52 | INFO | train |   Ep 030/400 | Loss=1.2476 CE=1.2452 Phys=0.0025 | Val F1=0.1965 Acc=0.3000 | LR=2.96e-04 | 0.2s
+2026-05-17 04:23:53 | INFO | train |   Checkpoint saved (F1=0.3064)
+2026-05-17 04:23:53 | INFO | train |   Ep 040/400 | Loss=1.3551 CE=1.3523 Phys=0.0028 | Val F1=0.3027 Acc=0.3800 | LR=2.93e-04 | 0.1s
+2026-05-17 04:23:55 | INFO | train |   Ep 050/400 | Loss=1.3015 CE=1.2987 Phys=0.0028 | Val F1=0.2570 Acc=0.3400 | LR=2.89e-04 | 0.1s
+2026-05-17 04:23:55 | INFO | train |   Checkpoint saved (F1=0.3233)
+2026-05-17 04:23:56 | INFO | train |   Checkpoint saved (F1=0.3246)
+2026-05-17 04:23:56 | INFO | train |   Ep 060/400 | Loss=1.1417 CE=1.1387 Phys=0.0030 | Val F1=0.2579 Acc=0.3400 | LR=2.84e-04 | 0.2s
+2026-05-17 04:23:58 | INFO | train |   Ep 070/400 | Loss=1.2076 CE=1.2047 Phys=0.0029 | Val F1=0.2508 Acc=0.3200 | LR=2.78e-04 | 0.2s
+2026-05-17 04:23:59 | INFO | train |   Checkpoint saved (F1=0.3260)
+2026-05-17 04:24:00 | INFO | train |   Ep 080/400 | Loss=1.1427 CE=1.1398 Phys=0.0029 | Val F1=0.3506 Acc=0.4400 | LR=2.71e-04 | 0.2s
+2026-05-17 04:24:00 | INFO | train |   Checkpoint saved (F1=0.3506)
+2026-05-17 04:24:01 | INFO | train |   Ep 090/400 | Loss=1.1782 CE=1.1754 Phys=0.0029 | Val F1=0.2010 Acc=0.2800 | LR=2.64e-04 | 0.1s
+2026-05-17 04:24:02 | INFO | train |   Ep 100/400 | Loss=1.1665 CE=1.1638 Phys=0.0026 | Val F1=0.2476 Acc=0.3200 | LR=2.56e-04 | 0.2s
+2026-05-17 04:24:04 | INFO | train |   Ep 110/400 | Loss=1.1691 CE=1.1665 Phys=0.0026 | Val F1=0.3407 Acc=0.4200 | LR=2.48e-04 | 0.1s
+2026-05-17 04:24:05 | INFO | train |   Ep 120/400 | Loss=1.1811 CE=1.1784 Phys=0.0027 | Val F1=0.2452 Acc=0.3200 | LR=2.38e-04 | 0.2s
+2026-05-17 04:24:06 | INFO | train |   Checkpoint saved (F1=0.3520)
+2026-05-17 04:24:06 | INFO | train |   Checkpoint saved (F1=0.3843)
+2026-05-17 04:24:07 | INFO | train |   Ep 130/400 | Loss=1.1703 CE=1.1675 Phys=0.0029 | Val F1=0.2697 Acc=0.3600 | LR=2.29e-04 | 0.2s
+2026-05-17 04:24:08 | INFO | train |   Ep 140/400 | Loss=1.2178 CE=1.2149 Phys=0.0029 | Val F1=0.3079 Acc=0.3800 | LR=2.18e-04 | 0.1s
+2026-05-17 04:24:10 | INFO | train |   Ep 150/400 | Loss=1.1387 CE=1.1360 Phys=0.0027 | Val F1=0.3431 Acc=0.4400 | LR=2.08e-04 | 0.2s
+2026-05-17 04:24:11 | INFO | train |   Ep 160/400 | Loss=1.0617 CE=1.0588 Phys=0.0029 | Val F1=0.3615 Acc=0.4600 | LR=1.97e-04 | 0.2s
+2026-05-17 04:24:13 | INFO | train |   Ep 170/400 | Loss=1.0680 CE=1.0654 Phys=0.0027 | Val F1=0.3506 Acc=0.4400 | LR=1.85e-04 | 0.1s
+2026-05-17 04:24:14 | INFO | train |   Ep 180/400 | Loss=1.0507 CE=1.0481 Phys=0.0026 | Val F1=0.3555 Acc=0.4400 | LR=1.74e-04 | 0.2s
+2026-05-17 04:24:16 | INFO | train |   Ep 190/400 | Loss=1.1308 CE=1.1281 Phys=0.0027 | Val F1=0.3432 Acc=0.4000 | LR=1.62e-04 | 0.2s
+2026-05-17 04:24:17 | INFO | train |   Ep 200/400 | Loss=1.0531 CE=1.0503 Phys=0.0028 | Val F1=0.3669 Acc=0.4600 | LR=1.51e-04 | 0.1s
+2026-05-17 04:24:19 | INFO | train |   Ep 210/400 | Loss=1.0697 CE=1.0670 Phys=0.0027 | Val F1=0.3504 Acc=0.4400 | LR=1.39e-04 | 0.1s
+2026-05-17 04:24:20 | INFO | train |   Ep 220/400 | Loss=1.1861 CE=1.1834 Phys=0.0028 | Val F1=0.3511 Acc=0.4200 | LR=1.27e-04 | 0.2s
+2026-05-17 04:24:21 | INFO | train |   Checkpoint saved (F1=0.3905)
+2026-05-17 04:24:22 | INFO | train |   Ep 230/400 | Loss=1.2175 CE=1.2147 Phys=0.0028 | Val F1=0.3532 Acc=0.4400 | LR=1.16e-04 | 0.1s
+2026-05-17 04:24:23 | INFO | train |   Ep 240/400 | Loss=1.0160 CE=1.0131 Phys=0.0028 | Val F1=0.3643 Acc=0.4600 | LR=1.04e-04 | 0.2s
+2026-05-17 04:24:25 | INFO | train |   Ep 250/400 | Loss=1.0577 CE=1.0551 Phys=0.0027 | Val F1=0.3489 Acc=0.4400 | LR=9.33e-05 | 0.2s
+2026-05-17 04:24:27 | INFO | train |   Ep 260/400 | Loss=1.0344 CE=1.0316 Phys=0.0028 | Val F1=0.3669 Acc=0.4600 | LR=8.26e-05 | 0.2s
+2026-05-17 04:24:28 | INFO | train |   Ep 270/400 | Loss=1.1487 CE=1.1458 Phys=0.0029 | Val F1=0.3396 Acc=0.4200 | LR=7.24e-05 | 0.2s
+2026-05-17 04:24:30 | INFO | train |   Ep 280/400 | Loss=1.0076 CE=1.0050 Phys=0.0026 | Val F1=0.3309 Acc=0.4000 | LR=6.26e-05 | 0.1s
+2026-05-17 04:24:31 | INFO | train |   Ep 290/400 | Loss=1.1167 CE=1.1139 Phys=0.0028 | Val F1=0.3265 Acc=0.4000 | LR=5.34e-05 | 0.2s
+2026-05-17 04:24:33 | INFO | train |   Ep 300/400 | Loss=1.0985 CE=1.0957 Phys=0.0028 | Val F1=0.3431 Acc=0.4200 | LR=4.48e-05 | 0.1s
+2026-05-17 04:24:34 | INFO | train |   Ep 310/400 | Loss=1.0921 CE=1.0894 Phys=0.0026 | Val F1=0.3475 Acc=0.4200 | LR=3.68e-05 | 0.1s
+2026-05-17 04:24:36 | INFO | train |   Ep 320/400 | Loss=1.1318 CE=1.1290 Phys=0.0028 | Val F1=0.3265 Acc=0.4000 | LR=2.96e-05 | 0.1s
+2026-05-17 04:24:36 | INFO | train |   Early stopping triggered (patience=100)
+2026-05-17 04:24:36 | INFO | train | Temperature scaling: T=0.6556
+2026-05-17 04:24:37 | INFO | train | 
+== Test set metrics — final model (MC Dropout) ==
+2026-05-17 04:24:37 | INFO | train |   accuracy             = 0.4706 ✗
+2026-05-17 04:24:37 | INFO | train |   precision            = 0.2991 ✗
+2026-05-17 04:24:37 | INFO | train |   recall               = 0.4157 ✗
+2026-05-17 04:24:37 | INFO | train |   f1                   = 0.3389 ✗
+2026-05-17 04:24:37 | INFO | train |   kappa                = 0.3477 ✗
+2026-05-17 04:24:37 | INFO | train |   brier                = 0.6867 ✗
+2026-05-17 04:24:37 | INFO | train |   ece                  = 0.1321 ✗
+2026-05-17 04:24:37 | INFO | train |   mean_uncertainty     = 0.0270
+2026-05-17 04:24:39 | INFO | train | 
+== Test set metrics — KFold Ensemble + Temperature Scaling ==
+2026-05-17 04:24:39 | INFO | train |   accuracy             = 0.4314 ✗
+2026-05-17 04:24:39 | INFO | train |   precision            = 0.2726 ✗
+2026-05-17 04:24:39 | INFO | train |   recall               = 0.3820 ✗
+2026-05-17 04:24:39 | INFO | train |   f1                   = 0.3078 ✗
+2026-05-17 04:24:39 | INFO | train |   kappa                = 0.2960 ✗
+2026-05-17 04:24:39 | INFO | train |   brier                = 0.7065 ✗
+2026-05-17 04:24:39 | INFO | train |   ece                  = 0.1382 ✗
+2026-05-17 04:24:39 | INFO | train |   mean_uncertainty     = 0.0000
+2026-05-17 04:24:40 | INFO | train | Inference complete — 51 samples — Acc=0.4510
+2026-05-17 04:24:40 | INFO | train | 
+JSON report: /Users/krohn/PycharmProjects/pignn_uq/outputs/pignn_uq_report.json
+2026-05-17 04:39:32 | INFO | train | ===============================================
+2026-05-17 04:39:32 | INFO | train |   PIGNN-UQ — Full pipeline
+2026-05-17 04:39:32 | INFO | train | ===============================================
+2026-05-17 04:39:33 | INFO | train | Device: cpu
+2026-05-17 04:39:33 | INFO | train | 
+============================================================
+2026-05-17 04:39:33 | INFO | train | FOLD 1/10  train=255  val=29
+2026-05-17 04:39:33 | INFO | train | == Fold 0 — training start ==
+2026-05-17 04:39:34 | INFO | train |   Ep 001/500 | Loss=2.0639 CE=2.0639 Phys=0.0000 | Val F1=0.0111 Acc=0.0345 | LR=3.00e-04 | 0.3s
+2026-05-17 04:39:34 | INFO | train |   Checkpoint saved (F1=0.0111)
+2026-05-17 04:39:34 | INFO | train |   Checkpoint saved (F1=0.2407)
+2026-05-17 04:39:34 | INFO | train |   Checkpoint saved (F1=0.2708)
+2026-05-17 04:39:35 | INFO | train |   Checkpoint saved (F1=0.3079)
+2026-05-17 04:39:35 | INFO | train |   Ep 010/500 | Loss=1.7462 CE=1.7462 Phys=0.0000 | Val F1=0.3211 Acc=0.3448 | LR=2.93e-04 | 0.1s
+2026-05-17 04:39:35 | INFO | train |   Checkpoint saved (F1=0.3211)
+2026-05-17 04:39:36 | INFO | train |   Checkpoint saved (F1=0.3223)
+2026-05-17 04:39:36 | INFO | train |   Ep 020/500 | Loss=1.6389 CE=1.6389 Phys=0.0000 | Val F1=0.1976 Acc=0.2759 | LR=2.71e-04 | 0.1s
+2026-05-17 04:39:38 | INFO | train |   Ep 030/500 | Loss=1.6415 CE=1.6415 Phys=0.0000 | Val F1=0.2414 Acc=0.3103 | LR=2.38e-04 | 0.1s
+2026-05-17 04:39:39 | INFO | train |   Ep 040/500 | Loss=1.5595 CE=1.5595 Phys=0.0000 | Val F1=0.2875 Acc=0.3793 | LR=1.97e-04 | 0.1s
+2026-05-17 04:39:40 | INFO | train |   Ep 050/500 | Loss=1.4737 CE=1.4737 Phys=0.0000 | Val F1=0.2407 Acc=0.3448 | LR=1.50e-04 | 0.1s
+2026-05-17 04:39:42 | INFO | train |   Ep 060/500 | Loss=1.6009 CE=1.6009 Phys=0.0000 | Val F1=0.2497 Acc=0.3448 | LR=1.04e-04 | 0.1s
+2026-05-17 04:39:43 | INFO | train |   Ep 070/500 | Loss=1.5626 CE=1.5626 Phys=0.0000 | Val F1=0.2497 Acc=0.3448 | LR=6.26e-05 | 0.1s
+2026-05-17 04:39:44 | INFO | train |   Ep 080/500 | Loss=1.5288 CE=1.5288 Phys=0.0000 | Val F1=0.2497 Acc=0.3448 | LR=2.96e-05 | 0.1s
+2026-05-17 04:39:45 | INFO | train |   Ep 090/500 | Loss=1.5576 CE=1.5576 Phys=0.0000 | Val F1=0.2449 Acc=0.3448 | LR=8.32e-06 | 0.1s
+2026-05-17 04:39:47 | INFO | train |   Ep 100/500 | Loss=1.4495 CE=1.4495 Phys=0.0000 | Val F1=0.2497 Acc=0.3448 | LR=3.00e-04 | 0.1s
+2026-05-17 04:39:48 | INFO | train |   Ep 110/500 | Loss=1.5141 CE=1.5141 Phys=0.0000 | Val F1=0.2338 Acc=0.3103 | LR=2.93e-04 | 0.1s
+2026-05-17 04:39:49 | INFO | train |   Ep 120/500 | Loss=1.5234 CE=1.5234 Phys=0.0000 | Val F1=0.2449 Acc=0.3448 | LR=2.71e-04 | 0.1s
+2026-05-17 04:39:50 | INFO | train |   Ep 130/500 | Loss=1.4433 CE=1.4433 Phys=0.0000 | Val F1=0.2506 Acc=0.3448 | LR=2.38e-04 | 0.1s
+2026-05-17 04:39:52 | INFO | train |   Ep 140/500 | Loss=1.5586 CE=1.5586 Phys=0.0000 | Val F1=0.3208 Acc=0.4138 | LR=1.97e-04 | 0.1s
+2026-05-17 04:39:52 | INFO | train |   Checkpoint saved (F1=0.3286)
+2026-05-17 04:39:52 | INFO | train |   Checkpoint saved (F1=0.3512)
+2026-05-17 04:39:52 | INFO | train |   Checkpoint saved (F1=0.3677)
+2026-05-17 04:39:53 | INFO | train |   Ep 150/500 | Loss=1.5280 CE=1.5280 Phys=0.0000 | Val F1=0.3651 Acc=0.4483 | LR=1.50e-04 | 0.1s
+2026-05-17 04:39:54 | INFO | train |   Ep 160/500 | Loss=1.4037 CE=1.4037 Phys=0.0000 | Val F1=0.3319 Acc=0.4138 | LR=1.04e-04 | 0.1s
+2026-05-17 04:39:56 | INFO | train |   Ep 170/500 | Loss=1.4123 CE=1.4123 Phys=0.0000 | Val F1=0.2740 Acc=0.3448 | LR=6.26e-05 | 0.1s
+2026-05-17 04:39:57 | INFO | train |   Ep 180/500 | Loss=1.3776 CE=1.3776 Phys=0.0000 | Val F1=0.2328 Acc=0.3103 | LR=2.96e-05 | 0.1s
+2026-05-17 04:39:58 | INFO | train |   Ep 190/500 | Loss=1.3621 CE=1.3621 Phys=0.0000 | Val F1=0.2703 Acc=0.3448 | LR=8.32e-06 | 0.1s
+2026-05-17 04:39:59 | INFO | train |   Ep 200/500 | Loss=1.3617 CE=1.3617 Phys=0.0000 | Val F1=0.2697 Acc=0.3448 | LR=3.00e-04 | 0.1s
+2026-05-17 04:40:01 | INFO | train |   Ep 210/500 | Loss=1.3192 CE=1.3192 Phys=0.0000 | Val F1=0.2204 Acc=0.2759 | LR=2.93e-04 | 0.2s
+2026-05-17 04:40:02 | INFO | train |   Ep 220/500 | Loss=1.3534 CE=1.3534 Phys=0.0000 | Val F1=0.2499 Acc=0.3448 | LR=2.71e-04 | 0.2s
+2026-05-17 04:40:04 | INFO | train |   Ep 230/500 | Loss=1.3971 CE=1.3971 Phys=0.0000 | Val F1=0.2801 Acc=0.3793 | LR=2.38e-04 | 0.2s
+2026-05-17 04:40:05 | INFO | train |   Ep 240/500 | Loss=1.4142 CE=1.4142 Phys=0.0000 | Val F1=0.2833 Acc=0.3793 | LR=1.97e-04 | 0.1s
+2026-05-17 04:40:06 | INFO | train |   Ep 250/500 | Loss=1.3866 CE=1.3866 Phys=0.0000 | Val F1=0.2427 Acc=0.3103 | LR=1.50e-04 | 0.1s
+2026-05-17 04:40:08 | INFO | train |   Ep 260/500 | Loss=1.2503 CE=1.2503 Phys=0.0000 | Val F1=0.2877 Acc=0.3793 | LR=1.04e-04 | 0.1s
+2026-05-17 04:40:09 | INFO | train |   Ep 270/500 | Loss=1.2569 CE=1.2569 Phys=0.0000 | Val F1=0.2624 Acc=0.3448 | LR=6.26e-05 | 0.1s
+2026-05-17 04:40:10 | INFO | train |   Ep 280/500 | Loss=1.2519 CE=1.2519 Phys=0.0000 | Val F1=0.2427 Acc=0.3103 | LR=2.96e-05 | 0.2s
+2026-05-17 04:40:12 | INFO | train |   Ep 290/500 | Loss=1.3285 CE=1.3285 Phys=0.0000 | Val F1=0.2427 Acc=0.3103 | LR=8.32e-06 | 0.1s
+2026-05-17 04:40:13 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:40:13 | INFO | train |   Fold 1 results:
+2026-05-17 04:40:13 | INFO | train |     accuracy           = 0.4828
+2026-05-17 04:40:13 | INFO | train |     precision          = 0.3389
+2026-05-17 04:40:13 | INFO | train |     recall             = 0.4431
+2026-05-17 04:40:13 | INFO | train |     f1                 = 0.3677
+2026-05-17 04:40:13 | INFO | train |     kappa              = 0.3631
+2026-05-17 04:40:13 | INFO | train |     brier              = 0.7283
+2026-05-17 04:40:13 | INFO | train |     ece                = 0.1332
+2026-05-17 04:40:13 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:40:13 | INFO | train | 
+============================================================
+2026-05-17 04:40:13 | INFO | train | FOLD 2/10  train=255  val=29
+2026-05-17 04:40:13 | INFO | train | == Fold 1 — training start ==
+2026-05-17 04:40:13 | INFO | train |   Ep 001/500 | Loss=2.1245 CE=2.1245 Phys=0.0000 | Val F1=0.0111 Acc=0.0345 | LR=3.00e-04 | 0.1s
+2026-05-17 04:40:13 | INFO | train |   Checkpoint saved (F1=0.0111)
+2026-05-17 04:40:13 | INFO | train |   Checkpoint saved (F1=0.0123)
+2026-05-17 04:40:13 | INFO | train |   Checkpoint saved (F1=0.1044)
+2026-05-17 04:40:14 | INFO | train |   Checkpoint saved (F1=0.1619)
+2026-05-17 04:40:14 | INFO | train |   Checkpoint saved (F1=0.2086)
+2026-05-17 04:40:14 | INFO | train |   Checkpoint saved (F1=0.3038)
+2026-05-17 04:40:14 | INFO | train |   Checkpoint saved (F1=0.3336)
+2026-05-17 04:40:14 | INFO | train |   Ep 010/500 | Loss=1.7156 CE=1.7156 Phys=0.0000 | Val F1=0.3264 Acc=0.4138 | LR=2.93e-04 | 0.1s
+2026-05-17 04:40:14 | INFO | train |   Checkpoint saved (F1=0.3805)
+2026-05-17 04:40:15 | INFO | train |   Checkpoint saved (F1=0.4890)
+2026-05-17 04:40:15 | INFO | train |   Checkpoint saved (F1=0.4952)
+2026-05-17 04:40:16 | INFO | train |   Checkpoint saved (F1=0.5441)
+2026-05-17 04:40:16 | INFO | train |   Ep 020/500 | Loss=1.6651 CE=1.6651 Phys=0.0000 | Val F1=0.5032 Acc=0.5862 | LR=2.71e-04 | 0.1s
+2026-05-17 04:40:16 | INFO | train |   Checkpoint saved (F1=0.5885)
+2026-05-17 04:40:17 | INFO | train |   Ep 030/500 | Loss=1.6859 CE=1.6859 Phys=0.0000 | Val F1=0.5127 Acc=0.6207 | LR=2.38e-04 | 0.1s
+2026-05-17 04:40:18 | INFO | train |   Checkpoint saved (F1=0.5939)
+2026-05-17 04:40:19 | INFO | train |   Ep 040/500 | Loss=1.5624 CE=1.5624 Phys=0.0000 | Val F1=0.5977 Acc=0.6897 | LR=1.97e-04 | 0.2s
+2026-05-17 04:40:19 | INFO | train |   Checkpoint saved (F1=0.5977)
+2026-05-17 04:40:20 | INFO | train |   Ep 050/500 | Loss=1.5432 CE=1.5432 Phys=0.0000 | Val F1=0.5119 Acc=0.5862 | LR=1.50e-04 | 0.1s
+2026-05-17 04:40:21 | INFO | train |   Ep 060/500 | Loss=1.6200 CE=1.6200 Phys=0.0000 | Val F1=0.5865 Acc=0.6552 | LR=1.04e-04 | 0.1s
+2026-05-17 04:40:22 | INFO | train |   Checkpoint saved (F1=0.5984)
+2026-05-17 04:40:22 | INFO | train |   Ep 070/500 | Loss=1.5464 CE=1.5464 Phys=0.0000 | Val F1=0.5984 Acc=0.6897 | LR=6.26e-05 | 0.1s
+2026-05-17 04:40:23 | INFO | train |   Checkpoint saved (F1=0.6074)
+2026-05-17 04:40:23 | INFO | train |   Ep 080/500 | Loss=1.5707 CE=1.5707 Phys=0.0000 | Val F1=0.6036 Acc=0.6897 | LR=2.96e-05 | 0.1s
+2026-05-17 04:40:25 | INFO | train |   Ep 090/500 | Loss=1.5826 CE=1.5826 Phys=0.0000 | Val F1=0.5903 Acc=0.6552 | LR=8.32e-06 | 0.1s
+2026-05-17 04:40:26 | INFO | train |   Ep 100/500 | Loss=1.4831 CE=1.4831 Phys=0.0000 | Val F1=0.5518 Acc=0.6552 | LR=3.00e-04 | 0.1s
+2026-05-17 04:40:27 | INFO | train |   Ep 110/500 | Loss=1.5867 CE=1.5867 Phys=0.0000 | Val F1=0.4986 Acc=0.5862 | LR=2.93e-04 | 0.1s
+2026-05-17 04:40:28 | INFO | train |   Ep 120/500 | Loss=1.5814 CE=1.5814 Phys=0.0000 | Val F1=0.5786 Acc=0.6552 | LR=2.71e-04 | 0.1s
+2026-05-17 04:40:30 | INFO | train |   Ep 130/500 | Loss=1.4857 CE=1.4857 Phys=0.0000 | Val F1=0.5217 Acc=0.5862 | LR=2.38e-04 | 0.2s
+2026-05-17 04:40:31 | INFO | train |   Ep 140/500 | Loss=1.4856 CE=1.4856 Phys=0.0000 | Val F1=0.4119 Acc=0.4828 | LR=1.97e-04 | 0.1s
+2026-05-17 04:40:33 | INFO | train |   Ep 150/500 | Loss=1.4971 CE=1.4971 Phys=0.0000 | Val F1=0.4658 Acc=0.5172 | LR=1.50e-04 | 0.1s
+2026-05-17 04:40:35 | INFO | train |   Ep 160/500 | Loss=1.5083 CE=1.5083 Phys=0.0000 | Val F1=0.4658 Acc=0.5172 | LR=1.04e-04 | 0.2s
+2026-05-17 04:40:36 | INFO | train |   Ep 170/500 | Loss=1.5134 CE=1.5134 Phys=0.0000 | Val F1=0.4881 Acc=0.5517 | LR=6.26e-05 | 0.2s
+2026-05-17 04:40:38 | INFO | train |   Ep 180/500 | Loss=1.4640 CE=1.4640 Phys=0.0000 | Val F1=0.4834 Acc=0.5517 | LR=2.96e-05 | 0.1s
+2026-05-17 04:40:40 | INFO | train |   Ep 190/500 | Loss=1.4762 CE=1.4762 Phys=0.0000 | Val F1=0.4603 Acc=0.5172 | LR=8.32e-06 | 0.1s
+2026-05-17 04:40:41 | INFO | train |   Ep 200/500 | Loss=1.4823 CE=1.4823 Phys=0.0000 | Val F1=0.4834 Acc=0.5517 | LR=3.00e-04 | 0.4s
+2026-05-17 04:40:43 | INFO | train |   Ep 210/500 | Loss=1.3984 CE=1.3984 Phys=0.0000 | Val F1=0.5297 Acc=0.6207 | LR=2.93e-04 | 0.1s
+2026-05-17 04:40:44 | INFO | train |   Ep 220/500 | Loss=1.4332 CE=1.4332 Phys=0.0000 | Val F1=0.4826 Acc=0.5517 | LR=2.71e-04 | 0.1s
+2026-05-17 04:40:45 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:40:45 | INFO | train |   Fold 2 results:
+2026-05-17 04:40:45 | INFO | train |     accuracy           = 0.6897
+2026-05-17 04:40:45 | INFO | train |     precision          = 0.6399
+2026-05-17 04:40:45 | INFO | train |     recall             = 0.5931
+2026-05-17 04:40:45 | INFO | train |     f1                 = 0.6074
+2026-05-17 04:40:45 | INFO | train |     kappa              = 0.6122
+2026-05-17 04:40:45 | INFO | train |     brier              = 0.6293
+2026-05-17 04:40:45 | INFO | train |     ece                = 0.3844
+2026-05-17 04:40:45 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:40:45 | INFO | train | 
+============================================================
+2026-05-17 04:40:45 | INFO | train | FOLD 3/10  train=255  val=29
+2026-05-17 04:40:45 | INFO | train | == Fold 2 — training start ==
+2026-05-17 04:40:45 | INFO | train |   Ep 001/500 | Loss=2.1044 CE=2.1044 Phys=0.0000 | Val F1=0.0670 Acc=0.0690 | LR=3.00e-04 | 0.1s
+2026-05-17 04:40:45 | INFO | train |   Checkpoint saved (F1=0.0670)
+2026-05-17 04:40:45 | INFO | train |   Checkpoint saved (F1=0.1151)
+2026-05-17 04:40:46 | INFO | train |   Checkpoint saved (F1=0.1619)
+2026-05-17 04:40:46 | INFO | train |   Checkpoint saved (F1=0.1884)
+2026-05-17 04:40:46 | INFO | train |   Checkpoint saved (F1=0.2328)
+2026-05-17 04:40:46 | INFO | train |   Checkpoint saved (F1=0.2979)
+2026-05-17 04:40:46 | INFO | train |   Checkpoint saved (F1=0.3023)
+2026-05-17 04:40:46 | INFO | train |   Ep 010/500 | Loss=1.7168 CE=1.7168 Phys=0.0000 | Val F1=0.3445 Acc=0.4138 | LR=2.93e-04 | 0.1s
+2026-05-17 04:40:46 | INFO | train |   Checkpoint saved (F1=0.3445)
+2026-05-17 04:40:47 | INFO | train |   Checkpoint saved (F1=0.3726)
+2026-05-17 04:40:47 | INFO | train |   Checkpoint saved (F1=0.3975)
+2026-05-17 04:40:48 | INFO | train |   Ep 020/500 | Loss=1.7032 CE=1.7032 Phys=0.0000 | Val F1=0.3504 Acc=0.4828 | LR=2.71e-04 | 0.1s
+2026-05-17 04:40:48 | INFO | train |   Checkpoint saved (F1=0.4266)
+2026-05-17 04:40:49 | INFO | train |   Checkpoint saved (F1=0.4340)
+2026-05-17 04:40:50 | INFO | train |   Ep 030/500 | Loss=1.6972 CE=1.6972 Phys=0.0000 | Val F1=0.2903 Acc=0.3448 | LR=2.38e-04 | 0.2s
+2026-05-17 04:40:51 | INFO | train |   Ep 040/500 | Loss=1.6296 CE=1.6296 Phys=0.0000 | Val F1=0.4102 Acc=0.5517 | LR=1.97e-04 | 0.2s
+2026-05-17 04:40:52 | INFO | train |   Checkpoint saved (F1=0.4508)
+2026-05-17 04:40:53 | INFO | train |   Ep 050/500 | Loss=1.6296 CE=1.6296 Phys=0.0000 | Val F1=0.3873 Acc=0.5172 | LR=1.50e-04 | 0.1s
+2026-05-17 04:40:54 | INFO | train |   Ep 060/500 | Loss=1.6582 CE=1.6582 Phys=0.0000 | Val F1=0.3921 Acc=0.5172 | LR=1.04e-04 | 0.1s
+2026-05-17 04:40:56 | INFO | train |   Ep 070/500 | Loss=1.6045 CE=1.6045 Phys=0.0000 | Val F1=0.3754 Acc=0.4828 | LR=6.26e-05 | 0.2s
+2026-05-17 04:40:57 | INFO | train |   Checkpoint saved (F1=0.4667)
+2026-05-17 04:40:57 | INFO | train |   Ep 080/500 | Loss=1.5551 CE=1.5551 Phys=0.0000 | Val F1=0.4330 Acc=0.5517 | LR=2.96e-05 | 0.2s
+2026-05-17 04:40:59 | INFO | train |   Ep 090/500 | Loss=1.5736 CE=1.5736 Phys=0.0000 | Val F1=0.4330 Acc=0.5517 | LR=8.32e-06 | 0.1s
+2026-05-17 04:41:00 | INFO | train |   Ep 100/500 | Loss=1.6304 CE=1.6304 Phys=0.0000 | Val F1=0.4144 Acc=0.5517 | LR=3.00e-04 | 0.1s
+2026-05-17 04:41:02 | INFO | train |   Ep 110/500 | Loss=1.5666 CE=1.5666 Phys=0.0000 | Val F1=0.4592 Acc=0.5862 | LR=2.93e-04 | 0.1s
+2026-05-17 04:41:02 | INFO | train |   Checkpoint saved (F1=0.4786)
+2026-05-17 04:41:02 | INFO | train |   Checkpoint saved (F1=0.5290)
+2026-05-17 04:41:03 | INFO | train |   Checkpoint saved (F1=0.5345)
+2026-05-17 04:41:03 | INFO | train |   Ep 120/500 | Loss=1.5969 CE=1.5969 Phys=0.0000 | Val F1=0.4671 Acc=0.6207 | LR=2.71e-04 | 0.2s
+2026-05-17 04:41:05 | INFO | train |   Ep 130/500 | Loss=1.5719 CE=1.5719 Phys=0.0000 | Val F1=0.4534 Acc=0.5862 | LR=2.38e-04 | 0.2s
+2026-05-17 04:41:06 | INFO | train |   Ep 140/500 | Loss=1.5158 CE=1.5158 Phys=0.0000 | Val F1=0.3957 Acc=0.4828 | LR=1.97e-04 | 0.1s
+2026-05-17 04:41:08 | INFO | train |   Ep 150/500 | Loss=1.5174 CE=1.5174 Phys=0.0000 | Val F1=0.4980 Acc=0.5862 | LR=1.50e-04 | 0.2s
+2026-05-17 04:41:10 | INFO | train |   Ep 160/500 | Loss=1.5506 CE=1.5506 Phys=0.0000 | Val F1=0.3990 Acc=0.4828 | LR=1.04e-04 | 0.2s
+2026-05-17 04:41:12 | INFO | train |   Ep 170/500 | Loss=1.4785 CE=1.4785 Phys=0.0000 | Val F1=0.4293 Acc=0.5172 | LR=6.26e-05 | 0.2s
+2026-05-17 04:41:14 | INFO | train |   Ep 180/500 | Loss=1.4436 CE=1.4436 Phys=0.0000 | Val F1=0.4797 Acc=0.5517 | LR=2.96e-05 | 0.2s
+2026-05-17 04:41:15 | INFO | train |   Ep 190/500 | Loss=1.5024 CE=1.5024 Phys=0.0000 | Val F1=0.4289 Acc=0.5172 | LR=8.32e-06 | 0.2s
+2026-05-17 04:41:17 | INFO | train |   Ep 200/500 | Loss=1.4431 CE=1.4431 Phys=0.0000 | Val F1=0.4289 Acc=0.5172 | LR=3.00e-04 | 0.2s
+2026-05-17 04:41:19 | INFO | train |   Ep 210/500 | Loss=1.3836 CE=1.3836 Phys=0.0000 | Val F1=0.3955 Acc=0.5172 | LR=2.93e-04 | 0.2s
+2026-05-17 04:41:21 | INFO | train |   Ep 220/500 | Loss=1.4238 CE=1.4238 Phys=0.0000 | Val F1=0.4759 Acc=0.5517 | LR=2.71e-04 | 0.1s
+2026-05-17 04:41:22 | INFO | train |   Ep 230/500 | Loss=1.4979 CE=1.4979 Phys=0.0000 | Val F1=0.4615 Acc=0.5517 | LR=2.38e-04 | 0.1s
+2026-05-17 04:41:24 | INFO | train |   Ep 240/500 | Loss=1.4774 CE=1.4774 Phys=0.0000 | Val F1=0.4417 Acc=0.5172 | LR=1.97e-04 | 0.1s
+2026-05-17 04:41:25 | INFO | train |   Ep 250/500 | Loss=1.5503 CE=1.5503 Phys=0.0000 | Val F1=0.4370 Acc=0.5172 | LR=1.50e-04 | 0.1s
+2026-05-17 04:41:27 | INFO | train |   Ep 260/500 | Loss=1.3618 CE=1.3618 Phys=0.0000 | Val F1=0.4243 Acc=0.4828 | LR=1.04e-04 | 0.2s
+2026-05-17 04:41:28 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:41:28 | INFO | train |   Fold 3 results:
+2026-05-17 04:41:28 | INFO | train |     accuracy           = 0.6552
+2026-05-17 04:41:28 | INFO | train |     precision          = 0.5856
+2026-05-17 04:41:28 | INFO | train |     recall             = 0.5319
+2026-05-17 04:41:28 | INFO | train |     f1                 = 0.5345
+2026-05-17 04:41:28 | INFO | train |     kappa              = 0.5639
+2026-05-17 04:41:28 | INFO | train |     brier              = 0.6512
+2026-05-17 04:41:28 | INFO | train |     ece                = 0.3441
+2026-05-17 04:41:28 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:41:28 | INFO | train | 
+============================================================
+2026-05-17 04:41:28 | INFO | train | FOLD 4/10  train=255  val=29
+2026-05-17 04:41:28 | INFO | train | == Fold 3 — training start ==
+2026-05-17 04:41:29 | INFO | train |   Ep 001/500 | Loss=2.1397 CE=2.1397 Phys=0.0000 | Val F1=0.0111 Acc=0.0345 | LR=3.00e-04 | 0.2s
+2026-05-17 04:41:29 | INFO | train |   Checkpoint saved (F1=0.0111)
+2026-05-17 04:41:29 | INFO | train |   Checkpoint saved (F1=0.0679)
+2026-05-17 04:41:29 | INFO | train |   Checkpoint saved (F1=0.0684)
+2026-05-17 04:41:29 | INFO | train |   Checkpoint saved (F1=0.1726)
+2026-05-17 04:41:30 | INFO | train |   Checkpoint saved (F1=0.1825)
+2026-05-17 04:41:30 | INFO | train |   Checkpoint saved (F1=0.2000)
+2026-05-17 04:41:30 | INFO | train |   Ep 010/500 | Loss=1.7406 CE=1.7406 Phys=0.0000 | Val F1=0.2025 Acc=0.2414 | LR=2.93e-04 | 0.1s
+2026-05-17 04:41:30 | INFO | train |   Checkpoint saved (F1=0.2025)
+2026-05-17 04:41:30 | INFO | train |   Checkpoint saved (F1=0.2241)
+2026-05-17 04:41:30 | INFO | train |   Checkpoint saved (F1=0.2609)
+2026-05-17 04:41:31 | INFO | train |   Checkpoint saved (F1=0.3013)
+2026-05-17 04:41:31 | INFO | train |   Checkpoint saved (F1=0.3081)
+2026-05-17 04:41:31 | INFO | train |   Checkpoint saved (F1=0.3354)
+2026-05-17 04:41:31 | INFO | train |   Ep 020/500 | Loss=1.6636 CE=1.6636 Phys=0.0000 | Val F1=0.2804 Acc=0.3103 | LR=2.71e-04 | 0.1s
+2026-05-17 04:41:32 | INFO | train |   Checkpoint saved (F1=0.3613)
+2026-05-17 04:41:32 | INFO | train |   Checkpoint saved (F1=0.3780)
+2026-05-17 04:41:32 | INFO | train |   Checkpoint saved (F1=0.4083)
+2026-05-17 04:41:33 | INFO | train |   Ep 030/500 | Loss=1.6179 CE=1.6179 Phys=0.0000 | Val F1=0.3483 Acc=0.4138 | LR=2.38e-04 | 0.1s
+2026-05-17 04:41:33 | INFO | train |   Checkpoint saved (F1=0.4097)
+2026-05-17 04:41:34 | INFO | train |   Ep 040/500 | Loss=1.5971 CE=1.5971 Phys=0.0000 | Val F1=0.3868 Acc=0.4483 | LR=1.97e-04 | 0.1s
+2026-05-17 04:41:34 | INFO | train |   Checkpoint saved (F1=0.4175)
+2026-05-17 04:41:35 | INFO | train |   Ep 050/500 | Loss=1.5571 CE=1.5571 Phys=0.0000 | Val F1=0.3021 Acc=0.3103 | LR=1.50e-04 | 0.1s
+2026-05-17 04:41:36 | INFO | train |   Ep 060/500 | Loss=1.5437 CE=1.5437 Phys=0.0000 | Val F1=0.4054 Acc=0.4828 | LR=1.04e-04 | 0.1s
+2026-05-17 04:41:37 | INFO | train |   Checkpoint saved (F1=0.4195)
+2026-05-17 04:41:38 | INFO | train |   Ep 070/500 | Loss=1.5716 CE=1.5716 Phys=0.0000 | Val F1=0.3978 Acc=0.4483 | LR=6.26e-05 | 0.1s
+2026-05-17 04:41:38 | INFO | train |   Checkpoint saved (F1=0.4341)
+2026-05-17 04:41:40 | INFO | train |   Ep 080/500 | Loss=1.5180 CE=1.5180 Phys=0.0000 | Val F1=0.4054 Acc=0.4828 | LR=2.96e-05 | 0.1s
+2026-05-17 04:41:41 | INFO | train |   Ep 090/500 | Loss=1.5541 CE=1.5541 Phys=0.0000 | Val F1=0.3902 Acc=0.4483 | LR=8.32e-06 | 0.1s
+2026-05-17 04:41:42 | INFO | train |   Ep 100/500 | Loss=1.4644 CE=1.4644 Phys=0.0000 | Val F1=0.3727 Acc=0.4138 | LR=3.00e-04 | 0.1s
+2026-05-17 04:41:44 | INFO | train |   Ep 110/500 | Loss=1.5499 CE=1.5499 Phys=0.0000 | Val F1=0.3249 Acc=0.3448 | LR=2.93e-04 | 0.1s
+2026-05-17 04:41:45 | INFO | train |   Ep 120/500 | Loss=1.5561 CE=1.5561 Phys=0.0000 | Val F1=0.2997 Acc=0.3103 | LR=2.71e-04 | 0.1s
+2026-05-17 04:41:46 | INFO | train |   Ep 130/500 | Loss=1.5476 CE=1.5476 Phys=0.0000 | Val F1=0.3691 Acc=0.3793 | LR=2.38e-04 | 0.2s
+2026-05-17 04:41:49 | INFO | train |   Ep 140/500 | Loss=1.4158 CE=1.4158 Phys=0.0000 | Val F1=0.3846 Acc=0.3793 | LR=1.97e-04 | 0.3s
+2026-05-17 04:41:51 | INFO | train |   Checkpoint saved (F1=0.4485)
+2026-05-17 04:41:54 | INFO | train |   Ep 150/500 | Loss=1.4851 CE=1.4851 Phys=0.0000 | Val F1=0.3468 Acc=0.3793 | LR=1.50e-04 | 0.2s
+2026-05-17 04:41:56 | INFO | train |   Ep 160/500 | Loss=1.4592 CE=1.4592 Phys=0.0000 | Val F1=0.3543 Acc=0.3793 | LR=1.04e-04 | 0.1s
+2026-05-17 04:41:59 | INFO | train |   Ep 170/500 | Loss=1.4013 CE=1.4013 Phys=0.0000 | Val F1=0.3214 Acc=0.3448 | LR=6.26e-05 | 0.5s
+2026-05-17 04:42:01 | INFO | train |   Ep 180/500 | Loss=1.4097 CE=1.4097 Phys=0.0000 | Val F1=0.3192 Acc=0.3448 | LR=2.96e-05 | 0.2s
+2026-05-17 04:42:03 | INFO | train |   Ep 190/500 | Loss=1.4610 CE=1.4610 Phys=0.0000 | Val F1=0.3192 Acc=0.3448 | LR=8.32e-06 | 0.2s
+2026-05-17 04:42:04 | INFO | train |   Ep 200/500 | Loss=1.3505 CE=1.3505 Phys=0.0000 | Val F1=0.3468 Acc=0.3793 | LR=3.00e-04 | 0.2s
+2026-05-17 04:42:06 | INFO | train |   Ep 210/500 | Loss=1.3159 CE=1.3159 Phys=0.0000 | Val F1=0.4131 Acc=0.4138 | LR=2.93e-04 | 0.2s
+2026-05-17 04:42:07 | INFO | train |   Ep 220/500 | Loss=1.3735 CE=1.3735 Phys=0.0000 | Val F1=0.3854 Acc=0.4138 | LR=2.71e-04 | 0.2s
+2026-05-17 04:42:09 | INFO | train |   Ep 230/500 | Loss=1.4152 CE=1.4152 Phys=0.0000 | Val F1=0.3923 Acc=0.4138 | LR=2.38e-04 | 0.1s
+2026-05-17 04:42:11 | INFO | train |   Ep 240/500 | Loss=1.4008 CE=1.4008 Phys=0.0000 | Val F1=0.3520 Acc=0.3793 | LR=1.97e-04 | 0.2s
+2026-05-17 04:42:12 | INFO | train |   Ep 250/500 | Loss=1.5164 CE=1.5164 Phys=0.0000 | Val F1=0.3594 Acc=0.3793 | LR=1.50e-04 | 0.2s
+2026-05-17 04:42:14 | INFO | train |   Ep 260/500 | Loss=1.2021 CE=1.2021 Phys=0.0000 | Val F1=0.3828 Acc=0.4138 | LR=1.04e-04 | 0.1s
+2026-05-17 04:42:15 | INFO | train |   Ep 270/500 | Loss=1.3086 CE=1.3086 Phys=0.0000 | Val F1=0.3763 Acc=0.4138 | LR=6.26e-05 | 0.1s
+2026-05-17 04:42:16 | INFO | train |   Ep 280/500 | Loss=1.2361 CE=1.2361 Phys=0.0000 | Val F1=0.3763 Acc=0.4138 | LR=2.96e-05 | 0.1s
+2026-05-17 04:42:18 | INFO | train |   Ep 290/500 | Loss=1.2742 CE=1.2742 Phys=0.0000 | Val F1=0.3789 Acc=0.4138 | LR=8.32e-06 | 0.1s
+2026-05-17 04:42:18 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:42:18 | INFO | train |   Fold 4 results:
+2026-05-17 04:42:18 | INFO | train |     accuracy           = 0.4483
+2026-05-17 04:42:18 | INFO | train |     precision          = 0.5028
+2026-05-17 04:42:18 | INFO | train |     recall             = 0.5583
+2026-05-17 04:42:18 | INFO | train |     f1                 = 0.4485
+2026-05-17 04:42:18 | INFO | train |     kappa              = 0.3501
+2026-05-17 04:42:18 | INFO | train |     brier              = 0.7211
+2026-05-17 04:42:18 | INFO | train |     ece                = 0.1096
+2026-05-17 04:42:18 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:42:18 | INFO | train | 
+============================================================
+2026-05-17 04:42:18 | INFO | train | FOLD 5/10  train=256  val=28
+2026-05-17 04:42:18 | INFO | train | == Fold 4 — training start ==
+2026-05-17 04:42:19 | INFO | train |   Ep 001/500 | Loss=2.1446 CE=2.1446 Phys=0.0000 | Val F1=0.0000 Acc=0.0000 | LR=3.00e-04 | 0.1s
+2026-05-17 04:42:19 | INFO | train |   Checkpoint saved (F1=0.0000)
+2026-05-17 04:42:19 | INFO | train |   Checkpoint saved (F1=0.0833)
+2026-05-17 04:42:19 | INFO | train |   Checkpoint saved (F1=0.1756)
+2026-05-17 04:42:20 | INFO | train |   Checkpoint saved (F1=0.1921)
+2026-05-17 04:42:20 | INFO | train |   Checkpoint saved (F1=0.2276)
+2026-05-17 04:42:20 | INFO | train |   Checkpoint saved (F1=0.3063)
+2026-05-17 04:42:20 | INFO | train |   Ep 010/500 | Loss=1.7274 CE=1.7274 Phys=0.0000 | Val F1=0.4295 Acc=0.5000 | LR=2.93e-04 | 0.1s
+2026-05-17 04:42:20 | INFO | train |   Checkpoint saved (F1=0.4295)
+2026-05-17 04:42:20 | INFO | train |   Checkpoint saved (F1=0.4684)
+2026-05-17 04:42:20 | INFO | train |   Checkpoint saved (F1=0.4857)
+2026-05-17 04:42:21 | INFO | train |   Ep 020/500 | Loss=1.6681 CE=1.6681 Phys=0.0000 | Val F1=0.3401 Acc=0.4643 | LR=2.71e-04 | 0.1s
+2026-05-17 04:42:23 | INFO | train |   Ep 030/500 | Loss=1.6478 CE=1.6478 Phys=0.0000 | Val F1=0.3623 Acc=0.5000 | LR=2.38e-04 | 0.1s
+2026-05-17 04:42:24 | INFO | train |   Ep 040/500 | Loss=1.5735 CE=1.5735 Phys=0.0000 | Val F1=0.4198 Acc=0.5000 | LR=1.97e-04 | 0.2s
+2026-05-17 04:42:26 | INFO | train |   Ep 050/500 | Loss=1.5412 CE=1.5412 Phys=0.0000 | Val F1=0.3214 Acc=0.3571 | LR=1.50e-04 | 0.1s
+2026-05-17 04:42:27 | INFO | train |   Ep 060/500 | Loss=1.5672 CE=1.5672 Phys=0.0000 | Val F1=0.3500 Acc=0.3929 | LR=1.04e-04 | 0.1s
+2026-05-17 04:42:29 | INFO | train |   Ep 070/500 | Loss=1.5998 CE=1.5998 Phys=0.0000 | Val F1=0.2933 Acc=0.3214 | LR=6.26e-05 | 0.1s
+2026-05-17 04:42:30 | INFO | train |   Ep 080/500 | Loss=1.5598 CE=1.5598 Phys=0.0000 | Val F1=0.2761 Acc=0.3214 | LR=2.96e-05 | 0.1s
+2026-05-17 04:42:31 | INFO | train |   Ep 090/500 | Loss=1.5038 CE=1.5038 Phys=0.0000 | Val F1=0.2575 Acc=0.2857 | LR=8.32e-06 | 0.1s
+2026-05-17 04:42:32 | INFO | train |   Ep 100/500 | Loss=1.5098 CE=1.5098 Phys=0.0000 | Val F1=0.2529 Acc=0.2857 | LR=3.00e-04 | 0.1s
+2026-05-17 04:42:34 | INFO | train |   Ep 110/500 | Loss=1.5230 CE=1.5230 Phys=0.0000 | Val F1=0.3246 Acc=0.3571 | LR=2.93e-04 | 0.1s
+2026-05-17 04:42:35 | INFO | train |   Ep 120/500 | Loss=1.5251 CE=1.5251 Phys=0.0000 | Val F1=0.1769 Acc=0.2143 | LR=2.71e-04 | 0.1s
+2026-05-17 04:42:36 | INFO | train |   Ep 130/500 | Loss=1.5275 CE=1.5275 Phys=0.0000 | Val F1=0.2063 Acc=0.2500 | LR=2.38e-04 | 0.1s
+2026-05-17 04:42:38 | INFO | train |   Ep 140/500 | Loss=1.4972 CE=1.4972 Phys=0.0000 | Val F1=0.2320 Acc=0.2857 | LR=1.97e-04 | 0.2s
+2026-05-17 04:42:44 | INFO | train |   Ep 150/500 | Loss=1.4829 CE=1.4829 Phys=0.0000 | Val F1=0.2618 Acc=0.3214 | LR=1.50e-04 | 0.2s
+2026-05-17 04:42:46 | INFO | train |   Ep 160/500 | Loss=1.5295 CE=1.5295 Phys=0.0000 | Val F1=0.2479 Acc=0.3214 | LR=1.04e-04 | 0.1s
+2026-05-17 04:42:46 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:42:46 | INFO | train |   Fold 5 results:
+2026-05-17 04:42:46 | INFO | train |     accuracy           = 0.5714
+2026-05-17 04:42:46 | INFO | train |     precision          = 0.5792
+2026-05-17 04:42:46 | INFO | train |     recall             = 0.4681
+2026-05-17 04:42:46 | INFO | train |     f1                 = 0.4857
+2026-05-17 04:42:46 | INFO | train |     kappa              = 0.4624
+2026-05-17 04:42:46 | INFO | train |     brier              = 0.7503
+2026-05-17 04:42:46 | INFO | train |     ece                = 0.3278
+2026-05-17 04:42:46 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:42:46 | INFO | train | 
+============================================================
+2026-05-17 04:42:46 | INFO | train | FOLD 6/10  train=256  val=28
+2026-05-17 04:42:46 | INFO | train | == Fold 5 — training start ==
+2026-05-17 04:42:46 | INFO | train |   Ep 001/500 | Loss=2.0200 CE=2.0200 Phys=0.0000 | Val F1=0.0000 Acc=0.0000 | LR=3.00e-04 | 0.1s
+2026-05-17 04:42:46 | INFO | train |   Checkpoint saved (F1=0.0000)
+2026-05-17 04:42:47 | INFO | train |   Checkpoint saved (F1=0.0417)
+2026-05-17 04:42:47 | INFO | train |   Checkpoint saved (F1=0.1083)
+2026-05-17 04:42:47 | INFO | train |   Checkpoint saved (F1=0.1250)
+2026-05-17 04:42:47 | INFO | train |   Checkpoint saved (F1=0.1927)
+2026-05-17 04:42:48 | INFO | train |   Checkpoint saved (F1=0.2439)
+2026-05-17 04:42:48 | INFO | train |   Checkpoint saved (F1=0.2708)
+2026-05-17 04:42:48 | INFO | train |   Ep 010/500 | Loss=1.7128 CE=1.7128 Phys=0.0000 | Val F1=0.2751 Acc=0.3214 | LR=2.93e-04 | 0.2s
+2026-05-17 04:42:48 | INFO | train |   Checkpoint saved (F1=0.2751)
+2026-05-17 04:42:48 | INFO | train |   Checkpoint saved (F1=0.3127)
+2026-05-17 04:42:49 | INFO | train |   Checkpoint saved (F1=0.3130)
+2026-05-17 04:42:50 | INFO | train |   Ep 020/500 | Loss=1.6648 CE=1.6648 Phys=0.0000 | Val F1=0.3069 Acc=0.3929 | LR=2.71e-04 | 0.2s
+2026-05-17 04:42:50 | INFO | train |   Checkpoint saved (F1=0.3588)
+2026-05-17 04:42:50 | INFO | train |   Checkpoint saved (F1=0.4005)
+2026-05-17 04:42:52 | INFO | train |   Ep 030/500 | Loss=1.6483 CE=1.6483 Phys=0.0000 | Val F1=0.3194 Acc=0.4286 | LR=2.38e-04 | 0.2s
+2026-05-17 04:42:52 | INFO | train |   Checkpoint saved (F1=0.4075)
+2026-05-17 04:42:52 | INFO | train |   Checkpoint saved (F1=0.4329)
+2026-05-17 04:42:53 | INFO | train |   Ep 040/500 | Loss=1.5844 CE=1.5844 Phys=0.0000 | Val F1=0.2949 Acc=0.4286 | LR=1.97e-04 | 0.1s
+2026-05-17 04:42:54 | INFO | train |   Ep 050/500 | Loss=1.5640 CE=1.5640 Phys=0.0000 | Val F1=0.3508 Acc=0.5000 | LR=1.50e-04 | 0.1s
+2026-05-17 04:42:56 | INFO | train |   Checkpoint saved (F1=0.4393)
+2026-05-17 04:42:56 | INFO | train |   Ep 060/500 | Loss=1.6390 CE=1.6390 Phys=0.0000 | Val F1=0.3480 Acc=0.4643 | LR=1.04e-04 | 0.1s
+2026-05-17 04:42:57 | INFO | train |   Ep 070/500 | Loss=1.5794 CE=1.5794 Phys=0.0000 | Val F1=0.3893 Acc=0.5000 | LR=6.26e-05 | 0.1s
+2026-05-17 04:42:59 | INFO | train |   Ep 080/500 | Loss=1.5990 CE=1.5990 Phys=0.0000 | Val F1=0.3893 Acc=0.5000 | LR=2.96e-05 | 0.1s
+2026-05-17 04:43:00 | INFO | train |   Ep 090/500 | Loss=1.5104 CE=1.5104 Phys=0.0000 | Val F1=0.3961 Acc=0.5000 | LR=8.32e-06 | 0.1s
+2026-05-17 04:43:00 | INFO | train |   Checkpoint saved (F1=0.4421)
+2026-05-17 04:43:02 | INFO | train |   Ep 100/500 | Loss=1.5429 CE=1.5429 Phys=0.0000 | Val F1=0.4421 Acc=0.5357 | LR=3.00e-04 | 0.1s
+2026-05-17 04:43:03 | INFO | train |   Ep 110/500 | Loss=1.5386 CE=1.5386 Phys=0.0000 | Val F1=0.4261 Acc=0.5000 | LR=2.93e-04 | 0.1s
+2026-05-17 04:43:03 | INFO | train |   Checkpoint saved (F1=0.4841)
+2026-05-17 04:43:04 | INFO | train |   Ep 120/500 | Loss=1.6021 CE=1.6021 Phys=0.0000 | Val F1=0.4532 Acc=0.5357 | LR=2.71e-04 | 0.1s
+2026-05-17 04:43:06 | INFO | train |   Ep 130/500 | Loss=1.5160 CE=1.5160 Phys=0.0000 | Val F1=0.4157 Acc=0.5357 | LR=2.38e-04 | 0.2s
+2026-05-17 04:43:08 | INFO | train |   Ep 140/500 | Loss=1.5627 CE=1.5627 Phys=0.0000 | Val F1=0.3889 Acc=0.5000 | LR=1.97e-04 | 0.2s
+2026-05-17 04:43:09 | INFO | train |   Ep 150/500 | Loss=1.4789 CE=1.4789 Phys=0.0000 | Val F1=0.3889 Acc=0.5000 | LR=1.50e-04 | 0.1s
+2026-05-17 04:43:10 | INFO | train |   Ep 160/500 | Loss=1.5171 CE=1.5171 Phys=0.0000 | Val F1=0.4027 Acc=0.5000 | LR=1.04e-04 | 0.1s
+2026-05-17 04:43:11 | INFO | train |   Ep 170/500 | Loss=1.4729 CE=1.4729 Phys=0.0000 | Val F1=0.3729 Acc=0.4643 | LR=6.26e-05 | 0.1s
+2026-05-17 04:43:13 | INFO | train |   Ep 180/500 | Loss=1.4466 CE=1.4466 Phys=0.0000 | Val F1=0.3603 Acc=0.4643 | LR=2.96e-05 | 0.1s
+2026-05-17 04:43:14 | INFO | train |   Ep 190/500 | Loss=1.4420 CE=1.4420 Phys=0.0000 | Val F1=0.3594 Acc=0.4643 | LR=8.32e-06 | 0.1s
+2026-05-17 04:43:15 | INFO | train |   Ep 200/500 | Loss=1.4571 CE=1.4571 Phys=0.0000 | Val F1=0.3594 Acc=0.4643 | LR=3.00e-04 | 0.1s
+2026-05-17 04:43:17 | INFO | train |   Ep 210/500 | Loss=1.4176 CE=1.4176 Phys=0.0000 | Val F1=0.3539 Acc=0.4643 | LR=2.93e-04 | 0.2s
+2026-05-17 04:43:19 | INFO | train |   Ep 220/500 | Loss=1.4443 CE=1.4443 Phys=0.0000 | Val F1=0.4210 Acc=0.5357 | LR=2.71e-04 | 0.3s
+2026-05-17 04:43:23 | INFO | train |   Ep 230/500 | Loss=1.4443 CE=1.4443 Phys=0.0000 | Val F1=0.3903 Acc=0.5000 | LR=2.38e-04 | 0.2s
+2026-05-17 04:43:25 | INFO | train |   Ep 240/500 | Loss=1.4848 CE=1.4848 Phys=0.0000 | Val F1=0.4126 Acc=0.5357 | LR=1.97e-04 | 0.2s
+2026-05-17 04:43:27 | INFO | train |   Ep 250/500 | Loss=1.4175 CE=1.4175 Phys=0.0000 | Val F1=0.4076 Acc=0.5357 | LR=1.50e-04 | 0.1s
+2026-05-17 04:43:29 | INFO | train |   Ep 260/500 | Loss=1.2277 CE=1.2277 Phys=0.0000 | Val F1=0.4126 Acc=0.5357 | LR=1.04e-04 | 0.2s
+2026-05-17 04:43:30 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:43:30 | INFO | train |   Fold 6 results:
+2026-05-17 04:43:30 | INFO | train |     accuracy           = 0.5714
+2026-05-17 04:43:30 | INFO | train |     precision          = 0.5468
+2026-05-17 04:43:30 | INFO | train |     recall             = 0.5000
+2026-05-17 04:43:30 | INFO | train |     f1                 = 0.4841
+2026-05-17 04:43:30 | INFO | train |     kappa              = 0.4734
+2026-05-17 04:43:30 | INFO | train |     brier              = 0.6857
+2026-05-17 04:43:30 | INFO | train |     ece                = 0.2091
+2026-05-17 04:43:30 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:43:30 | INFO | train | 
+============================================================
+2026-05-17 04:43:30 | INFO | train | FOLD 7/10  train=256  val=28
+2026-05-17 04:43:30 | INFO | train | == Fold 6 — training start ==
+2026-05-17 04:43:30 | INFO | train |   Ep 001/500 | Loss=2.0722 CE=2.0722 Phys=0.0000 | Val F1=0.0115 Acc=0.0357 | LR=3.00e-04 | 0.3s
+2026-05-17 04:43:30 | INFO | train |   Checkpoint saved (F1=0.0115)
+2026-05-17 04:43:31 | INFO | train |   Checkpoint saved (F1=0.0595)
+2026-05-17 04:43:31 | INFO | train |   Checkpoint saved (F1=0.0604)
+2026-05-17 04:43:31 | INFO | train |   Checkpoint saved (F1=0.1171)
+2026-05-17 04:43:32 | INFO | train |   Checkpoint saved (F1=0.1435)
+2026-05-17 04:43:32 | INFO | train |   Checkpoint saved (F1=0.2643)
+2026-05-17 04:43:32 | INFO | train |   Checkpoint saved (F1=0.3336)
+2026-05-17 04:43:32 | INFO | train |   Checkpoint saved (F1=0.3471)
+2026-05-17 04:43:32 | INFO | train |   Ep 010/500 | Loss=1.6886 CE=1.6886 Phys=0.0000 | Val F1=0.3730 Acc=0.4643 | LR=2.93e-04 | 0.1s
+2026-05-17 04:43:32 | INFO | train |   Checkpoint saved (F1=0.3730)
+2026-05-17 04:43:33 | INFO | train |   Checkpoint saved (F1=0.3810)
+2026-05-17 04:43:33 | INFO | train |   Checkpoint saved (F1=0.4265)
+2026-05-17 04:43:34 | INFO | train |   Ep 020/500 | Loss=1.6575 CE=1.6575 Phys=0.0000 | Val F1=0.3561 Acc=0.4286 | LR=2.71e-04 | 0.1s
+2026-05-17 04:43:35 | INFO | train |   Checkpoint saved (F1=0.4659)
+2026-05-17 04:43:35 | INFO | train |   Checkpoint saved (F1=0.4730)
+2026-05-17 04:43:36 | INFO | train |   Checkpoint saved (F1=0.4942)
+2026-05-17 04:43:36 | INFO | train |   Ep 030/500 | Loss=1.6678 CE=1.6678 Phys=0.0000 | Val F1=0.3764 Acc=0.5000 | LR=2.38e-04 | 0.1s
+2026-05-17 04:43:38 | INFO | train |   Ep 040/500 | Loss=1.6415 CE=1.6415 Phys=0.0000 | Val F1=0.3565 Acc=0.4643 | LR=1.97e-04 | 0.3s
+2026-05-17 04:43:39 | INFO | train |   Ep 050/500 | Loss=1.5431 CE=1.5431 Phys=0.0000 | Val F1=0.2946 Acc=0.3929 | LR=1.50e-04 | 0.2s
+2026-05-17 04:43:41 | INFO | train |   Ep 060/500 | Loss=1.6279 CE=1.6279 Phys=0.0000 | Val F1=0.3240 Acc=0.4286 | LR=1.04e-04 | 0.2s
+2026-05-17 04:43:43 | INFO | train |   Ep 070/500 | Loss=1.5415 CE=1.5415 Phys=0.0000 | Val F1=0.3240 Acc=0.4286 | LR=6.26e-05 | 0.2s
+2026-05-17 04:43:44 | INFO | train |   Ep 080/500 | Loss=1.5446 CE=1.5446 Phys=0.0000 | Val F1=0.3120 Acc=0.3929 | LR=2.96e-05 | 0.2s
+2026-05-17 04:43:46 | INFO | train |   Ep 090/500 | Loss=1.5092 CE=1.5092 Phys=0.0000 | Val F1=0.3120 Acc=0.3929 | LR=8.32e-06 | 0.2s
+2026-05-17 04:43:47 | INFO | train |   Ep 100/500 | Loss=1.4776 CE=1.4776 Phys=0.0000 | Val F1=0.3185 Acc=0.3929 | LR=3.00e-04 | 0.1s
+2026-05-17 04:43:49 | INFO | train |   Ep 110/500 | Loss=1.5574 CE=1.5574 Phys=0.0000 | Val F1=0.3185 Acc=0.3929 | LR=2.93e-04 | 0.1s
+2026-05-17 04:43:51 | INFO | train |   Ep 120/500 | Loss=1.5711 CE=1.5711 Phys=0.0000 | Val F1=0.2365 Acc=0.3214 | LR=2.71e-04 | 0.4s
+2026-05-17 04:43:53 | INFO | train |   Ep 130/500 | Loss=1.5534 CE=1.5534 Phys=0.0000 | Val F1=0.2925 Acc=0.3571 | LR=2.38e-04 | 0.2s
+2026-05-17 04:43:54 | INFO | train |   Ep 140/500 | Loss=1.4997 CE=1.4997 Phys=0.0000 | Val F1=0.2606 Acc=0.3214 | LR=1.97e-04 | 0.1s
+2026-05-17 04:43:55 | INFO | train |   Ep 150/500 | Loss=1.4644 CE=1.4644 Phys=0.0000 | Val F1=0.2581 Acc=0.3214 | LR=1.50e-04 | 0.1s
+2026-05-17 04:43:57 | INFO | train |   Ep 160/500 | Loss=1.5062 CE=1.5062 Phys=0.0000 | Val F1=0.2544 Acc=0.3214 | LR=1.04e-04 | 0.1s
+2026-05-17 04:43:58 | INFO | train |   Ep 170/500 | Loss=1.4910 CE=1.4910 Phys=0.0000 | Val F1=0.2538 Acc=0.3214 | LR=6.26e-05 | 0.2s
+2026-05-17 04:43:59 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:43:59 | INFO | train |   Fold 7 results:
+2026-05-17 04:43:59 | INFO | train |     accuracy           = 0.6071
+2026-05-17 04:43:59 | INFO | train |     precision          = 0.4926
+2026-05-17 04:43:59 | INFO | train |     recall             = 0.5139
+2026-05-17 04:43:59 | INFO | train |     f1                 = 0.4942
+2026-05-17 04:43:59 | INFO | train |     kappa              = 0.5056
+2026-05-17 04:43:59 | INFO | train |     brier              = 0.6744
+2026-05-17 04:43:59 | INFO | train |     ece                = 0.2475
+2026-05-17 04:43:59 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:43:59 | INFO | train | 
+============================================================
+2026-05-17 04:43:59 | INFO | train | FOLD 8/10  train=256  val=28
+2026-05-17 04:44:00 | INFO | train | == Fold 7 — training start ==
+2026-05-17 04:44:00 | INFO | train |   Ep 001/500 | Loss=2.0430 CE=2.0430 Phys=0.0000 | Val F1=0.0115 Acc=0.0357 | LR=3.00e-04 | 0.2s
+2026-05-17 04:44:00 | INFO | train |   Checkpoint saved (F1=0.0115)
+2026-05-17 04:44:00 | INFO | train |   Checkpoint saved (F1=0.0123)
+2026-05-17 04:44:01 | INFO | train |   Checkpoint saved (F1=0.0886)
+2026-05-17 04:44:01 | INFO | train |   Checkpoint saved (F1=0.2167)
+2026-05-17 04:44:01 | INFO | train |   Checkpoint saved (F1=0.3034)
+2026-05-17 04:44:01 | INFO | train |   Checkpoint saved (F1=0.3334)
+2026-05-17 04:44:01 | INFO | train |   Checkpoint saved (F1=0.4179)
+2026-05-17 04:44:01 | INFO | train |   Ep 010/500 | Loss=1.7339 CE=1.7339 Phys=0.0000 | Val F1=0.4615 Acc=0.5357 | LR=2.93e-04 | 0.1s
+2026-05-17 04:44:01 | INFO | train |   Checkpoint saved (F1=0.4615)
+2026-05-17 04:44:02 | INFO | train |   Checkpoint saved (F1=0.4659)
+2026-05-17 04:44:03 | INFO | train |   Checkpoint saved (F1=0.4896)
+2026-05-17 04:44:03 | INFO | train |   Ep 020/500 | Loss=1.6775 CE=1.6775 Phys=0.0000 | Val F1=0.4765 Acc=0.6071 | LR=2.71e-04 | 0.2s
+2026-05-17 04:44:04 | INFO | train |   Checkpoint saved (F1=0.5317)
+2026-05-17 04:44:05 | INFO | train |   Ep 030/500 | Loss=1.6421 CE=1.6421 Phys=0.0000 | Val F1=0.5373 Acc=0.6429 | LR=2.38e-04 | 0.1s
+2026-05-17 04:44:05 | INFO | train |   Checkpoint saved (F1=0.5373)
+2026-05-17 04:44:06 | INFO | train |   Checkpoint saved (F1=0.5544)
+2026-05-17 04:44:07 | INFO | train |   Ep 040/500 | Loss=1.5948 CE=1.5948 Phys=0.0000 | Val F1=0.5417 Acc=0.6071 | LR=1.97e-04 | 0.2s
+2026-05-17 04:44:08 | INFO | train |   Ep 050/500 | Loss=1.5094 CE=1.5094 Phys=0.0000 | Val F1=0.5510 Acc=0.5714 | LR=1.50e-04 | 0.1s
+2026-05-17 04:44:09 | INFO | train |   Checkpoint saved (F1=0.5684)
+2026-05-17 04:44:10 | INFO | train |   Ep 060/500 | Loss=1.6051 CE=1.6051 Phys=0.0000 | Val F1=0.5234 Acc=0.5357 | LR=1.04e-04 | 0.1s
+2026-05-17 04:44:12 | INFO | train |   Ep 070/500 | Loss=1.5434 CE=1.5434 Phys=0.0000 | Val F1=0.5038 Acc=0.5000 | LR=6.26e-05 | 0.2s
+2026-05-17 04:44:13 | INFO | train |   Ep 080/500 | Loss=1.5033 CE=1.5033 Phys=0.0000 | Val F1=0.5038 Acc=0.5000 | LR=2.96e-05 | 0.1s
+2026-05-17 04:44:15 | INFO | train |   Ep 090/500 | Loss=1.5284 CE=1.5284 Phys=0.0000 | Val F1=0.5038 Acc=0.5000 | LR=8.32e-06 | 0.1s
+2026-05-17 04:44:16 | INFO | train |   Ep 100/500 | Loss=1.5377 CE=1.5377 Phys=0.0000 | Val F1=0.5038 Acc=0.5000 | LR=3.00e-04 | 0.1s
+2026-05-17 04:44:17 | INFO | train |   Ep 110/500 | Loss=1.5455 CE=1.5455 Phys=0.0000 | Val F1=0.5095 Acc=0.5357 | LR=2.93e-04 | 0.1s
+2026-05-17 04:44:19 | INFO | train |   Ep 120/500 | Loss=1.5971 CE=1.5971 Phys=0.0000 | Val F1=0.4332 Acc=0.4643 | LR=2.71e-04 | 0.1s
+2026-05-17 04:44:20 | INFO | train |   Ep 130/500 | Loss=1.5550 CE=1.5550 Phys=0.0000 | Val F1=0.5113 Acc=0.5000 | LR=2.38e-04 | 0.1s
+2026-05-17 04:44:20 | INFO | train |   Checkpoint saved (F1=0.6159)
+2026-05-17 04:44:21 | INFO | train |   Ep 140/500 | Loss=1.4882 CE=1.4882 Phys=0.0000 | Val F1=0.4658 Acc=0.4643 | LR=1.97e-04 | 0.1s
+2026-05-17 04:44:23 | INFO | train |   Ep 150/500 | Loss=1.4926 CE=1.4926 Phys=0.0000 | Val F1=0.5570 Acc=0.5357 | LR=1.50e-04 | 0.2s
+2026-05-17 04:44:24 | INFO | train |   Ep 160/500 | Loss=1.5264 CE=1.5264 Phys=0.0000 | Val F1=0.4373 Acc=0.4286 | LR=1.04e-04 | 0.1s
+2026-05-17 04:44:25 | INFO | train |   Ep 170/500 | Loss=1.4536 CE=1.4536 Phys=0.0000 | Val F1=0.5229 Acc=0.5000 | LR=6.26e-05 | 0.1s
+2026-05-17 04:44:27 | INFO | train |   Ep 180/500 | Loss=1.4660 CE=1.4660 Phys=0.0000 | Val F1=0.4773 Acc=0.4643 | LR=2.96e-05 | 0.1s
+2026-05-17 04:44:28 | INFO | train |   Ep 190/500 | Loss=1.3935 CE=1.3935 Phys=0.0000 | Val F1=0.5054 Acc=0.5000 | LR=8.32e-06 | 0.1s
+2026-05-17 04:44:29 | INFO | train |   Ep 200/500 | Loss=1.3693 CE=1.3693 Phys=0.0000 | Val F1=0.5511 Acc=0.5357 | LR=3.00e-04 | 0.1s
+2026-05-17 04:44:30 | INFO | train |   Ep 210/500 | Loss=1.3375 CE=1.3375 Phys=0.0000 | Val F1=0.5332 Acc=0.5357 | LR=2.93e-04 | 0.2s
+2026-05-17 04:44:32 | INFO | train |   Ep 220/500 | Loss=1.3414 CE=1.3414 Phys=0.0000 | Val F1=0.5229 Acc=0.5000 | LR=2.71e-04 | 0.1s
+2026-05-17 04:44:33 | INFO | train |   Ep 230/500 | Loss=1.3970 CE=1.3970 Phys=0.0000 | Val F1=0.3925 Acc=0.3929 | LR=2.38e-04 | 0.1s
+2026-05-17 04:44:34 | INFO | train |   Ep 240/500 | Loss=1.4558 CE=1.4558 Phys=0.0000 | Val F1=0.4587 Acc=0.4286 | LR=1.97e-04 | 0.1s
+2026-05-17 04:44:35 | INFO | train |   Ep 250/500 | Loss=1.4175 CE=1.4175 Phys=0.0000 | Val F1=0.4091 Acc=0.3929 | LR=1.50e-04 | 0.1s
+2026-05-17 04:44:37 | INFO | train |   Ep 260/500 | Loss=1.2579 CE=1.2579 Phys=0.0000 | Val F1=0.5195 Acc=0.5000 | LR=1.04e-04 | 0.1s
+2026-05-17 04:44:38 | INFO | train |   Ep 270/500 | Loss=1.2038 CE=1.2038 Phys=0.0000 | Val F1=0.4937 Acc=0.4643 | LR=6.26e-05 | 0.1s
+2026-05-17 04:44:39 | INFO | train |   Ep 280/500 | Loss=1.3312 CE=1.3312 Phys=0.0000 | Val F1=0.4905 Acc=0.4643 | LR=2.96e-05 | 0.1s
+2026-05-17 04:44:40 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:44:40 | INFO | train |   Fold 8 results:
+2026-05-17 04:44:40 | INFO | train |     accuracy           = 0.6071
+2026-05-17 04:44:40 | INFO | train |     precision          = 0.7004
+2026-05-17 04:44:40 | INFO | train |     recall             = 0.6819
+2026-05-17 04:44:40 | INFO | train |     f1                 = 0.6159
+2026-05-17 04:44:40 | INFO | train |     kappa              = 0.5347
+2026-05-17 04:44:40 | INFO | train |     brier              = 0.5686
+2026-05-17 04:44:40 | INFO | train |     ece                = 0.2025
+2026-05-17 04:44:40 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:44:40 | INFO | train | 
+============================================================
+2026-05-17 04:44:40 | INFO | train | FOLD 9/10  train=256  val=28
+2026-05-17 04:44:40 | INFO | train | == Fold 8 — training start ==
+2026-05-17 04:44:40 | INFO | train |   Ep 001/500 | Loss=2.0954 CE=2.0954 Phys=0.0000 | Val F1=0.0115 Acc=0.0357 | LR=3.00e-04 | 0.1s
+2026-05-17 04:44:40 | INFO | train |   Checkpoint saved (F1=0.0115)
+2026-05-17 04:44:40 | INFO | train |   Checkpoint saved (F1=0.0119)
+2026-05-17 04:44:40 | INFO | train |   Checkpoint saved (F1=0.0540)
+2026-05-17 04:44:41 | INFO | train |   Checkpoint saved (F1=0.0889)
+2026-05-17 04:44:41 | INFO | train |   Checkpoint saved (F1=0.1365)
+2026-05-17 04:44:41 | INFO | train |   Checkpoint saved (F1=0.2778)
+2026-05-17 04:44:41 | INFO | train |   Ep 010/500 | Loss=1.7682 CE=1.7682 Phys=0.0000 | Val F1=0.3016 Acc=0.3214 | LR=2.93e-04 | 0.1s
+2026-05-17 04:44:41 | INFO | train |   Checkpoint saved (F1=0.3016)
+2026-05-17 04:44:42 | INFO | train |   Checkpoint saved (F1=0.3365)
+2026-05-17 04:44:43 | INFO | train |   Ep 020/500 | Loss=1.6402 CE=1.6402 Phys=0.0000 | Val F1=0.3365 Acc=0.3571 | LR=2.71e-04 | 0.2s
+2026-05-17 04:44:43 | INFO | train |   Checkpoint saved (F1=0.3443)
+2026-05-17 04:44:43 | INFO | train |   Checkpoint saved (F1=0.3613)
+2026-05-17 04:44:43 | INFO | train |   Checkpoint saved (F1=0.4028)
+2026-05-17 04:44:44 | INFO | train |   Checkpoint saved (F1=0.4445)
+2026-05-17 04:44:44 | INFO | train |   Ep 030/500 | Loss=1.6291 CE=1.6291 Phys=0.0000 | Val F1=0.4260 Acc=0.5000 | LR=2.38e-04 | 0.1s
+2026-05-17 04:44:45 | INFO | train |   Ep 040/500 | Loss=1.6444 CE=1.6444 Phys=0.0000 | Val F1=0.3827 Acc=0.3929 | LR=1.97e-04 | 0.1s
+2026-05-17 04:44:47 | INFO | train |   Ep 050/500 | Loss=1.5018 CE=1.5018 Phys=0.0000 | Val F1=0.3720 Acc=0.3929 | LR=1.50e-04 | 0.1s
+2026-05-17 04:44:48 | INFO | train |   Ep 060/500 | Loss=1.6431 CE=1.6431 Phys=0.0000 | Val F1=0.3566 Acc=0.3929 | LR=1.04e-04 | 0.1s
+2026-05-17 04:44:49 | INFO | train |   Ep 070/500 | Loss=1.5869 CE=1.5869 Phys=0.0000 | Val F1=0.3300 Acc=0.3214 | LR=6.26e-05 | 0.1s
+2026-05-17 04:44:50 | INFO | train |   Ep 080/500 | Loss=1.5412 CE=1.5412 Phys=0.0000 | Val F1=0.2639 Acc=0.2857 | LR=2.96e-05 | 0.1s
+2026-05-17 04:44:51 | INFO | train |   Ep 090/500 | Loss=1.5271 CE=1.5271 Phys=0.0000 | Val F1=0.2930 Acc=0.3214 | LR=8.32e-06 | 0.1s
+2026-05-17 04:44:53 | INFO | train |   Ep 100/500 | Loss=1.5035 CE=1.5035 Phys=0.0000 | Val F1=0.2639 Acc=0.2857 | LR=3.00e-04 | 0.1s
+2026-05-17 04:44:54 | INFO | train |   Ep 110/500 | Loss=1.5508 CE=1.5508 Phys=0.0000 | Val F1=0.2646 Acc=0.2857 | LR=2.93e-04 | 0.1s
+2026-05-17 04:44:55 | INFO | train |   Ep 120/500 | Loss=1.5499 CE=1.5499 Phys=0.0000 | Val F1=0.2694 Acc=0.2500 | LR=2.71e-04 | 0.1s
+2026-05-17 04:44:57 | INFO | train |   Ep 130/500 | Loss=1.5455 CE=1.5455 Phys=0.0000 | Val F1=0.2082 Acc=0.2143 | LR=2.38e-04 | 0.1s
+2026-05-17 04:44:58 | INFO | train |   Ep 140/500 | Loss=1.4870 CE=1.4870 Phys=0.0000 | Val F1=0.2392 Acc=0.2143 | LR=1.97e-04 | 0.1s
+2026-05-17 04:44:59 | INFO | train |   Ep 150/500 | Loss=1.4542 CE=1.4542 Phys=0.0000 | Val F1=0.2583 Acc=0.2500 | LR=1.50e-04 | 0.1s
+2026-05-17 04:45:00 | INFO | train |   Ep 160/500 | Loss=1.4251 CE=1.4251 Phys=0.0000 | Val F1=0.2610 Acc=0.2500 | LR=1.04e-04 | 0.1s
+2026-05-17 04:45:02 | INFO | train |   Ep 170/500 | Loss=1.3445 CE=1.3445 Phys=0.0000 | Val F1=0.2597 Acc=0.2500 | LR=6.26e-05 | 0.2s
+2026-05-17 04:45:03 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:45:03 | INFO | train |   Fold 9 results:
+2026-05-17 04:45:03 | INFO | train |     accuracy           = 0.5000
+2026-05-17 04:45:03 | INFO | train |     precision          = 0.4675
+2026-05-17 04:45:03 | INFO | train |     recall             = 0.4361
+2026-05-17 04:45:03 | INFO | train |     f1                 = 0.4445
+2026-05-17 04:45:03 | INFO | train |     kappa              = 0.3657
+2026-05-17 04:45:03 | INFO | train |     brier              = 0.7573
+2026-05-17 04:45:03 | INFO | train |     ece                = 0.2116
+2026-05-17 04:45:03 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:45:03 | INFO | train | 
+============================================================
+2026-05-17 04:45:03 | INFO | train | FOLD 10/10  train=256  val=28
+2026-05-17 04:45:03 | INFO | train | == Fold 9 — training start ==
+2026-05-17 04:45:04 | INFO | train |   Ep 001/500 | Loss=2.1426 CE=2.1426 Phys=0.0000 | Val F1=0.0000 Acc=0.0000 | LR=3.00e-04 | 0.2s
+2026-05-17 04:45:04 | INFO | train |   Checkpoint saved (F1=0.0000)
+2026-05-17 04:45:04 | INFO | train |   Checkpoint saved (F1=0.1143)
+2026-05-17 04:45:04 | INFO | train |   Checkpoint saved (F1=0.1548)
+2026-05-17 04:45:04 | INFO | train |   Checkpoint saved (F1=0.2083)
+2026-05-17 04:45:05 | INFO | train |   Ep 010/500 | Loss=1.6527 CE=1.6527 Phys=0.0000 | Val F1=0.2413 Acc=0.2857 | LR=2.93e-04 | 0.1s
+2026-05-17 04:45:05 | INFO | train |   Checkpoint saved (F1=0.2413)
+2026-05-17 04:45:05 | INFO | train |   Checkpoint saved (F1=0.2746)
+2026-05-17 04:45:05 | INFO | train |   Checkpoint saved (F1=0.3070)
+2026-05-17 04:45:05 | INFO | train |   Checkpoint saved (F1=0.3217)
+2026-05-17 04:45:06 | INFO | train |   Checkpoint saved (F1=0.3519)
+2026-05-17 04:45:06 | INFO | train |   Ep 020/500 | Loss=1.6582 CE=1.6582 Phys=0.0000 | Val F1=0.2631 Acc=0.3571 | LR=2.71e-04 | 0.2s
+2026-05-17 04:45:08 | INFO | train |   Checkpoint saved (F1=0.3563)
+2026-05-17 04:45:08 | INFO | train |   Ep 030/500 | Loss=1.6683 CE=1.6683 Phys=0.0000 | Val F1=0.3397 Acc=0.3929 | LR=2.38e-04 | 0.1s
+2026-05-17 04:45:10 | INFO | train |   Checkpoint saved (F1=0.3657)
+2026-05-17 04:45:10 | INFO | train |   Ep 040/500 | Loss=1.5894 CE=1.5894 Phys=0.0000 | Val F1=0.3717 Acc=0.4643 | LR=1.97e-04 | 0.1s
+2026-05-17 04:45:10 | INFO | train |   Checkpoint saved (F1=0.3717)
+2026-05-17 04:45:10 | INFO | train |   Checkpoint saved (F1=0.3803)
+2026-05-17 04:45:11 | INFO | train |   Ep 050/500 | Loss=1.5376 CE=1.5376 Phys=0.0000 | Val F1=0.3126 Acc=0.4286 | LR=1.50e-04 | 0.2s
+2026-05-17 04:45:12 | INFO | train |   Checkpoint saved (F1=0.3896)
+2026-05-17 04:45:13 | INFO | train |   Ep 060/500 | Loss=1.5903 CE=1.5903 Phys=0.0000 | Val F1=0.3803 Acc=0.4643 | LR=1.04e-04 | 0.1s
+2026-05-17 04:45:14 | INFO | train |   Ep 070/500 | Loss=1.5586 CE=1.5586 Phys=0.0000 | Val F1=0.3582 Acc=0.4286 | LR=6.26e-05 | 0.2s
+2026-05-17 04:45:16 | INFO | train |   Ep 080/500 | Loss=1.5296 CE=1.5296 Phys=0.0000 | Val F1=0.3419 Acc=0.3929 | LR=2.96e-05 | 0.1s
+2026-05-17 04:45:17 | INFO | train |   Ep 090/500 | Loss=1.5032 CE=1.5032 Phys=0.0000 | Val F1=0.3419 Acc=0.3929 | LR=8.32e-06 | 0.1s
+2026-05-17 04:45:19 | INFO | train |   Ep 100/500 | Loss=1.4539 CE=1.4539 Phys=0.0000 | Val F1=0.3419 Acc=0.3929 | LR=3.00e-04 | 0.1s
+2026-05-17 04:45:20 | INFO | train |   Ep 110/500 | Loss=1.5882 CE=1.5882 Phys=0.0000 | Val F1=0.3556 Acc=0.3929 | LR=2.93e-04 | 0.1s
+2026-05-17 04:45:20 | INFO | train |   Checkpoint saved (F1=0.3915)
+2026-05-17 04:45:22 | INFO | train |   Checkpoint saved (F1=0.3922)
+2026-05-17 04:45:22 | INFO | train |   Ep 120/500 | Loss=1.5741 CE=1.5741 Phys=0.0000 | Val F1=0.4059 Acc=0.4643 | LR=2.71e-04 | 0.2s
+2026-05-17 04:45:22 | INFO | train |   Checkpoint saved (F1=0.4059)
+2026-05-17 04:45:23 | INFO | train |   Checkpoint saved (F1=0.4069)
+2026-05-17 04:45:24 | INFO | train |   Ep 130/500 | Loss=1.5123 CE=1.5123 Phys=0.0000 | Val F1=0.3367 Acc=0.4286 | LR=2.38e-04 | 0.2s
+2026-05-17 04:45:25 | INFO | train |   Ep 140/500 | Loss=1.4260 CE=1.4260 Phys=0.0000 | Val F1=0.2926 Acc=0.3214 | LR=1.97e-04 | 0.1s
+2026-05-17 04:45:27 | INFO | train |   Ep 150/500 | Loss=1.4039 CE=1.4039 Phys=0.0000 | Val F1=0.3011 Acc=0.3214 | LR=1.50e-04 | 0.1s
+2026-05-17 04:45:28 | INFO | train |   Ep 160/500 | Loss=1.4517 CE=1.4517 Phys=0.0000 | Val F1=0.2926 Acc=0.3214 | LR=1.04e-04 | 0.1s
+2026-05-17 04:45:29 | INFO | train |   Ep 170/500 | Loss=1.5595 CE=1.5595 Phys=0.0000 | Val F1=0.2926 Acc=0.3214 | LR=6.26e-05 | 0.1s
+2026-05-17 04:45:31 | INFO | train |   Ep 180/500 | Loss=1.4614 CE=1.4614 Phys=0.0000 | Val F1=0.3598 Acc=0.3929 | LR=2.96e-05 | 0.2s
+2026-05-17 04:45:32 | INFO | train |   Ep 190/500 | Loss=1.3964 CE=1.3964 Phys=0.0000 | Val F1=0.3598 Acc=0.3929 | LR=8.32e-06 | 0.1s
+2026-05-17 04:45:33 | INFO | train |   Ep 200/500 | Loss=1.3236 CE=1.3236 Phys=0.0000 | Val F1=0.3719 Acc=0.3929 | LR=3.00e-04 | 0.1s
+2026-05-17 04:45:34 | INFO | train |   Checkpoint saved (F1=0.4077)
+2026-05-17 04:45:35 | INFO | train |   Ep 210/500 | Loss=1.4306 CE=1.4306 Phys=0.0000 | Val F1=0.3049 Acc=0.3571 | LR=2.93e-04 | 0.1s
+2026-05-17 04:45:36 | INFO | train |   Ep 220/500 | Loss=1.3655 CE=1.3655 Phys=0.0000 | Val F1=0.3677 Acc=0.4286 | LR=2.71e-04 | 0.1s
+2026-05-17 04:45:37 | INFO | train |   Ep 230/500 | Loss=1.4244 CE=1.4244 Phys=0.0000 | Val F1=0.3403 Acc=0.4286 | LR=2.38e-04 | 0.1s
+2026-05-17 04:45:38 | INFO | train |   Ep 240/500 | Loss=1.4143 CE=1.4143 Phys=0.0000 | Val F1=0.3216 Acc=0.3929 | LR=1.97e-04 | 0.1s
+2026-05-17 04:45:40 | INFO | train |   Ep 250/500 | Loss=1.4060 CE=1.4060 Phys=0.0000 | Val F1=0.3145 Acc=0.3929 | LR=1.50e-04 | 0.1s
+2026-05-17 04:45:41 | INFO | train |   Ep 260/500 | Loss=1.2968 CE=1.2968 Phys=0.0000 | Val F1=0.3994 Acc=0.5000 | LR=1.04e-04 | 0.1s
+2026-05-17 04:45:42 | INFO | train |   Ep 270/500 | Loss=1.2448 CE=1.2448 Phys=0.0000 | Val F1=0.3145 Acc=0.3929 | LR=6.26e-05 | 0.1s
+2026-05-17 04:45:44 | INFO | train |   Ep 280/500 | Loss=1.2980 CE=1.2980 Phys=0.0000 | Val F1=0.3351 Acc=0.4286 | LR=2.96e-05 | 0.1s
+2026-05-17 04:45:45 | INFO | train |   Ep 290/500 | Loss=1.2985 CE=1.2985 Phys=0.0000 | Val F1=0.3518 Acc=0.4643 | LR=8.32e-06 | 0.1s
+2026-05-17 04:45:46 | INFO | train |   Ep 300/500 | Loss=1.3523 CE=1.3523 Phys=0.0000 | Val F1=0.3454 Acc=0.4643 | LR=3.00e-04 | 0.1s
+2026-05-17 04:45:47 | INFO | train |   Checkpoint saved (F1=0.4153)
+2026-05-17 04:45:47 | INFO | train |   Ep 310/500 | Loss=1.3059 CE=1.3059 Phys=0.0000 | Val F1=0.3944 Acc=0.5000 | LR=2.93e-04 | 0.1s
+2026-05-17 04:45:48 | INFO | train |   Checkpoint saved (F1=0.4163)
+2026-05-17 04:45:49 | INFO | train |   Ep 320/500 | Loss=1.4193 CE=1.4193 Phys=0.0000 | Val F1=0.3929 Acc=0.5000 | LR=2.71e-04 | 0.1s
+2026-05-17 04:45:50 | INFO | train |   Ep 330/500 | Loss=1.3329 CE=1.3329 Phys=0.0000 | Val F1=0.3042 Acc=0.3929 | LR=2.38e-04 | 0.1s
+2026-05-17 04:45:51 | INFO | train |   Ep 340/500 | Loss=1.3238 CE=1.3238 Phys=0.0000 | Val F1=0.3214 Acc=0.4286 | LR=1.97e-04 | 0.1s
+2026-05-17 04:45:53 | INFO | train |   Ep 350/500 | Loss=1.2062 CE=1.2062 Phys=0.0000 | Val F1=0.2956 Acc=0.3929 | LR=1.50e-04 | 0.1s
+2026-05-17 04:45:54 | INFO | train |   Ep 360/500 | Loss=1.2605 CE=1.2605 Phys=0.0000 | Val F1=0.3212 Acc=0.4286 | LR=1.04e-04 | 0.1s
+2026-05-17 04:45:55 | INFO | train |   Ep 370/500 | Loss=1.2539 CE=1.2539 Phys=0.0000 | Val F1=0.3031 Acc=0.3929 | LR=6.26e-05 | 0.1s
+2026-05-17 04:45:57 | INFO | train |   Ep 380/500 | Loss=1.3524 CE=1.3524 Phys=0.0000 | Val F1=0.3031 Acc=0.3929 | LR=2.96e-05 | 0.1s
+2026-05-17 04:45:58 | INFO | train |   Ep 390/500 | Loss=1.2868 CE=1.2868 Phys=0.0000 | Val F1=0.3031 Acc=0.3929 | LR=8.32e-06 | 0.1s
+2026-05-17 04:45:59 | INFO | train |   Ep 400/500 | Loss=1.2769 CE=1.2769 Phys=0.0000 | Val F1=0.3031 Acc=0.3929 | LR=3.00e-04 | 0.1s
+2026-05-17 04:46:00 | INFO | train |   Ep 410/500 | Loss=1.1634 CE=1.1634 Phys=0.0000 | Val F1=0.2697 Acc=0.3571 | LR=2.93e-04 | 0.1s
+2026-05-17 04:46:02 | INFO | train |   Ep 420/500 | Loss=1.3099 CE=1.3099 Phys=0.0000 | Val F1=0.3855 Acc=0.4643 | LR=2.71e-04 | 0.1s
+2026-05-17 04:46:03 | INFO | train |   Ep 430/500 | Loss=1.3826 CE=1.3826 Phys=0.0000 | Val F1=0.3634 Acc=0.4286 | LR=2.38e-04 | 0.1s
+2026-05-17 04:46:04 | INFO | train |   Ep 440/500 | Loss=1.1671 CE=1.1671 Phys=0.0000 | Val F1=0.3753 Acc=0.4643 | LR=1.97e-04 | 0.1s
+2026-05-17 04:46:05 | INFO | train |   Ep 450/500 | Loss=1.1701 CE=1.1701 Phys=0.0000 | Val F1=0.3570 Acc=0.4286 | LR=1.50e-04 | 0.1s
+2026-05-17 04:46:07 | INFO | train |   Ep 460/500 | Loss=1.0711 CE=1.0711 Phys=0.0000 | Val F1=0.3570 Acc=0.4286 | LR=1.04e-04 | 0.1s
+2026-05-17 04:46:07 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:46:07 | INFO | train |   Fold 10 results:
+2026-05-17 04:46:07 | INFO | train |     accuracy           = 0.5357
+2026-05-17 04:46:07 | INFO | train |     precision          = 0.5284
+2026-05-17 04:46:07 | INFO | train |     recall             = 0.4292
+2026-05-17 04:46:07 | INFO | train |     f1                 = 0.4163
+2026-05-17 04:46:07 | INFO | train |     kappa              = 0.4157
+2026-05-17 04:46:07 | INFO | train |     brier              = 0.7014
+2026-05-17 04:46:07 | INFO | train |     ece                = 0.1849
+2026-05-17 04:46:07 | INFO | train |     mean_uncertainty   = 0.0000
+2026-05-17 04:46:07 | INFO | train | 
+== Cross-validation summary ==
+2026-05-17 04:46:07 | INFO | train |   accuracy    : 0.5669 ± 0.0726
+2026-05-17 04:46:07 | INFO | train |   f1          : 0.4899 ± 0.0747
+2026-05-17 04:46:07 | INFO | train |   precision   : 0.5382 ± 0.0942
+2026-05-17 04:46:07 | INFO | train |   recall      : 0.5156 ± 0.0757
+2026-05-17 04:46:07 | INFO | train |   kappa       : 0.4647 ± 0.0860
+2026-05-17 04:46:07 | INFO | train |   brier       : 0.6868 ± 0.0555
+2026-05-17 04:46:07 | INFO | train |   ece         : 0.2355 ± 0.0859
+2026-05-17 04:46:07 | INFO | train | 
+  Targets (Table 3.23): NOT MET
+2026-05-17 04:46:07 | INFO | train | 
+== Final training on train set only ==
+2026-05-17 04:46:07 | INFO | train | == Fold 99 — training start ==
+2026-05-17 04:46:07 | INFO | train |   Ep 001/500 | Loss=2.0710 CE=2.0710 Phys=0.0000 | Val F1=0.0128 Acc=0.0400 | LR=3.00e-04 | 0.1s
+2026-05-17 04:46:07 | INFO | train |   Checkpoint saved (F1=0.0128)
+2026-05-17 04:46:07 | INFO | train |   Checkpoint saved (F1=0.1006)
+2026-05-17 04:46:08 | INFO | train |   Checkpoint saved (F1=0.1303)
+2026-05-17 04:46:08 | INFO | train |   Checkpoint saved (F1=0.1466)
+2026-05-17 04:46:08 | INFO | train |   Checkpoint saved (F1=0.1495)
+2026-05-17 04:46:08 | INFO | train |   Checkpoint saved (F1=0.1905)
+2026-05-17 04:46:08 | INFO | train |   Checkpoint saved (F1=0.3296)
+2026-05-17 04:46:08 | INFO | train |   Ep 010/500 | Loss=1.7353 CE=1.7353 Phys=0.0000 | Val F1=0.3503 Acc=0.4000 | LR=2.93e-04 | 0.1s
+2026-05-17 04:46:08 | INFO | train |   Checkpoint saved (F1=0.3503)
+2026-05-17 04:46:08 | INFO | train |   Checkpoint saved (F1=0.3896)
+2026-05-17 04:46:09 | INFO | train |   Checkpoint saved (F1=0.3988)
+2026-05-17 04:46:09 | INFO | train |   Checkpoint saved (F1=0.4295)
+2026-05-17 04:46:09 | INFO | train |   Checkpoint saved (F1=0.4308)
+2026-05-17 04:46:10 | INFO | train |   Ep 020/500 | Loss=1.7008 CE=1.7008 Phys=0.0000 | Val F1=0.3569 Acc=0.4000 | LR=2.71e-04 | 0.1s
+2026-05-17 04:46:11 | INFO | train |   Checkpoint saved (F1=0.4446)
+2026-05-17 04:46:11 | INFO | train |   Checkpoint saved (F1=0.4596)
+2026-05-17 04:46:11 | INFO | train |   Ep 030/500 | Loss=1.6824 CE=1.6824 Phys=0.0000 | Val F1=0.4616 Acc=0.5600 | LR=2.38e-04 | 0.1s
+2026-05-17 04:46:11 | INFO | train |   Checkpoint saved (F1=0.4616)
+2026-05-17 04:46:12 | INFO | train |   Ep 040/500 | Loss=1.6349 CE=1.6349 Phys=0.0000 | Val F1=0.4143 Acc=0.4800 | LR=1.97e-04 | 0.1s
+2026-05-17 04:46:13 | INFO | train |   Ep 050/500 | Loss=1.5821 CE=1.5821 Phys=0.0000 | Val F1=0.3901 Acc=0.4400 | LR=1.50e-04 | 0.1s
+2026-05-17 04:46:14 | INFO | train |   Checkpoint saved (F1=0.4630)
+2026-05-17 04:46:15 | INFO | train |   Ep 060/500 | Loss=1.6396 CE=1.6396 Phys=0.0000 | Val F1=0.4494 Acc=0.5000 | LR=1.04e-04 | 0.1s
+2026-05-17 04:46:16 | INFO | train |   Ep 070/500 | Loss=1.5967 CE=1.5967 Phys=0.0000 | Val F1=0.4365 Acc=0.4800 | LR=6.26e-05 | 0.1s
+2026-05-17 04:46:17 | INFO | train |   Checkpoint saved (F1=0.4663)
+2026-05-17 04:46:17 | INFO | train |   Ep 080/500 | Loss=1.5653 CE=1.5653 Phys=0.0000 | Val F1=0.3916 Acc=0.4400 | LR=2.96e-05 | 0.1s
+2026-05-17 04:46:19 | INFO | train |   Ep 090/500 | Loss=1.5599 CE=1.5599 Phys=0.0000 | Val F1=0.4513 Acc=0.5000 | LR=8.32e-06 | 0.1s
+2026-05-17 04:46:20 | INFO | train |   Ep 100/500 | Loss=1.4997 CE=1.4997 Phys=0.0000 | Val F1=0.4250 Acc=0.4800 | LR=3.00e-04 | 0.1s
+2026-05-17 04:46:20 | INFO | train |   Checkpoint saved (F1=0.4679)
+2026-05-17 04:46:21 | INFO | train |   Ep 110/500 | Loss=1.6482 CE=1.6482 Phys=0.0000 | Val F1=0.4239 Acc=0.4800 | LR=2.93e-04 | 0.1s
+2026-05-17 04:46:23 | INFO | train |   Ep 120/500 | Loss=1.5631 CE=1.5631 Phys=0.0000 | Val F1=0.4248 Acc=0.4600 | LR=2.71e-04 | 0.1s
+2026-05-17 04:46:23 | INFO | train |   Checkpoint saved (F1=0.4894)
+2026-05-17 04:46:25 | INFO | train |   Ep 130/500 | Loss=1.5701 CE=1.5701 Phys=0.0000 | Val F1=0.4025 Acc=0.4400 | LR=2.38e-04 | 0.2s
+2026-05-17 04:46:26 | INFO | train |   Ep 140/500 | Loss=1.5044 CE=1.5044 Phys=0.0000 | Val F1=0.3831 Acc=0.4200 | LR=1.97e-04 | 0.2s
+2026-05-17 04:46:28 | INFO | train |   Ep 150/500 | Loss=1.5413 CE=1.5413 Phys=0.0000 | Val F1=0.3618 Acc=0.3800 | LR=1.50e-04 | 0.2s
+2026-05-17 04:46:29 | INFO | train |   Ep 160/500 | Loss=1.4915 CE=1.4915 Phys=0.0000 | Val F1=0.3544 Acc=0.3800 | LR=1.04e-04 | 0.2s
+2026-05-17 04:46:31 | INFO | train |   Ep 170/500 | Loss=1.5557 CE=1.5557 Phys=0.0000 | Val F1=0.3683 Acc=0.4000 | LR=6.26e-05 | 0.2s
+2026-05-17 04:46:32 | INFO | train |   Ep 180/500 | Loss=1.4859 CE=1.4859 Phys=0.0000 | Val F1=0.3933 Acc=0.4200 | LR=2.96e-05 | 0.1s
+2026-05-17 04:46:34 | INFO | train |   Ep 190/500 | Loss=1.3861 CE=1.3861 Phys=0.0000 | Val F1=0.4079 Acc=0.4400 | LR=8.32e-06 | 0.2s
+2026-05-17 04:46:36 | INFO | train |   Ep 200/500 | Loss=1.4033 CE=1.4033 Phys=0.0000 | Val F1=0.3940 Acc=0.4200 | LR=3.00e-04 | 0.2s
+2026-05-17 04:46:37 | INFO | train |   Ep 210/500 | Loss=1.4376 CE=1.4376 Phys=0.0000 | Val F1=0.3854 Acc=0.4000 | LR=2.93e-04 | 0.1s
+2026-05-17 04:46:38 | INFO | train |   Ep 220/500 | Loss=1.5083 CE=1.5083 Phys=0.0000 | Val F1=0.4073 Acc=0.4400 | LR=2.71e-04 | 0.1s
+2026-05-17 04:46:40 | INFO | train |   Ep 230/500 | Loss=1.5201 CE=1.5201 Phys=0.0000 | Val F1=0.5016 Acc=0.4800 | LR=2.38e-04 | 0.1s
+2026-05-17 04:46:40 | INFO | train |   Checkpoint saved (F1=0.5016)
+2026-05-17 04:46:41 | INFO | train |   Ep 240/500 | Loss=1.4642 CE=1.4642 Phys=0.0000 | Val F1=0.4892 Acc=0.4800 | LR=1.97e-04 | 0.1s
+2026-05-17 04:46:41 | INFO | train |   Checkpoint saved (F1=0.5092)
+2026-05-17 04:46:42 | INFO | train |   Ep 250/500 | Loss=1.4830 CE=1.4830 Phys=0.0000 | Val F1=0.4508 Acc=0.4400 | LR=1.50e-04 | 0.1s
+2026-05-17 04:46:44 | INFO | train |   Ep 260/500 | Loss=1.3341 CE=1.3341 Phys=0.0000 | Val F1=0.4812 Acc=0.4800 | LR=1.04e-04 | 0.1s
+2026-05-17 04:46:45 | INFO | train |   Ep 270/500 | Loss=1.3492 CE=1.3492 Phys=0.0000 | Val F1=0.4812 Acc=0.4800 | LR=6.26e-05 | 0.1s
+2026-05-17 04:46:46 | INFO | train |   Ep 280/500 | Loss=1.3863 CE=1.3863 Phys=0.0000 | Val F1=0.4892 Acc=0.4800 | LR=2.96e-05 | 0.1s
+2026-05-17 04:46:48 | INFO | train |   Ep 290/500 | Loss=1.3883 CE=1.3883 Phys=0.0000 | Val F1=0.4774 Acc=0.4800 | LR=8.32e-06 | 0.1s
+2026-05-17 04:46:49 | INFO | train |   Checkpoint saved (F1=0.5115)
+2026-05-17 04:46:49 | INFO | train |   Ep 300/500 | Loss=1.3643 CE=1.3643 Phys=0.0000 | Val F1=0.4812 Acc=0.4800 | LR=3.00e-04 | 0.1s
+2026-05-17 04:46:50 | INFO | train |   Ep 310/500 | Loss=1.3219 CE=1.3219 Phys=0.0000 | Val F1=0.4526 Acc=0.4600 | LR=2.93e-04 | 0.1s
+2026-05-17 04:46:51 | INFO | train |   Checkpoint saved (F1=0.5636)
+2026-05-17 04:46:52 | INFO | train |   Ep 320/500 | Loss=1.5100 CE=1.5100 Phys=0.0000 | Val F1=0.4689 Acc=0.4800 | LR=2.71e-04 | 0.2s
+2026-05-17 04:46:53 | INFO | train |   Ep 330/500 | Loss=1.3366 CE=1.3366 Phys=0.0000 | Val F1=0.5186 Acc=0.5200 | LR=2.38e-04 | 0.1s
+2026-05-17 04:46:54 | INFO | train |   Ep 340/500 | Loss=1.3252 CE=1.3252 Phys=0.0000 | Val F1=0.4906 Acc=0.4800 | LR=1.97e-04 | 0.1s
+2026-05-17 04:46:57 | INFO | train |   Ep 350/500 | Loss=1.2735 CE=1.2735 Phys=0.0000 | Val F1=0.5099 Acc=0.5200 | LR=1.50e-04 | 0.3s
+2026-05-17 04:47:00 | INFO | train |   Ep 360/500 | Loss=1.2908 CE=1.2908 Phys=0.0000 | Val F1=0.5079 Acc=0.5000 | LR=1.04e-04 | 0.2s
+2026-05-17 04:47:02 | INFO | train |   Ep 370/500 | Loss=1.2769 CE=1.2769 Phys=0.0000 | Val F1=0.4999 Acc=0.5000 | LR=6.26e-05 | 0.2s
+2026-05-17 04:47:04 | INFO | train |   Ep 380/500 | Loss=1.3257 CE=1.3257 Phys=0.0000 | Val F1=0.5079 Acc=0.5000 | LR=2.96e-05 | 0.2s
+2026-05-17 04:47:06 | INFO | train |   Ep 390/500 | Loss=1.3263 CE=1.3263 Phys=0.0000 | Val F1=0.5247 Acc=0.5200 | LR=8.32e-06 | 0.2s
+2026-05-17 04:47:07 | INFO | train |   Ep 400/500 | Loss=1.2741 CE=1.2741 Phys=0.0000 | Val F1=0.5484 Acc=0.5600 | LR=3.00e-04 | 0.1s
+2026-05-17 04:47:09 | INFO | train |   Ep 410/500 | Loss=1.1226 CE=1.1226 Phys=0.0000 | Val F1=0.5226 Acc=0.5400 | LR=2.93e-04 | 0.2s
+2026-05-17 04:47:11 | INFO | train |   Ep 420/500 | Loss=1.2475 CE=1.2475 Phys=0.0000 | Val F1=0.4398 Acc=0.4400 | LR=2.71e-04 | 0.2s
+2026-05-17 04:47:12 | INFO | train |   Ep 430/500 | Loss=1.3922 CE=1.3922 Phys=0.0000 | Val F1=0.5049 Acc=0.5000 | LR=2.38e-04 | 0.2s
+2026-05-17 04:47:14 | INFO | train |   Ep 440/500 | Loss=1.0997 CE=1.0997 Phys=0.0000 | Val F1=0.5213 Acc=0.5200 | LR=1.97e-04 | 0.2s
+2026-05-17 04:47:16 | INFO | train |   Ep 450/500 | Loss=1.2388 CE=1.2388 Phys=0.0000 | Val F1=0.4897 Acc=0.4800 | LR=1.50e-04 | 0.1s
+2026-05-17 04:47:17 | INFO | train |   Ep 460/500 | Loss=1.2407 CE=1.2407 Phys=0.0000 | Val F1=0.5078 Acc=0.5000 | LR=1.04e-04 | 0.1s
+2026-05-17 04:47:18 | INFO | train |   Early stopping triggered (patience=150)
+2026-05-17 04:47:18 | INFO | train | Temperature scaling: T=0.9024
+2026-05-17 04:47:18 | INFO | train | 
+== Test set metrics — final model (MC Dropout) ==
+2026-05-17 04:47:18 | INFO | train |   accuracy             = 0.5490 ✗
+2026-05-17 04:47:18 | INFO | train |   precision            = 0.5028 ✗
+2026-05-17 04:47:18 | INFO | train |   recall               = 0.6253 ✗
+2026-05-17 04:47:18 | INFO | train |   f1                   = 0.5285 ✗
+2026-05-17 04:47:18 | INFO | train |   kappa                = 0.4430 ✗
+2026-05-17 04:47:18 | INFO | train |   brier                = 0.5838 ✗
+2026-05-17 04:47:18 | INFO | train |   ece                  = 0.1213 ✗
+2026-05-17 04:47:18 | INFO | train |   mean_uncertainty     = 0.0700
+2026-05-17 04:47:24 | INFO | train | 
+== Test set metrics — KFold Ensemble (weighted) + Temperature Scaling ==
+2026-05-17 04:47:24 | INFO | train |   accuracy             = 0.5490 ✗
+2026-05-17 04:47:24 | INFO | train |   precision            = 0.5401 ✗
+2026-05-17 04:47:24 | INFO | train |   recall               = 0.6157 ✗
+2026-05-17 04:47:24 | INFO | train |   f1                   = 0.5600 ✗
+2026-05-17 04:47:24 | INFO | train |   kappa                = 0.4363 ✗
+2026-05-17 04:47:24 | INFO | train |   brier                = 0.6472 ✗
+2026-05-17 04:47:24 | INFO | train |   ece                  = 0.1780 ✗
+2026-05-17 04:47:24 | INFO | train |   mean_uncertainty     = 0.0000
+2026-05-17 04:47:25 | INFO | train | Inference complete — 51 samples — Acc=0.3137
+2026-05-17 04:47:25 | INFO | train | 
+JSON report: /Users/krohn/PycharmProjects/pignn_uq/outputs/pignn_uq_report.json
