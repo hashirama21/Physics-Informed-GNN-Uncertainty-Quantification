@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Data (not versioned — too large / proprietary)
+data/
+
+# Model weights (large binary files)
+outputs/*.pt
+
+# Logs
+logs/
+
+# Export artifacts
+*.html
+*.pdf
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# macOS
+.DS_Store

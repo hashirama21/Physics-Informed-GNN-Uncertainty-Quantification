@@ -199,18 +199,38 @@ def find_temperature(model: PIGNN_UQ, val_loader: DataLoader) -> float:
     return t_val
 
 
-def ensemble_evaluate(fold_paths:   List[str],
-                      graphs:        list,
-                      node_in_dim:   int,
-                      temperature:   float = 1.0,
-                      fold_weights:  Optional[List[float]] = None,
-                      ) -> Dict[str, float]:
-    """Weighted average of MC Dropout probs from all fold models on test set."""
-    all_model_probs: list = []
-    all_targets: list     = []
-    valid_weights: list   = []
+def find_ensemble_temperature(ens_log_probs: torch.Tensor,
+                               targets:        torch.Tensor) -> float:
+    """Optimise T for ensemble log-probabilities on val set."""
+    T = torch.nn.Parameter(torch.ones(1))
+    opt = torch.optim.LBFGS([T], lr=0.1, max_iter=200)
+    def closure():
+        opt.zero_grad()
+        loss = F.cross_entropy(ens_log_probs / T.clamp(min=0.01), targets)
+        loss.backward()
+        return loss
+    opt.step(closure)
+    t_val = float(T.clamp(min=0.5, max=3.0).item())
+    logger.info(f"Ensemble temperature scaling: T={t_val:.4f}")
+    return t_val
 
-    loader = DataLoader(graphs, batch_size=TRAIN_CONFIG["batch_size"])
+
+def ensemble_evaluate(fold_paths:     List[str],
+                      test_graphs:     list,
+                      val_graphs:      list,
+                      node_in_dim:     int,
+                      fold_weights:    Optional[List[float]] = None,
+                      ) -> Dict[str, float]:
+    """Weighted average of MC Dropout probs from all fold models on test set.
+    Temperature is optimised separately for the ensemble on val set."""
+    all_model_probs: list    = []
+    all_val_probs: list      = []
+    all_targets: list        = []
+    valid_weights: list      = []
+
+    test_loader = DataLoader(test_graphs, batch_size=TRAIN_CONFIG["batch_size"])
+    val_loader  = DataLoader(val_graphs,  batch_size=TRAIN_CONFIG["batch_size"])
+    val_targets: list = []
 
     for i, path in enumerate(fold_paths):
         if not os.path.exists(path):
@@ -220,7 +240,7 @@ def ensemble_evaluate(fold_paths:   List[str],
         m.load_state_dict(torch.load(path, map_location=DEVICE, weights_only=True))
 
         fold_probs, fold_tgts = [], []
-        for batch in loader:
+        for batch in test_loader:
             batch = batch.to(DEVICE)
             mc = m.mc_dropout_predict(batch, n_samples=MODEL_CONFIG["mc_samples"])
             fold_probs.append(mc["mean_probs"].cpu())
@@ -228,6 +248,17 @@ def ensemble_evaluate(fold_paths:   List[str],
         all_model_probs.append(torch.cat(fold_probs, dim=0))
         if not all_targets:
             all_targets = fold_tgts
+
+        # Collect val predictions for ensemble T-scaling
+        vp = []
+        for batch in val_loader:
+            batch = batch.to(DEVICE)
+            mc = m.mc_dropout_predict(batch, n_samples=MODEL_CONFIG["mc_samples"])
+            vp.append(mc["mean_probs"].cpu())
+            if i == 0:
+                val_targets.extend(batch.y.cpu().tolist())
+        all_val_probs.append(torch.cat(vp, dim=0))
+
         w = fold_weights[i] if (fold_weights and i < len(fold_weights)) else 1.0
         valid_weights.append(max(w, 1e-9))
 
@@ -235,16 +266,23 @@ def ensemble_evaluate(fold_paths:   List[str],
         logger.error("No fold models found — skipping ensemble.")
         return {}
 
-    # Weighted average then temperature scaling
+    # Weighted average of probabilities
     weights_t = torch.tensor(valid_weights, dtype=torch.float)
     weights_t = weights_t / weights_t.sum()
     stacked   = torch.stack(all_model_probs, dim=0)          # [K, N, C]
     ens_probs = (stacked * weights_t[:, None, None]).sum(dim=0)
-    if temperature != 1.0:
-        logits_ens = torch.log(ens_probs.clamp(min=1e-9))
-        ens_probs  = torch.softmax(logits_ens / temperature, dim=-1)
 
-    y_prob = ens_probs.numpy()
+    # Ensemble-specific temperature scaling on val set
+    val_stacked  = torch.stack(all_val_probs, dim=0)
+    val_ens_prob = (val_stacked * weights_t[:, None, None]).sum(dim=0)
+    val_log_p    = torch.log(val_ens_prob.clamp(min=1e-9))
+    val_tgts_t   = torch.tensor(val_targets, dtype=torch.long)
+    ens_T        = find_ensemble_temperature(val_log_p, val_tgts_t)
+
+    ens_log = torch.log(ens_probs.clamp(min=1e-9))
+    ens_probs_cal = torch.softmax(ens_log / ens_T, dim=-1)
+
+    y_prob = ens_probs_cal.numpy()
     y_pred = y_prob.argmax(axis=1)
     y_true = np.array(all_targets)
 
@@ -301,7 +339,7 @@ def train_split(train_graphs: list,
     optimizer = AdamW(model.parameters(),
                        lr=TRAIN_CONFIG["learning_rate"],
                        weight_decay=TRAIN_CONFIG["weight_decay"])
-    scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=100, T_mult=1, eta_min=1e-6)
+    scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=200, T_mult=1, eta_min=1e-6)
     ckpt_path = os.path.join(OUTPUT_DIR, f"best_fold{fold_id}.pt")
     stopper   = EarlyStopping(ckpt=ckpt_path)
     history   = {"train_loss": [], "val_f1": [], "val_acc": [], "lr": []}
@@ -470,18 +508,27 @@ def main():
     df_trainval = pd.concat([df_train, df_val], ignore_index=True)
     cv_results  = cross_validate(df_trainval, node_in_dim=MODEL_CONFIG["node_in_dim"])
 
-    # Final model trained on train only; val_graphs is a true held-out for early stopping
-    logger.info("\n== Final training on train set only ==")
+    # Final model trained on 90% of train+val; 10% pseudo-val for early stopping & T-scaling
+    import random as _rng
+    _rng.seed(TRAIN_CONFIG["random_seed"])
+    all_tv = train_graphs + val_graphs       # 284 graphs (already scaled)
+    n_pv   = max(10, int(len(all_tv) * 0.10))   # ~28 pseudo-val samples
+    _idx   = list(range(len(all_tv)))
+    _rng.shuffle(_idx)
+    final_train_g = [all_tv[i] for i in _idx[n_pv:]]   # ~256 samples
+    final_val_g   = [all_tv[i] for i in _idx[:n_pv]]    # ~28 samples
+
+    logger.info(f"\n== Final training on train+val 90% ({len(final_train_g)} samples) ==")
     final_model, history = train_split(
-        train_graphs=train_graphs,
-        val_graphs=val_graphs,
+        train_graphs=final_train_g,
+        val_graphs=final_val_g,
         node_in_dim=MODEL_CONFIG["node_in_dim"],
         fold_id=99,
     )
     torch.save(final_model.state_dict(), os.path.join(OUTPUT_DIR, "final_model.pt"))
 
-    # Temperature scaling calibration sur val
-    val_loader_cal = DataLoader(val_graphs, batch_size=TRAIN_CONFIG["batch_size"])
+    # Temperature scaling calibration sur pseudo-val
+    val_loader_cal = DataLoader(final_val_g, batch_size=TRAIN_CONFIG["batch_size"])
     temperature    = find_temperature(final_model, val_loader_cal)
 
     test_loader  = DataLoader(test_graphs, batch_size=TRAIN_CONFIG["batch_size"])
@@ -496,15 +543,14 @@ def main():
                            or (k not in ("brier", "ece") and v >= tgt)) else " ✗"
         logger.info(f"  {k:20s} = {v:.4f}{tag}")
 
-    # KFold ensemble sur test (weighted by fold val F1)
+    # KFold ensemble sur test (weighted by fold val F1, with ensemble-specific T-scaling)
     fold_paths = [os.path.join(OUTPUT_DIR, f"best_fold{i}.pt")
                   for i in range(TRAIN_CONFIG["n_folds"])]
     fold_f1_weights = [m["f1"] for m in cv_results["fold_metrics"]]
-    ens_metrics = ensemble_evaluate(fold_paths, test_graphs,
+    ens_metrics = ensemble_evaluate(fold_paths, test_graphs, val_graphs,
                                      MODEL_CONFIG["node_in_dim"],
-                                     temperature=temperature,
                                      fold_weights=fold_f1_weights)
-    logger.info("\n== Test set metrics — KFold Ensemble (weighted) + Temperature Scaling ==")
+    logger.info("\n== Test set metrics — KFold Ensemble (weighted, T-scaled separately) ==")
     for k, v in ens_metrics.items():
         tgt = EVAL_TARGETS.get(k)
         tag = ""

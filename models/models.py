@@ -229,7 +229,7 @@ class PIGNN_UQ(nn.Module):
                      ) -> Dict[str, torch.Tensor]:
         dev = logits.device
         w   = class_weights.to(dev) if class_weights is not None else None
-        ce  = F.cross_entropy(logits, targets, weight=w)
+        ce  = F.cross_entropy(logits, targets, weight=w, label_smoothing=0.02)
         batch = (data.batch.to(dev) if data.batch is not None
                  else torch.zeros(data.x.size(0), dtype=torch.long, device=dev))
         phys  = self.physics_loss_fn(logits, data.x.to(dev), batch)

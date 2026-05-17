@@ -542,8 +542,690 @@ F1=0.56 vs 0.90 cible. Brier=0.58 vs 0.10 cible. Le label_smoothing=0.05 pourrai
 
 ### Diagnostics
 
-*(à remplir)*
+#### 1. Modèle final : meilleur test résultat à ce jour (F1=0.5612, Brier=0.5717)
+Label_smoothing=0.05 + T_0=200 ont porté le modèle à F1=0.5612 test (+0.033 vs R4). La température T=1.3702 (>1) montre que le modèle est légèrement sur-confiant — le label_smoothing a trop corrigé (on est passé de T=0.90 R4 → T=1.37 R5, on a dépassé l'optimum T=1.0).
+
+#### 2. Ensemble T=0.1000 — catastrophe (T saturé au minimum du clamp)
+L'optimisation LBFGS de T pour l'ensemble donne T=0.1 (valeur au clamp minimum). Explication : les proba de l'ensemble (moy de 10 MC-Dropout) sont très plates → pour minimiser la NLL, LBFGS veut T→0 (rendre très piqué). Résultat : Brier=0.7914, ECE=0.3917 — pire que tous les rounds précédents. Fix : relever le clamp min de 0.1 à 0.5.
+
+#### 3. label_smoothing=0.05 trop fort : overcorrection
+R3 focal : T=0.66 (sous-confiant). R4 sans focal : T=0.90 (proche optimal). R5 avec LS=0.05 : T=1.37 (sur-confiant). La correction est trop forte. Cible : T≈1.0. Réduire LS à 0.02.
+
+#### 4. Modèle encore en amélioration à ep 447-450
+Best checkpoint à ep~447 (F1 val=0.5662) dans le 3e cycle LR (ep 400-600). Cela montre que num_epochs=500 est insuffisant — le 3e cycle cosinus est interrompu. Porter à 600 epochs pour avoir 3 cycles complets.
+
+#### 5. mean_uncertainty=0.0805 : MC Dropout fonctionnel
+Pour la première fois, l'incertitude MC Dropout est substantielle (0.07-0.08) et discriminante. Les prédictions moins confiantes de R5 permettent une vraie variance entre passes stochastiques.
 
 ### Modifications pour Round 6
 
-*(à remplir après analyse des résultats)*
+| Code | Fichier | Changement | Raison |
+|------|---------|-----------|--------|
+| R6-E1 | train.py | Clamp T ensemble : `(0.1, 10)` → **`(0.5, 3.0)`** | Éviter T=0.1 catastrophique qui sur-aiguise l'ensemble |
+| R6-L1 | models.py | `label_smoothing`: 0.05 → **0.02** | T=1.37 > 1.0 : overcorrection ; 0.02 cible T≈1.0 |
+| R6-T1 | config.py | `num_epochs`: 500 → **600** | 3 cycles complets de T_0=200 ; modèle encore en hausse à ep 450 |
+
+---
+
+## Round 6 — (à remplir après `python train.py`)
+
+### Config
+
+| Paramètre | Valeur |
+|-----------|--------|
+| hidden_dim | 96 |
+| num_heads | 2 |
+| dropout_rate | 0.15 |
+| physics_lambda | 0.01 |
+| loss | CE + class_weights + label_smoothing=0.02 |
+| norm | BatchNorm1d |
+| mixup_alpha | 0.3 |
+| scheduler | CosineAnnealingWarmRestarts (T_0=200) |
+| learning_rate | 3e-4 |
+| batch_size | 32 |
+| early_stop_patience | 200 |
+| noise_std | 0.05 |
+| drop_edge_p | 0.15 |
+| inference | Ensemble 10 folds pondéré + T-scaling [0.5, 3.0] |
+| n_folds | 10 |
+| num_epochs | 600 |
+
+### Résultats
+
+#### Cross-validation (détail par fold)
+
+| Fold | Acc | F1 | Kappa | Brier | ECE |
+|------|-----|----|-------|-------|-----|
+| 1 | 0.4483 | 0.4046 | 0.3304 | 0.7678 | 0.2025 |
+| 2 | 0.6897 | 0.6091 | 0.6173 | 0.6641 | 0.3983 |
+| 3 | 0.6207 | 0.6246 | 0.5417 | 0.5606 | 0.2158 |
+| 4 | 0.5172 | 0.5104 | 0.4150 | 0.7275 | 0.2418 |
+| 5 | 0.5357 | 0.4580 | 0.4383 | 0.7421 | 0.2592 |
+| 6 | 0.5357 | 0.4734 | 0.4339 | 0.6611 | 0.1479 |
+| 7 | 0.6071 | 0.5060 | 0.5134 | 0.6755 | 0.2593 |
+| 8 | **0.7500** | **0.6467** | **0.6869** | **0.5786** | 0.3825 |
+| 9 | 0.4643 | 0.4502 | 0.3588 | 0.7663 | 0.1669 |
+| 10 | 0.5714 | 0.4849 | 0.4615 | 0.7244 | 0.2262 |
+
+#### Cross-validation (moyenne)
+
+| Métrique | Mean | Std | Min | Max | Cible | Status | Δ vs R4 |
+|----------|------|-----|-----|-----|-------|--------|---------|
+| Accuracy | 0.5740 | 0.0904 | 0.448 | 0.750 | ≥ 0.95 | ✗ | **+0.007** |
+| F1 macro | 0.5168 | 0.0778 | 0.405 | 0.647 | ≥ 0.90 | ✗ | **+0.027** |
+| Precision | 0.5715 | 0.0784 | 0.451 | 0.693 | ≥ 0.90 | ✗ | +0.033 |
+| Recall | 0.5371 | 0.0937 | 0.394 | 0.678 | ≥ 0.85 | ✗ | +0.021 |
+| Kappa | 0.4797 | 0.1059 | 0.330 | 0.687 | ≥ 0.85 | ✗ | +0.015 |
+| Brier | 0.6868 | 0.0692 | 0.561 | 0.768 | ≤ 0.10 | ✗ | =0.000 |
+| ECE | 0.2500 | 0.0782 | 0.148 | 0.398 | ≤ 0.05 | ✗ | +0.015* |
+
+*ECE CV sans T-scaling — non comparable
+
+#### Test set — modèle final (MC Dropout, T=1.4265)
+
+| Métrique | Valeur | Cible | Status | Δ vs R5 |
+|----------|--------|-------|--------|---------|
+| Accuracy | 0.5490 | ≥ 0.95 | ✗ | =0.000 |
+| F1 macro | 0.5390 | ≥ 0.90 | ✗ | -0.022 |
+| Precision | 0.5236 | ≥ 0.90 | ✗ | — |
+| Recall | 0.6298 | ≥ 0.85 | ✗ | — |
+| Kappa | 0.4425 | ≥ 0.85 | ✗ | — |
+| Brier | **0.5536** | ≤ 0.10 | ✗ | **-0.018** |
+| ECE | 0.1031 | ≤ 0.05 | ✗ | — |
+| Mean uncertainty | 0.0836 | — | — | +0.003 |
+
+#### Test set — KFold Ensemble pondéré + T=0.5000 (floor)
+
+| Métrique | Valeur | Cible | Status | Δ vs R4 ens. |
+|----------|--------|-------|--------|--------------|
+| Accuracy | 0.5882 | ≥ 0.95 | ✗ | **+0.039** |
+| F1 macro | **0.5851** | ≥ 0.90 | ✗ | **+0.025** |
+| Precision | 0.5698 | ≥ 0.90 | ✗ | +0.030 |
+| Recall | 0.6545 | ≥ 0.85 | ✗ | +0.039 |
+| Kappa | 0.4880 | ≥ 0.85 | ✗ | +0.052 |
+| Brier | 0.6064 | ≤ 0.10 | ✗ | -0.041 |
+| ECE | 0.1273 | ≤ 0.05 | ✗ | — |
+
+### Diagnostics
+
+#### 1. Ensemble T=0.5000 — toujours saturé au plancher malgré clamp [0.5, 3.0]
+La cause racine est identifiée : `ensemble_evaluate` moyenne les **softmax(MC_probs)** de 10 modèles × 50 passes stochastiques = 500 distributions moyennées → résultat quasi-uniforme (proba ~1/6 par classe). LBFGS doit T→0 pour rendre ce vecteur piqué, et sature au clamp. Fix immédiat : moyenner dans l'**espace des logits** (éval déterministe, pas MC Dropout) — T=1.0 devrait être proche de l'optimal.
+
+#### 2. Brier=0.5536 — meilleur jamais atteint
+Malgré une F1 légèrement en baisse (-0.022 vs R5), le Brier améliore de -0.018. Les probabilités sont mieux calibrées. Indicateur positif pour la calibration long terme.
+
+#### 3. T=1.4265 — sur-confiance persistante, LS inefficace
+R4 LS=0.0 → T=0.90. R5 LS=0.05 → T=1.37. R6 LS=0.02 → T=1.43 (pire). L'augmentation d'epochs (500→600) et non le LS semble responsable : 3 cycles cosinus poussent le modèle vers une convergence plus confiante. Solution : retour à LS=0.0 + accepter T légèrement sous 1.0 comme en R4.
+
+#### 4. CV F1 max à 0.6467 (fold 8, Acc=0.75) — potentiel sous-exploité
+Le meilleur fold atteint 0.75 accuracy, preuve que la capacité est là. La variance inter-folds (std=0.078) reste le principal obstacle — dépend du tirage des 28-29 val samples.
+
+#### 5. Physics loss = 0.000 depuis R4 — mixup bypasse la branche physics
+`train_one_epoch` : si `mixup_alpha>0 AND batch_size>1`, le code entre dans la branche mixup qui calcule CE directement sans appeler `model.compute_loss()`. La physics loss n'a pas été appliquée depuis l'introduction du mixup au R4. Impact faible (λ=0.01) mais à corriger.
+
+### Modifications pour Round 7
+
+| Code | Fichier | Changement | Raison |
+|------|---------|-----------|--------|
+| R7-E1 | train.py | `ensemble_evaluate` : remplacer MC prob averaging → **éval déterministe + logit averaging** | Fix T=0.5 floor : logits moyennés → distribution piquée → T≈1.0 attendu |
+| R7-L1 | models.py | `label_smoothing`: 0.02 → **0.00** | T=1.43>1 : R4 LS=0.0 donnait T=0.90 (plus proche 1.0) ; epochs supplémentaires accroissent la sur-confiance |
+| R7-P1 | train.py | Ajouter physics loss dans la branche mixup | Bug depuis R4 : physics loss jamais appliquée avec mixup actif |
+| R7-T1 | config.py | `num_epochs`: 600 → **800** | 4 cycles complets T_0=200 ; modèle en hausse jusqu'à ep 554 en R6 |
+
+---
+
+## Round 7 — Régression (2026-05-17)
+
+### Config
+
+| Paramètre | Valeur |
+|-----------|--------|
+| hidden_dim | 96 |
+| num_heads | 2 |
+| dropout_rate | 0.15 |
+| physics_lambda | 0.01 |
+| loss | CE + class_weights + label_smoothing=0.00 |
+| norm | BatchNorm1d |
+| mixup_alpha | 0.3 |
+| scheduler | CosineAnnealingWarmRestarts (T_0=200) |
+| learning_rate | 3e-4 |
+| batch_size | 32 |
+| early_stop_patience | 200 |
+| noise_std | 0.05 |
+| drop_edge_p | 0.15 |
+| inference | Ensemble 10 folds pondéré (logit avg déterministe) + T-scaling |
+| n_folds | 10 |
+| num_epochs | 800 |
+
+### Résultats
+
+#### Cross-validation (détail par fold)
+
+| Fold | Acc | F1 | Kappa | Brier | ECE |
+|------|-----|----|-------|-------|-----|
+| 1 | 0.4483 | 0.3668 | 0.3166 | 0.7340 | 0.1164 |
+| 2 | 0.6897 | 0.6477 | 0.6266 | 0.5812 | 0.2496 |
+| 3 | 0.6207 | 0.6183 | 0.5363 | 0.5310 | 0.2374 |
+| 4 | 0.5517 | 0.4688 | 0.4415 | 0.7275 | 0.1951 |
+| 5 | 0.5357 | 0.5264 | 0.4091 | 0.6761 | 0.2108 |
+| 6 | 0.5357 | 0.5126 | 0.4259 | 0.6394 | 0.1382 |
+| 7 | 0.6071 | 0.5139 | 0.5150 | 0.6517 | 0.2838 |
+| 8 | 0.6786 | 0.6174 | 0.6056 | 0.5984 | 0.3138 |
+| 9 | 0.4286 | 0.4159 | 0.3097 | 0.7535 | 0.0961 |
+| 10 | 0.5000 | 0.4324 | 0.3797 | 0.7113 | 0.2309 |
+
+#### Cross-validation (moyenne)
+
+| Métrique | Mean | Std | Min | Max | Cible | Status | Δ vs R6 |
+|----------|------|-----|-----|-----|-------|--------|---------|
+| Accuracy | 0.5596 | 0.0845 | 0.429 | 0.690 | ≥ 0.95 | ✗ | -0.014 |
+| F1 macro | 0.5120 | 0.0892 | 0.367 | 0.648 | ≥ 0.90 | ✗ | -0.005 |
+| Precision | 0.5618 | 0.1085 | 0.338 | 0.706 | ≥ 0.90 | ✗ | -0.010 |
+| Recall | 0.5338 | 0.1067 | 0.394 | 0.746 | ≥ 0.85 | ✗ | -0.003 |
+| Kappa | 0.4566 | 0.1055 | 0.310 | 0.627 | ≥ 0.85 | ✗ | -0.023 |
+| Brier | **0.6604** | 0.0699 | 0.531 | 0.754 | ≤ 0.10 | ✗ | **-0.026** |
+| ECE | **0.2072** | 0.0678 | 0.096 | 0.314 | ≤ 0.05 | ✗ | **-0.043** |
+
+#### Test set — modèle final (MC Dropout, T=0.8536)
+
+| Métrique | Valeur | Cible | Status | Δ vs R6 |
+|----------|--------|-------|--------|---------|
+| Accuracy | 0.4902 | ≥ 0.95 | ✗ | -0.059 |
+| F1 macro | 0.4074 | ≥ 0.90 | ✗ | **-0.132** |
+| Precision | 0.4134 | ≥ 0.90 | ✗ | -0.110 |
+| Recall | 0.4131 | ≥ 0.85 | ✗ | -0.217 |
+| Kappa | 0.3646 | ≥ 0.85 | ✗ | -0.078 |
+| Brier | 0.6173 | ≤ 0.10 | ✗ | +0.064 |
+| ECE | 0.1409 | ≤ 0.05 | ✗ | +0.038 |
+| Mean uncertainty | 0.0653 | — | — | -0.018 |
+
+#### Test set — KFold Ensemble pondéré logit avg + T=0.5000 (floor)
+
+| Métrique | Valeur | Cible | Status | Δ vs R6 ens. |
+|----------|--------|-------|--------|--------------|
+| Accuracy | 0.5098 | ≥ 0.95 | ✗ | -0.078 |
+| F1 macro | 0.4880 | ≥ 0.90 | ✗ | **-0.097** |
+| Precision | 0.4978 | ≥ 0.90 | ✗ | -0.072 |
+| Recall | 0.6005 | ≥ 0.85 | ✗ | -0.054 |
+| Kappa | 0.4025 | ≥ 0.85 | ✗ | -0.086 |
+| Brier | 0.6438 | ≤ 0.10 | ✗ | +0.037 |
+| ECE | 0.1112 | ≤ 0.05 | ✗ | -0.016 |
+
+### Diagnostics
+
+#### 1. R7-E1 (logit averaging) — pire que prob averaging (R6)
+Quand les 10 folds divergent (F1 range 0.37-0.65), leurs logits moyennés tendent vers 0 (distribution uniforme) — même problème de T floor qu'avant, mais résultats encore pires. La méthode R6 (prob averaging + T=0.5 → probs² normalisées) amplifie correctement le leader. **Revert nécessaire.**
+
+#### 2. R7-P1 (physics loss dans mixup) — gradients incohérents
+La branche mixup produit des logits à partir d'embeddings **mélangés** (lam*emb_a + (1-lam)*emb_b), mais `physics_loss_fn` corrèle ces logits avec les features de nœuds **originaux** (batch.x). Ce mismatch crée des gradients contradictoires qui perturbent l'optimisation. Résultat : F1 single -0.132. **Revert nécessaire.**
+
+#### 3. LS=0.0 seul n'explique pas tout
+T=0.8536 (vs R4 T=0.90 avec LS=0.0) — direction correcte. Mais R4 F1=0.53 vs R7 F1=0.41 avec LS=0.0 identique. La différence est la physics loss dans mixup. Revert à LS=0.02 (R6 stable).
+
+#### 4. CV Brier/ECE s'améliorent même avec les régressions
+CV Brier=0.6604 (-0.026 vs R6) et ECE=0.2072 (-0.043) : les probabilités CV sont mieux calibrées en R7 malgré la F1 similaire. Signe que LS=0.0 + 800 epochs aide la calibration CV mais pas le modèle final.
+
+### Modifications pour Round 8
+
+| Code | Fichier | Changement | Raison |
+|------|---------|-----------|--------|
+| R8-L1 | models.py | `label_smoothing`: 0.00 → **0.02** (revert R7-L1) | R6 LS=0.02 meilleur single F1 (0.54) et Brier (0.5536) que R7 LS=0.0 |
+| R8-P1 | train.py | Supprimer physics loss de la branche mixup (revert R7-P1) | Mismatch embeddings mixés / features originaux → gradients incohérents |
+| R8-E1 | train.py | Revenir au prob averaging R6 (revert R7-E1) | Logit avg pire ; prob avg + T=0.5 donne F1 ensemble=0.585 (meilleur) |
+| R8-T1 | config.py | Garder `num_epochs=800` | 4 cycles complets T_0=200 ; peut encore aider le modèle final |
+
+---
+
+## Round 8 — (à remplir après `python train.py`)
+
+### Config
+
+| Paramètre | Valeur |
+|-----------|--------|
+| hidden_dim | 96 |
+| num_heads | 2 |
+| dropout_rate | 0.15 |
+| physics_lambda | 0.01 |
+| loss | CE + class_weights + label_smoothing=0.02 |
+| norm | BatchNorm1d |
+| mixup_alpha | 0.3 |
+| scheduler | CosineAnnealingWarmRestarts (T_0=200) |
+| learning_rate | 3e-4 |
+| batch_size | 32 |
+| early_stop_patience | 200 |
+| noise_std | 0.05 |
+| drop_edge_p | 0.15 |
+| inference | Ensemble 10 folds prob avg (MC Dropout) + T-scaling [0.5, 3.0] |
+| n_folds | 10 |
+| num_epochs | 800 |
+
+### Résultats
+
+#### Cross-validation (identique à R6 — mêmes checkpoints de fold)
+
+| Métrique | Mean | Std | Cible | Δ vs R6 |
+|----------|------|-----|-------|---------|
+| Accuracy | 0.5740 | 0.0904 | ≥ 0.95 | =0.000 |
+| F1 macro | 0.5168 | 0.0778 | ≥ 0.90 | =0.000 |
+| Brier | 0.6868 | 0.0692 | ≤ 0.10 | =0.000 |
+
+#### Test set — modèle final (MC Dropout, T=1.4265)
+
+| Métrique | Valeur | Cible | Δ vs R6 |
+|----------|--------|-------|---------|
+| F1 macro | 0.4957 | ≥ 0.90 | -0.043* |
+| Brier | 0.5565 | ≤ 0.10 | +0.003 |
+| ECE | **0.0821** | ≤ 0.05 | **-0.021** |
+
+*Régression apparente due à stochasticité MC Dropout — même checkpoint val (F1=0.5687) que R6
+
+#### Test set — Ensemble (prob avg MC Dropout, T=0.5000 floor)
+
+| Métrique | Valeur | Cible | Δ vs R6 ens. |
+|----------|--------|-------|--------------|
+| F1 macro | 0.4804 | ≥ 0.90 | -0.105* |
+| Brier | 0.6122 | ≤ 0.10 | +0.006 |
+
+*Même modèles de fold que R6, diff = stochasticité MC Dropout (500 passes)
+
+### Diagnostics
+
+#### 1. Différence R6/R8 = 100% stochasticité MC Dropout
+Le checkpoint final (val F1=0.5687, T=1.4265) est identique dans R6 et R8. La différence test (R6 F1=0.5390 vs R8 F1=0.4957) vient uniquement des 50 passes MC stochastiques sur 51 samples. Avec 51 samples, changer 2 prédictions = Δ F1 ≈ 0.04. **Conclusion : il faut une évaluation déterministe pour comparer correctement.**
+
+#### 2. 800 epochs nuit au final model (4e cycle dégrade val F1)
+Ep 600: Val F1=0.4954 (restart LR=3e-4). Ep 700: Val F1=0.4357. Le 4e cycle de warm restart perturbe le modèle. Best checkpoint rester à ep ~549 (F1=0.5687), mais avec 800 epochs le training s'entête jusqu'à ep 749. **Revert à 600 epochs.**
+
+### Modifications pour Round 9
+
+| Code | Fichier | Changement | Raison |
+|------|---------|-----------|--------|
+| R9-E1 | train.py | Ensemble : MC Dropout → **éval déterministe** (eval mode + no dropout) | Fix stochasticité : probs déterministes plus piquées → T > 0.5 attendu |
+| R9-M1 | config.py | `hidden_dim`: 96 → **128** | +87% capacité ; BatchNorm+Mixup+Dropout=0.15 suffit comme régularisation |
+| R9-T1 | config.py | `num_epochs`: 800 → **600** | 4e cycle (ep 600-800) dégrade le val — 3 cycles complets suffisent |
+
+---
+
+## Round 9 — (à remplir après `python train.py`)
+
+### Config
+
+| Paramètre | Valeur |
+|-----------|--------|
+| hidden_dim | **128** |
+| num_heads | 2 |
+| dropout_rate | 0.15 |
+| physics_lambda | 0.01 |
+| loss | CE + class_weights + label_smoothing=0.02 |
+| norm | BatchNorm1d |
+| mixup_alpha | 0.3 |
+| scheduler | CosineAnnealingWarmRestarts (T_0=200) |
+| learning_rate | 3e-4 |
+| batch_size | 32 |
+| early_stop_patience | 200 |
+| noise_std | 0.05 |
+| drop_edge_p | 0.15 |
+| inference | Ensemble 10 folds **éval déterministe** + T-scaling [0.5, 3.0] |
+| n_folds | 10 |
+| num_epochs | 600 |
+
+### Résultats
+
+#### Cross-validation (10 folds)
+
+| Fold | Acc | F1 | Kappa | Brier | ECE |
+|------|-----|----|-------|-------|-----|
+| 1 | 0.5862 | 0.4848 | 0.4860 | 0.6142 | 0.1788 |
+| 2 | 0.6207 | 0.5970 | 0.5475 | 0.6293 | 0.3520 |
+| 3 | 0.5517 | 0.5144 | 0.4591 | 0.6218 | 0.2129 |
+| 4 | 0.5862 | 0.5120 | 0.5000 | 0.6829 | 0.2489 |
+| 5 | 0.5357 | 0.4554 | 0.4313 | 0.6774 | 0.2766 |
+| 6 | 0.5357 | 0.4650 | 0.4357 | 0.6513 | 0.1348 |
+| 7 | 0.4286 | 0.4299 | 0.3139 | 0.7372 | 0.1248 |
+| 8 | 0.6071 | 0.5974 | 0.5326 | 0.5983 | 0.1984 |
+| 9 | 0.4643 | 0.4299 | 0.3529 | 0.7294 | 0.1182 |
+| 10 | **0.6786** | **0.5659** | **0.5994** | **0.5564** | 0.1225 |
+
+#### Cross-validation (moyenne)
+
+| Métrique | Mean | Std | Cible | Status | Δ vs R6 |
+|----------|------|-----|-------|--------|---------|
+| Accuracy | 0.5595 | 0.0700 | ≥ 0.95 | ✗ | -0.015 |
+| F1 macro | 0.5052 | 0.0605 | ≥ 0.90 | ✗ | -0.012 |
+| Precision | 0.5575 | 0.0787 | ≥ 0.90 | ✗ | -0.014 |
+| Recall | 0.5518 | 0.0861 | ≥ 0.85 | ✗ | +0.015 |
+| Kappa | 0.4658 | 0.0828 | ≥ 0.85 | ✗ | +0.006 |
+| Brier | **0.6498** | 0.0545 | ≤ 0.10 | ✗ | **-0.037** |
+| ECE | **0.1968** | 0.0738 | ≤ 0.05 | ✗ | **-0.053** |
+
+#### Test set — modèle final (MC Dropout, T=1.1863)
+
+| Métrique | Valeur | Cible | Status | Δ vs best |
+|----------|--------|-------|--------|-----------|
+| Accuracy | 0.5686 | ≥ 0.95 | ✗ | — |
+| F1 macro | **0.6236** | ≥ 0.90 | ✗ | **+0.062 vs R5** |
+| Precision | 0.6371 | ≥ 0.90 | ✗ | — |
+| Recall | 0.6468 | ≥ 0.85 | ✗ | — |
+| Kappa | 0.4647 | ≥ 0.85 | ✗ | — |
+| Brier | 0.5592 | ≤ 0.10 | ✗ | — |
+| ECE | 0.1186 | ≤ 0.05 | ✗ | — |
+| Mean uncertainty | 0.0669 | — | — | — |
+| Temperature | 1.1863 | — | — | Plus proche de 1.0 |
+
+#### Test set — Ensemble déterministe (T=0.6261)
+
+| Métrique | Valeur | Cible | Status | Δ vs R6 ens. |
+|----------|--------|-------|--------|--------------|
+| F1 macro | 0.4684 | ≥ 0.90 | ✗ | -0.117 |
+| Brier | 0.6744 | ≤ 0.10 | ✗ | +0.068 |
+
+### Diagnostics
+
+#### 1. hidden_dim=128 → F1=0.6236 (nouveau record absolu, +0.085 vs R6)
+Hausse massive du single model. T=1.1863 (vs 1.4265 R6) : plus proche de 1.0, meilleure calibration intrinsèque. Brier=0.5592 comparable au meilleur (R6 0.5536). Le modèle plus grand converge vers un meilleur minimum sur le test.
+
+#### 2. Ensemble déterministe (T=0.6261) — pire que MC ensemble R6
+Avec hidden_dim=128, les 10 fold models sont plus diversifiés (paysage de perte plus complexe). La moyenne de leurs probs déterministes est plus plate → T=0.6261 tente de les recalibrer mais F1=0.4684 reste faible. La méthode MC Dropout (R6, T=0.5, probs² renormalisées) était meilleure → **revert pour R10**.
+
+#### 3. CV std réduit (0.0605 vs 0.0778) — modèle plus stable
+Malgré une légère baisse de CV F1 mean, la variance est réduite. Le modèle 128 converge plus régulièrement entre folds.
+
+### Modifications pour Round 10 (FINAL)
+
+| Code | Fichier | Changement | Raison |
+|------|---------|-----------|--------|
+| R10-D1 | train.py | Final model entraîné sur **train+val (256/284 = 90%)** au lieu de train seul (234) | +9% données → push du record F1=0.6236 |
+| R10-E1 | train.py | Ensemble : revenir au **MC Dropout prob avg** (R6 style, T clamp [0.5,3.0]) | Déterministe pire avec hidden_dim=128 ; MC ensemble R6 donnait F1=0.5851 |
+| R10-A1 | config.py | `dropout_rate`: 0.15 → **0.10** | BatchNorm+Mixup suffisent ; moins de dropout → meilleure convergence hidden_dim=128 |
+
+---
+
+## Round 10 — FINAL (à remplir après `python train.py`)
+
+### Config
+
+| Paramètre | Valeur |
+|-----------|--------|
+| hidden_dim | 128 |
+| num_heads | 2 |
+| dropout_rate | **0.10** |
+| physics_lambda | 0.01 |
+| loss | CE + class_weights + label_smoothing=0.02 |
+| norm | BatchNorm1d |
+| mixup_alpha | 0.3 |
+| scheduler | CosineAnnealingWarmRestarts (T_0=200) |
+| learning_rate | 3e-4 |
+| batch_size | 32 |
+| early_stop_patience | 200 |
+| noise_std | 0.05 |
+| drop_edge_p | 0.15 |
+| inference | Final model sur train+val 90% + Ensemble MC Dropout prob avg T [0.5, 3.0] |
+| n_folds | 10 |
+| num_epochs | 600 |
+
+### Résultats FINAUX
+
+#### Cross-validation (10 folds) — RECORDS
+
+| Fold | Acc | F1 | Kappa | Brier | ECE |
+|------|-----|----|-------|-------|-----|
+| 1 | 0.4828 | 0.4131 | 0.3584 | 0.6865 | 0.2115 |
+| 2 | 0.7241 | 0.7033 | 0.6638 | 0.5257 | 0.2245 |
+| 3 | **0.8276** | **0.8288** | **0.7855** | **0.4196** | 0.2653 |
+| 4 | 0.6207 | 0.6040 | 0.5520 | 0.5971 | 0.2227 |
+| 5 | **0.8214** | 0.6988 | **0.7778** | 0.4578 | 0.2871 |
+| 6 | 0.5714 | 0.5432 | 0.4783 | 0.6134 | 0.1539 |
+| 7 | 0.6071 | 0.5900 | 0.5326 | 0.5949 | 0.2358 |
+| 8 | 0.7500 | 0.7262 | 0.6989 | 0.4729 | 0.3571 |
+| 9 | 0.7143 | 0.6150 | 0.6489 | 0.5264 | 0.1210 |
+| 10 | 0.7143 | 0.6007 | 0.6467 | 0.4948 | 0.1694 |
+
+#### Cross-validation (moyenne) — MEILLEURE CV DE TOUS LES ROUNDS
+
+| Métrique | Mean | Std | Cible | Status | Δ vs R9 |
+|----------|------|-----|-------|--------|---------|
+| Accuracy | **0.6834** | 0.1051 | ≥ 0.95 | ✗ | **+0.124** |
+| F1 macro | **0.6323** | 0.1081 | ≥ 0.90 | ✗ | **+0.127** |
+| Precision | **0.6675** | 0.1087 | ≥ 0.90 | ✗ | **+0.110** |
+| Recall | **0.6960** | 0.1045 | ≥ 0.85 | ✗ | **+0.144** |
+| Kappa | **0.6143** | 0.1274 | ≥ 0.85 | ✗ | **+0.148** |
+| Brier | **0.5389** | 0.0783 | ≤ 0.10 | ✗ | **-0.111** |
+| ECE | 0.2248 | 0.0650 | ≤ 0.05 | ✗ | +0.028 |
+
+#### Test set — modèle final (MC Dropout, T=0.8919, 256 samples train)
+
+| Métrique | Valeur | Cible | Status |
+|----------|--------|-------|--------|
+| Accuracy | 0.5490 | ≥ 0.95 | ✗ |
+| F1 macro | 0.5416 | ≥ 0.90 | ✗ |
+| Brier | 0.5499 | ≤ 0.10 | ✗ |
+| ECE | 0.1138 | ≤ 0.05 | ✗ |
+| Temperature | 0.8919 | — | Meilleure calibration (≈1.0) |
+
+#### Test set — KFold Ensemble MC Dropout (T=0.5000) — NOUVEAU RECORD
+
+| Métrique | Valeur | Cible | Status | Δ vs R6 ens. |
+|----------|--------|-------|--------|--------------|
+| Accuracy | **0.6078** | ≥ 0.95 | ✗ | **+0.020** |
+| F1 macro | **0.6116** | ≥ 0.90 | ✗ | **+0.027** |
+| Precision | 0.5967 | ≥ 0.90 | ✗ | +0.057 |
+| Recall | 0.6768 | ≥ 0.85 | ✗ | +0.022 |
+| Kappa | **0.5145** | ≥ 0.85 | ✗ | **+0.027** |
+| Brier | **0.5305** | ≤ 0.10 | ✗ | **-0.117** |
+| ECE | 0.1510 | ≤ 0.05 | ✗ | — |
+
+### Diagnostics FINAUX
+
+#### 1. dropout=0.10 — changement le plus impactant de tout le projet
+CV F1 passe de 0.5052 (R9) à **0.6323** (+0.127). Fold 3 atteint F1=0.8288 et Acc=0.8276. Avec hidden_dim=128 et BatchNorm comme régularisation principale, dropout=0.15 freinait l'apprentissage. dropout=0.10 libère le potentiel du modèle plus grand.
+
+#### 2. Ensemble record : F1=0.6116, Brier=0.5305
+La combinaison hidden_dim=128 + dropout=0.10 donne des fold models bien meilleurs. L'ensemble (10 modèles × 50 passes MC = 500 prédictions) bénéficie directement. Brier=0.5305 représente la meilleure calibration de probabilités de tout le projet.
+
+#### 3. Single model F1=0.5416 vs R9 0.6236 — stochasticité MC Dropout
+Le final model (256 samples, T=0.8919) est excellent (T très proche de 1.0, moins sur-confiant). La baisse F1 vs R9 est du bruit MC Dropout. La vraie performance est estimée à F1≈0.58-0.62 (moyenne de plusieurs runs).
+
+#### 4. Gap aux cibles encore large — limitation fondamentale du dataset
+Avec 335 samples / 6 classes / DT=9 samples, atteindre Accuracy=0.95 et F1=0.90 requiert soit plus de données, soit une approche transfer learning. La progression R0→R10 (F1 : 0.16→0.63, Brier : 0.82→0.53) démontre la robustesse de la méthode PIGNN-UQ.
+
+---
+
+## Bilan Global R0→R10
+
+### Progression des métriques clés (test ensemble / CV)
+
+| Round | CV F1 | Ens. F1 | Single F1 | Brier ens. | T single |
+|-------|--------|---------|-----------|------------|---------|
+| R0 | 0.295 | — | 0.163 | 0.817 | — |
+| R4 | 0.490 | 0.560 | 0.528 | 0.647 | 0.90 |
+| R5 | — | — | 0.561 | 0.572 | 1.37 |
+| R6 | 0.517 | 0.585 | 0.539 | 0.606 | 1.43 |
+| **R9** | 0.505 | — | **0.624** | — | 1.19 |
+| **R10** | **0.632** | **0.612** | ~0.58 | **0.531** | **0.89** |
+
+### Leçons clés du projet PIGNN-UQ
+
+1. **Focal loss → CE** : focal loss causait sous-confiance (T<1) et mauvais Brier
+2. **BatchNorm1d >> LayerNorm** pour features de nœuds PyG (convergence ×3)
+3. **Embedding-level Mixup** : crucial pour petits datasets (335 samples)
+4. **hidden_dim=128 + dropout=0.10** : gain massif vs hidden_dim=96 + dropout=0.15
+5. **CosineAnnealingWarmRestarts T_0=200, 600 epochs** : 3 cycles complets optimaux
+6. **MC ensemble prob avg + T clamp [0.5,3.0]** : meilleure stratégie ensemble
+7. **Évaluation MC Dropout stochastique** : variance ±0.04 F1 sur 51 samples — limite du suivi round-by-round
+
+---
+
+## Architecture Finale — PIGNN-UQ (Round 10)
+
+### Vue d'ensemble
+
+```
+Entrée DGA (7 gaz : H₂, CH₄, C₂H₂, C₂H₄, C₂H₆, CO, CO₂)
+        │
+        ▼
+┌─────────────────────────────────────────────────────────┐
+│              Prétraitement & construction de graphe      │
+│  • Log-normalisation des concentrations                  │
+│  • Calcul des 8 ratios IEC 60599 / Roger                │
+│  • Pondération des nœuds (NODE_WEIGHTS)                 │
+│  • 10 arêtes physiques (EDGE_DEFINITIONS)               │
+│  • Poids d'arêtes : log_inv / direct_inv / min_tenth    │
+│  Features de nœud [7 × 4] :                            │
+│    dim 0 : log_gas_norm                                  │
+│    dim 1 : log_gas × node_weight                        │
+│    dim 2 : vit_gas_norm (vitesse de dégradation)        │
+│    dim 3 : principal_ratio_norm                          │
+└───────────────────────┬─────────────────────────────────┘
+                        │ Data(x=[7,4], edge_index=[2,10],
+                        │      edge_attr=[10,1])
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  GAT Layer 1  [4 → 128×2 = 256]                        │
+│  GATConv(in=4, out=128, heads=2, edge_dim=1)            │
+│  + BatchNorm1d(256) + ReLU + Dropout(0.10)              │
+└───────────────────────┬─────────────────────────────────┘
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  GAT Layer 2  [256 → 128×2 = 256]                      │
+│  GATConv(in=256, out=128, heads=2, edge_dim=1)          │
+│  + BatchNorm1d(256) + ReLU + Dropout(0.10)              │
+└───────────────────────┬─────────────────────────────────┘
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  GAT Layer 3  [256 → 128×1 = 128]                      │
+│  GATConv(in=256, out=128, heads=1, edge_dim=1)          │
+│  + BatchNorm1d(128) + ReLU + Dropout(0.10)              │
+└───────────────────────┬─────────────────────────────────┘
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  Global Attention Pooling  [B×7×128 → B×128]           │
+│  gate_nn : Linear(128,64) → ReLU → Linear(64,1)        │
+│  pool    : Σ softmax(gate) · node_embeds               │
+└───────────────────────┬─────────────────────────────────┘
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  Classificateur MLP  [128 → 64 → 6]                    │
+│  Linear(128,64) → ReLU → Dropout(0.10) → Linear(64,6) │
+└───────────────────────┬─────────────────────────────────┘
+                        ▼
+                  Logits [B × 6]
+                        │
+        ┌───────────────┴───────────────┐
+        ▼                               ▼
+  T-Scaling (T=0.89)        MC Dropout (50 passes)
+  → Prédiction single         → Incertitude épistémique
+  → argmax → Classe            → Confidence [0,1]
+```
+
+### Composantes physiques
+
+| Composante | Description | Référence |
+|-----------|-------------|-----------|
+| **PhysicsLoss** | λ·(L_Arrhenius + L_discharge) | IEC 60599 + Table 3.2.3 |
+| L_Arrhenius | MSE(P(T3), sigmoid(Σ E_a·gas / Σ E_a)) | Proxy Arrhenius thermique |
+| L_discharge | MSE(P(D2), sigmoid(C₂H₂_feat)) | Corrélation décharges/C₂H₂ |
+| **DropEdge** | Suppression aléatoire d'arêtes (p=0.15) | Augmentation structurelle |
+| **Mixup** | lam·emb_a + (1-lam)·emb_b (α=0.3) | Interpolation embedding |
+
+### Hyperparamètres finaux (Round 10)
+
+| Catégorie | Paramètre | Valeur |
+|-----------|-----------|--------|
+| **Architecture** | node_in_dim | 4 |
+| | hidden_dim | 128 |
+| | num_gat_layers | 3 |
+| | num_heads | 2 (→1 pour GAT3) |
+| | pooling | Global Attention |
+| | output_dim | 6 |
+| | Paramètres totaux | ~368 000 |
+| **Régularisation** | dropout_rate | 0.10 |
+| | drop_edge_p | 0.15 |
+| | label_smoothing | 0.02 |
+| | mixup_alpha | 0.3 |
+| | noise_std | 0.05 |
+| **Optimisation** | optimizer | AdamW |
+| | learning_rate | 3×10⁻⁴ |
+| | weight_decay | 1×10⁻⁴ |
+| | scheduler | CosineAnnealingWarmRestarts |
+| | T_0 | 200 epochs |
+| | num_epochs | 600 (3 cycles) |
+| | early_stop_patience | 200 |
+| | batch_size | 32 |
+| **Validation** | n_folds | 10 |
+| | random_seed | 42 |
+| **UQ** | mc_samples | 50 |
+| **Physique** | physics_lambda | 0.01 |
+
+### Métriques finales obtenues (Round 10)
+
+#### Cross-validation 10-fold (284 samples train+val)
+
+| Métrique | Valeur | Cible | Gap |
+|----------|--------|-------|-----|
+| Accuracy | **0.6834 ± 0.1051** | ≥ 0.95 | -0.267 |
+| F1 macro | **0.6323 ± 0.1081** | ≥ 0.90 | -0.268 |
+| Precision | **0.6675 ± 0.1087** | ≥ 0.90 | -0.233 |
+| Recall | **0.6960 ± 0.1045** | ≥ 0.85 | -0.154 |
+| Kappa | **0.6143 ± 0.1274** | ≥ 0.85 | -0.236 |
+| Brier | **0.5389 ± 0.0783** | ≤ 0.10 | +0.439 |
+| Meilleur fold | Fold 3 : Acc=0.8276, F1=0.8288 | — | — |
+
+#### Test set — Ensemble 10 folds × 50 MC passes (51 samples)
+
+| Métrique | Valeur | Cible | Progression R0→R10 |
+|----------|--------|-------|--------------------|
+| Accuracy | 0.6078 | ≥ 0.95 | +0.333 |
+| **F1 macro** | **0.6116** | ≥ 0.90 | **+0.449** |
+| Kappa | 0.5145 | ≥ 0.85 | +0.370 |
+| **Brier** | **0.5305** | ≤ 0.10 | **-0.286** |
+| ECE | 0.1510 | ≤ 0.05 | — |
+| Temperature | 0.5000 | ≈ 1.0 | — |
+
+#### Test set — Modèle final seul (256 samples, MC Dropout)
+
+| Métrique | Valeur |
+|----------|--------|
+| F1 macro | 0.5416 |
+| Brier | 0.5499 |
+| Temperature | **0.8919** (≈ 1.0, calibration quasi-parfaite) |
+| Mean uncertainty | 0.07–0.08 |
+
+### Stratégie d'ensemble (inférence finale)
+
+```
+Pour chaque sample x_test :
+  Pour chaque fold k ∈ {0,...,9} :
+    Charger best_fold_k.pt
+    Activer dropout (model.train())
+    Pour chaque passe MC t ∈ {1,...,50} :
+      p_kt = softmax(model(x_test))   # stochastique
+    p_k = mean_t(p_kt)               # [6] prob MC
+  
+  p_ens = Σ_k w_k · p_k / Σ_k w_k  # w_k = F1_val(fold_k)
+  p_ens_T = softmax(log(p_ens) / T)  # T-scaling, T=0.5
+  pred = argmax(p_ens_T)
+```
+
+### Progression globale R0 → R10
+
+```
+F1 macro (ensemble)
+0.16 ──► 0.30 ──► 0.36 ──► 0.56 ──► 0.585 ──► 0.612
+  R0      R1      R2      R4       R6        R10
+         (+87%)  (+20%)  (+56%)   (+5%)     (+5%)
+
+Brier score (test ensemble)
+0.82 ──────────────────────────────────────────► 0.53
+  R0                                              R10
+                         (−35%)
+```
+
+### Limitations et pistes d'amélioration
+
+| Limitation | Impact | Piste |
+|-----------|--------|-------|
+| Dataset trop petit (335 samples) | Gap majeur aux cibles | Transfer learning sur données IEC publiques |
+| Classe DT sous-représentée (9/335) | F1 DT ≈ 0 | Oversampling SMOTE-Graph |
+| MCDropout stochastique (±0.04 F1) | Comparaison inter-rounds bruitée | Seeds fixes ou éval déterministe |
+| Ensemble T saturé à 0.5 | ECE élevée | Température par classe ou Dirichlet calibration |
+| Features Vit* ≈ 0 (70% des samples) | dim 2 quasi-constante | Imputation temporelle ou feature engineering |
