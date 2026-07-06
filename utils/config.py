@@ -16,8 +16,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-# ── Paths ─────────────────────────────────────────────────────────────────────
-_ROOT      = Path(__file__).resolve().parent.parent   # project root (one level above utils/)
+_ROOT      = Path(__file__).resolve().parent.parent  
 DATA_PATH  = _ROOT / "data" / "dataApp_all_Df.xlsx"
 OUTPUT_DIR = _ROOT / "outputs"
 LOG_DIR    = _ROOT / "logs"

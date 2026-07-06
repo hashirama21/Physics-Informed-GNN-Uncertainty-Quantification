@@ -44,7 +44,7 @@ GAT Layer 3:  [7×256] → [7×128]   (128 ch × 1 head,  mean)
                            │
             MLP: 128 → 64 → 6 (fault classes)
                            │
-             ┌─────────────┴──────────────┐
+             ┌─┴┐
        T-scaling (T=0.89)      MC Dropout (50 passes)
     → Single prediction       → Uncertainty [0, 1]
 
@@ -208,27 +208,27 @@ python inference.py --h2 450 ... --json
 
 **Sample output:**
 ```
-┌────────────────────────────────────────────────────────────────┐
+┌┐
 │                PIGNN-UQ — Fault Diagnosis Report               │
-├────────────────────────────────────────────────────────────────┤
+├┤
 │  Equipment  : TR-42B                                           │
 │  Prediction : D2                                               │
 │  Description: Discharge of high energy                         │
 │  Confidence : 0.8412  |  Uncertainty : 0.1588                 │
-├────────────────────────────────────────────────────────────────┤
+├┤
 │  Class probabilities:                                          │
 │    D1: 0.0423  D2: 0.6812  T1: 0.0921                        │
 │    T2: 0.0512  T3: 0.0893  DT: 0.0380  (after T-scaling)    │
-├────────────────────────────────────────────────────────────────┤
+├┤
 │  Health indices (IEEE C57.104)                                 │
 │    OHI=0.830  CDI=0.148  TAI=1.444  DSI=0.223                │
-├────────────────────────────────────────────────────────────────┤
+├┤
 │  RUL estimates (IEEE C57.104 thresholds)                       │
 │    H2   : 36.7 months  [31.2–42.1]  → Bi-annual DGA          │
 │    C2H2 : ∞                          → Annual monitoring       │
 │    C2H4 : 8.5 months  [7.2–9.7]    → Monthly monitoring       │
 │    TDCG : 77.0 months [65.5–88.5]  → Bi-annual DGA           │
-└────────────────────────────────────────────────────────────────┘
+└┘
 ```
 
 ### CSV batch mode

@@ -1,0 +1,215 @@
+{
+  "variant": "kg_gnn",
+  "config": {
+    "epochs": 300,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "hidden": 64,
+    "layers": 3,
+    "dropout": 0.1,
+    "lambda_phys": 0.1,
+    "lambda_obs": 0.5,
+    "lambda_thinge": 0.1,
+    "lambda_ea": 1.0,
+    "mixup_alpha": 0.3,
+    "noise_std": 0.05,
+    "mc_samples": 50,
+    "patience": 100,
+    "seed": 42,
+    "cv_folds": 0,
+    "cv_repeats": 1,
+    "no_gates": false,
+    "no_phys": false,
+    "no_obs": false,
+    "free_ea": false,
+    "frozen_ea": false
+  },
+  "dataset": {
+    "train": 234,
+    "val": 50,
+    "test": 51
+  },
+  "best_val_f1": 0.8127,
+  "calibration_temperature": 0.537,
+  "epochs_run": 272,
+  "val_mc_dropout": {
+    "accuracy": 0.82,
+    "f1_macro": 0.7696,
+    "precision": 0.7708,
+    "recall": 0.7754,
+    "min_class_recall": 0.5,
+    "kappa": 0.7761,
+    "brier": 0.2764,
+    "ece": 0.1207,
+    "per_class_recall": {
+      "D1": 1.0,
+      "D2": 0.8,
+      "T1": 0.9,
+      "T2": 0.6667,
+      "T3": 0.7857,
+      "DT": 0.5
+    },
+    "pcr": 0.8,
+    "mean_pred_entropy": 0.6145,
+    "mean_mutual_info": 0.0324,
+    "gate_auroc": 0.5581,
+    "T_by_class": {
+      "D1": {
+        "mean": 740.3,
+        "std": 37.8
+      },
+      "D2": {
+        "mean": 868.2,
+        "std": 58.7
+      },
+      "T1": {
+        "mean": 613.7,
+        "std": 104.7
+      },
+      "T2": {
+        "mean": 933.6,
+        "std": 86.2
+      },
+      "T3": {
+        "mean": 1007.7,
+        "std": 53.9
+      },
+      "DT": {
+        "mean": 980.5,
+        "std": 93.8
+      }
+    }
+  },
+  "test_deterministic": {
+    "accuracy": 0.7843,
+    "f1_macro": 0.6153,
+    "precision": 0.6167,
+    "recall": 0.6178,
+    "min_class_recall": 0.0,
+    "kappa": 0.7281,
+    "brier": 0.325,
+    "ece": 0.15,
+    "per_class_recall": {
+      "D1": 0.8889,
+      "D2": 0.8182,
+      "T1": 1.0,
+      "T2": 0.2,
+      "T3": 0.8,
+      "DT": 0.0
+    }
+  },
+  "test_mc_dropout": {
+    "accuracy": 0.7647,
+    "f1_macro": 0.5989,
+    "precision": 0.6016,
+    "recall": 0.6027,
+    "min_class_recall": 0.0,
+    "kappa": 0.7036,
+    "brier": 0.2971,
+    "ece": 0.1445,
+    "per_class_recall": {
+      "D1": 0.8889,
+      "D2": 0.7273,
+      "T1": 1.0,
+      "T2": 0.2,
+      "T3": 0.8,
+      "DT": 0.0
+    },
+    "pcr": 0.7255,
+    "mean_pred_entropy": 0.5982,
+    "mean_mutual_info": 0.0322,
+    "gate_auroc": 0.5855,
+    "T_by_class": {
+      "D1": {
+        "mean": 721.9,
+        "std": 85.4
+      },
+      "D2": {
+        "mean": 868.0,
+        "std": 68.9
+      },
+      "T1": {
+        "mean": 581.3,
+        "std": 79.2
+      },
+      "T2": {
+        "mean": 855.4,
+        "std": 97.8
+      },
+      "T3": {
+        "mean": 995.9,
+        "std": 68.8
+      },
+      "DT": {
+        "mean": 982.9,
+        "std": 0.0
+      }
+    }
+  },
+  "activation_energies": {
+    "oil_h2": {
+      "learned_kJ_mol": 180.0,
+      "interval": [
+        150.0,
+        210.0
+      ],
+      "t_half_K": 393.0
+    },
+    "oil_ch4": {
+      "learned_kJ_mol": 249.97,
+      "interval": [
+        210.0,
+        290.0
+      ],
+      "t_half_K": 473.0
+    },
+    "oil_c2h6": {
+      "learned_kJ_mol": 277.95,
+      "interval": [
+        250.0,
+        306.0
+      ],
+      "t_half_K": 523.0
+    },
+    "c2h6_c2h4": {
+      "learned_kJ_mol": 260.94,
+      "interval": [
+        216.0,
+        306.0
+      ],
+      "t_half_K": 623.0
+    },
+    "ch4_c2h6": {
+      "learned_kJ_mol": 400.02,
+      "interval": [
+        370.0,
+        430.0
+      ],
+      "t_half_K": 1273.0
+    },
+    "c2h4_c2h2": {
+      "learned_kJ_mol": 439.89,
+      "interval": [
+        410.0,
+        470.0
+      ],
+      "t_half_K": 1023.0
+    },
+    "cell_co": {
+      "learned_kJ_mol": 118.0,
+      "interval": [
+        111.0,
+        125.0
+      ],
+      "t_half_K": 378.0
+    },
+    "cell_co2": {
+      "learned_kJ_mol": 118.0,
+      "interval": [
+        111.0,
+        125.0
+      ],
+      "t_half_K": 378.0
+    }
+  }
+}

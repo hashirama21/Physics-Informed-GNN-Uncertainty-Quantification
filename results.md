@@ -1063,7 +1063,7 @@ Avec 335 samples / 6 classes / DT=9 samples, atteindre Accuracy=0.95 et F1=0.90 
 Entrée DGA (7 gaz : H₂, CH₄, C₂H₂, C₂H₄, C₂H₆, CO, CO₂)
         │
         ▼
-┌─────────────────────────────────────────────────────────┐
+┌─┐
 │              Prétraitement & construction de graphe      │
 │  • Log-normalisation des concentrations                  │
 │  • Calcul des 8 ratios IEC 60599 / Roger                │
@@ -1075,42 +1075,42 @@ Entrée DGA (7 gaz : H₂, CH₄, C₂H₂, C₂H₄, C₂H₆, CO, CO₂)
 │    dim 1 : log_gas × node_weight                        │
 │    dim 2 : vit_gas_norm (vitesse de dégradation)        │
 │    dim 3 : principal_ratio_norm                          │
-└───────────────────────┬─────────────────────────────────┘
+└─┬─┘
                         │ Data(x=[7,4], edge_index=[2,10],
                         │      edge_attr=[10,1])
                         ▼
-┌─────────────────────────────────────────────────────────┐
+┌─┐
 │  GAT Layer 1  [4 → 128×2 = 256]                        │
 │  GATConv(in=4, out=128, heads=2, edge_dim=1)            │
 │  + BatchNorm1d(256) + ReLU + Dropout(0.10)              │
-└───────────────────────┬─────────────────────────────────┘
+└─┬─┘
                         ▼
-┌─────────────────────────────────────────────────────────┐
+┌─┐
 │  GAT Layer 2  [256 → 128×2 = 256]                      │
 │  GATConv(in=256, out=128, heads=2, edge_dim=1)          │
 │  + BatchNorm1d(256) + ReLU + Dropout(0.10)              │
-└───────────────────────┬─────────────────────────────────┘
+└─┬─┘
                         ▼
-┌─────────────────────────────────────────────────────────┐
+┌─┐
 │  GAT Layer 3  [256 → 128×1 = 128]                      │
 │  GATConv(in=256, out=128, heads=1, edge_dim=1)          │
 │  + BatchNorm1d(128) + ReLU + Dropout(0.10)              │
-└───────────────────────┬─────────────────────────────────┘
+└─┬─┘
                         ▼
-┌─────────────────────────────────────────────────────────┐
+┌─┐
 │  Global Attention Pooling  [B×7×128 → B×128]           │
 │  gate_nn : Linear(128,64) → ReLU → Linear(64,1)        │
 │  pool    : Σ softmax(gate) · node_embeds               │
-└───────────────────────┬─────────────────────────────────┘
+└─┬─┘
                         ▼
-┌─────────────────────────────────────────────────────────┐
+┌─┐
 │  Classificateur MLP  [128 → 64 → 6]                    │
 │  Linear(128,64) → ReLU → Dropout(0.10) → Linear(64,6) │
-└───────────────────────┬─────────────────────────────────┘
+└─┬─┘
                         ▼
                   Logits [B × 6]
                         │
-        ┌───────────────┴───────────────┐
+        ┌─┴─┐
         ▼                               ▼
   T-Scaling (T=0.89)        MC Dropout (50 passes)
   → Prédiction single         → Incertitude épistémique
@@ -1210,12 +1210,12 @@ Pour chaque sample x_test :
 
 ```
 F1 macro (ensemble)
-0.16 ──► 0.30 ──► 0.36 ──► 0.56 ──► 0.585 ──► 0.612
+0.16 ► 0.30 ► 0.36 ► 0.56 ► 0.585 ► 0.612
   R0      R1      R2      R4       R6        R10
          (+87%)  (+20%)  (+56%)   (+5%)     (+5%)
 
 Brier score (test ensemble)
-0.82 ──────────────────────────────────────────► 0.53
+0.82 ► 0.53
   R0                                              R10
                          (−35%)
 ```

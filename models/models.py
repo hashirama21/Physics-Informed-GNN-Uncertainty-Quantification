@@ -26,7 +26,7 @@ from utils.config import CLASS_WEIGHTS, DEVICE, GAS_COLS, MODEL_CONFIG, NUM_CLAS
 logger = get_logger("model")
 
 
-# ── GAT layer ─────────────────────────────────────────────────────────────────
+#  GAT layer ─
 
 class GATLayer(nn.Module):
 
@@ -63,7 +63,7 @@ class GATLayer(nn.Module):
         return self.drop(self.norm(F.relu(out)))
 
 
-# ── Physics-informed loss ─────────────────────────────────────────────────────
+#  Physics-informed loss ─
 
 class PhysicsLoss(nn.Module):
     """
@@ -116,7 +116,7 @@ class PhysicsLoss(nn.Module):
             return out
 
 
-# ── Main model ────────────────────────────────────────────────────────────────
+#  Main model 
 
 class PIGNN_UQ(nn.Module):
     """
@@ -235,7 +235,7 @@ class PIGNN_UQ(nn.Module):
         phys  = self.physics_loss_fn(logits, data.x.to(dev), batch)
         return {"total": ce + phys, "ce": ce, "physics": phys}
 
-    # ── MC Dropout inference ──────────────────────────────────────────────────
+    #  MC Dropout inference 
 
     def mc_dropout_predict(self,
                            data:      Data,
@@ -310,7 +310,7 @@ class PIGNN_UQ(nn.Module):
         }
 
 
-# ── Factory ───────────────────────────────────────────────────────────────────
+#  Factory ─
 
 def build_model(node_in_dim: int = MODEL_CONFIG["node_in_dim"]) -> PIGNN_UQ:
     model    = PIGNN_UQ(node_in_dim=node_in_dim)
@@ -319,7 +319,7 @@ def build_model(node_in_dim: int = MODEL_CONFIG["node_in_dim"]) -> PIGNN_UQ:
     return model
 
 
-# ── Quick sanity check ────────────────────────────────────────────────────────
+#  Quick sanity check 
 
 if __name__ == "__main__":
     model = build_model(node_in_dim=4).to(torch.device("cpu"))
