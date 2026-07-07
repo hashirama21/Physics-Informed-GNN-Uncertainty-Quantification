@@ -65,6 +65,7 @@ CV_SCALAR_KEYS = [
     "accuracy", "f1_macro", "precision", "recall", "min_class_recall",
     "kappa", "brier", "ece", "pcr", "gate_auroc", "gate_auroc_he",
     "mean_pred_entropy", "mean_mutual_info",
+    "flag_rate", "acc_consistent", "acc_flagged",
 ]
 
 
@@ -132,7 +133,12 @@ def train_one_epoch(model:     KGGNN,
         out = model(x)
         logits_clean = out["logits"]
 
-        phys = model.consistency_loss(F.softmax(logits_clean, dim=-1), out["kappa"])
+        # audit mode: stop-gradient on the class probabilities — L_phys trains
+        # only the kinetic head, never distorts the classification stream
+        probs_for_phys = (F.softmax(logits_clean.detach(), dim=-1)
+                          if model.gate_mode == "audit"
+                          else F.softmax(logits_clean, dim=-1))
+        phys = model.consistency_loss(probs_for_phys, out["kappa"])
         # absence scores from the un-noised measurements
         obs = model.observation_loss(x_clean, out["kappa"])
         thinge = model.temperature_hinge(out["T"], y)
@@ -187,8 +193,8 @@ def evaluate_mc(model:       KGGNN,
                 temperature: float = 1.0,
                 ) -> Dict:
     model.eval()
-    ys, probs, ents, mis, pcr_sum = [], [], [], [], 0.0
-    temps, kappa_c2h2 = [], []
+    ys, probs, ents, mis = [], [], [], []
+    temps, kappa_c2h2, consistent = [], [], []
     for x, y in loader:
         x = x.to(DEVICE)
         mc = model.mc_dropout_predict(x, n_samples=n_samples)
@@ -199,14 +205,26 @@ def evaluate_mc(model:       KGGNN,
         ys.append(y.numpy())
         ents.append(mc["pred_entropy"].cpu().numpy())
         mis.append(mc["epistemic"].cpu().numpy())
-        pcr_sum += float(model.pcr(p.argmax(dim=1), mc["kappa"])) * len(y)
+        consistent.append(model.pathway_consistent(p.argmax(dim=1),
+                                                   mc["kappa"]).cpu().numpy())
         temps.append(mc["T"].squeeze(-1).cpu().numpy())
         kappa_c2h2.append(mc["kappa"][:, ACETYLENE_EDGE].cpu().numpy())
 
     y_true = np.concatenate(ys)
     y_prob = np.concatenate(probs)
-    m = classification_metrics(y_true, y_prob.argmax(axis=1), y_prob)
-    m["pcr"] = round(pcr_sum / len(y_true), 4)
+    y_pred = y_prob.argmax(axis=1)
+    m = classification_metrics(y_true, y_pred, y_prob)
+
+    # Audit utility: kinetically inconsistent predictions should be wrong
+    # more often — the flag must carry signal, not just volume
+    ok = np.concatenate(consistent)
+    correct = (y_pred == y_true)
+    m["pcr"] = round(float(ok.mean()), 4)
+    m["flag_rate"] = round(float((~ok).mean()), 4)
+    m["acc_consistent"] = (round(float(correct[ok].mean()), 4)
+                           if ok.any() else float("nan"))
+    m["acc_flagged"] = (round(float(correct[~ok].mean()), 4)
+                        if (~ok).any() else float("nan"))
     m["mean_pred_entropy"] = round(float(np.concatenate(ents).mean()), 4)
     m["mean_mutual_info"] = round(float(np.concatenate(mis).mean()), 4)
 
@@ -406,7 +424,8 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=TRAIN_CONFIG["random_seed"])
     ap.add_argument("--cv-folds", type=int, default=0, help=">0 enables repeated k-fold")
     ap.add_argument("--cv-repeats", type=int, default=1)
-    ap.add_argument("--gate-mode", choices=["hard", "residual"], default="hard")
+    ap.add_argument("--gate-mode", choices=["hard", "residual", "audit"],
+                    default="hard")
     ap.add_argument("--no-gates", action="store_true")
     ap.add_argument("--no-phys", action="store_true")
     ap.add_argument("--no-obs", action="store_true")
@@ -423,6 +442,7 @@ def main() -> None:
     }
     tag = ("kg_gnn"
            + ("_resgate" if args.gate_mode == "residual" else "")
+           + ("_audit" if args.gate_mode == "audit" else "")
            + ("_nogates" if args.no_gates else "")
            + ("_nophys" if args.no_phys else "")
            + ("_noobs" if args.no_obs else "")

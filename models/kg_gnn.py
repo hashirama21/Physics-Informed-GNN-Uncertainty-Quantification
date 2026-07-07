@@ -151,6 +151,10 @@ class KGGNN(nn.Module):
         if self.use_gates and self.gate_mode == "residual":
             gamma = torch.sigmoid(self.gate_gamma).unsqueeze(0)
             kappa_mp = gamma + (1.0 - gamma) * kappa
+        elif self.use_gates and self.gate_mode == "audit":
+            # two-stream: classification flows ungated; kappa only feeds the
+            # jointly trained kinetic audit head (losses, PCR, explanations)
+            kappa_mp = x.new_ones(B, NUM_EDGES)
         else:
             kappa_mp = kappa
 
@@ -260,15 +264,22 @@ class KGGNN(nn.Module):
 
     #  Physical Consistency Rate (Section V-C) ─
 
+    def pathway_consistent(self,
+                           pred_class: torch.Tensor,   # [B]
+                           kappa:      torch.Tensor,   # [B, E]
+                           threshold:  float = 0.5,
+                           ) -> torch.Tensor:
+        """Per-sample audit flag: required pathway set open at the inferred T."""
+        required = self.pathway_mask[pred_class]                         # [B, E]
+        return ((kappa >= threshold) | ~required).all(dim=-1)
+
     def pcr(self,
-            pred_class: torch.Tensor,   # [B]
-            kappa:      torch.Tensor,   # [B, E]
+            pred_class: torch.Tensor,
+            kappa:      torch.Tensor,
             threshold:  float = 0.5,
             ) -> torch.Tensor:
         """Fraction of predictions whose required pathway set is open at T."""
-        required = self.pathway_mask[pred_class]                         # [B, E]
-        open_ok = (kappa >= threshold) | ~required
-        return open_ok.all(dim=-1).float().mean()
+        return self.pathway_consistent(pred_class, kappa, threshold).float().mean()
 
     #  Explainability by construction (Section IV-E) ─
 
