@@ -1,0 +1,230 @@
+{
+  "variant": "kg_gnn_audit",
+  "config": {
+    "epochs": 2,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "hidden": 64,
+    "layers": 3,
+    "dropout": 0.1,
+    "lambda_phys": 0.1,
+    "lambda_obs": 0.2,
+    "lambda_thinge": 0.3,
+    "lambda_ea": 1.0,
+    "mixup_alpha": 0.3,
+    "noise_std": 0.05,
+    "mc_samples": 5,
+    "patience": 5,
+    "seed": 42,
+    "cv_folds": 0,
+    "cv_repeats": 1,
+    "gate_mode": "audit",
+    "no_gates": false,
+    "no_phys": false,
+    "no_obs": false,
+    "free_ea": false,
+    "frozen_ea": false
+  },
+  "dataset": {
+    "train": 234,
+    "val": 50,
+    "test": 51
+  },
+  "best_val_f1": 0.0636,
+  "calibration_temperature": 1.1167,
+  "epochs_run": 2,
+  "val_mc_dropout": {
+    "accuracy": 0.16,
+    "f1_macro": 0.0893,
+    "precision": 0.059,
+    "recall": 0.1875,
+    "min_class_recall": 0.0,
+    "kappa": 0.026,
+    "brier": 0.8336,
+    "ece": 0.0249,
+    "per_class_recall": {
+      "D1": 0.625,
+      "D2": 0.0,
+      "T1": 0.0,
+      "T2": 0.5,
+      "T3": 0.0,
+      "DT": 0.0
+    },
+    "pcr": 0.92,
+    "flag_rate": 0.08,
+    "acc_consistent": 0.1739,
+    "acc_flagged": 0.0,
+    "err_auroc_entropy": 0.4554,
+    "err_auroc_kinetic": 0.5476,
+    "err_auroc_combo": 0.4554,
+    "mean_pred_entropy": 0.9961,
+    "mean_mutual_info": 0.0005,
+    "gate_auroc": 0.3268,
+    "gate_auroc_he": 0.4279,
+    "T_by_class": {
+      "D1": {
+        "mean": 847.6,
+        "std": 16.5
+      },
+      "D2": {
+        "mean": 839.5,
+        "std": 31.5
+      },
+      "T1": {
+        "mean": 856.9,
+        "std": 64.4
+      },
+      "T2": {
+        "mean": 869.4,
+        "std": 29.4
+      },
+      "T3": {
+        "mean": 863.4,
+        "std": 16.8
+      },
+      "DT": {
+        "mean": 868.3,
+        "std": 17.5
+      }
+    }
+  },
+  "test_deterministic": {
+    "accuracy": 0.1961,
+    "f1_macro": 0.108,
+    "precision": 0.0694,
+    "recall": 0.2593,
+    "min_class_recall": 0.0,
+    "kappa": 0.0756,
+    "brier": 0.8306,
+    "ece": 0.0241,
+    "per_class_recall": {
+      "D1": 0.5556,
+      "D2": 0.0,
+      "T1": 0.0,
+      "T2": 1.0,
+      "T3": 0.0,
+      "DT": 0.0
+    }
+  },
+  "test_mc_dropout": {
+    "accuracy": 0.2745,
+    "f1_macro": 0.1494,
+    "precision": 0.0963,
+    "recall": 0.3333,
+    "min_class_recall": 0.0,
+    "kappa": 0.1531,
+    "brier": 0.8296,
+    "ece": 0.0904,
+    "per_class_recall": {
+      "D1": 1.0,
+      "D2": 0.0,
+      "T1": 0.0,
+      "T2": 1.0,
+      "T3": 0.0,
+      "DT": 0.0
+    },
+    "pcr": 0.9412,
+    "flag_rate": 0.0588,
+    "acc_consistent": 0.2917,
+    "acc_flagged": 0.0,
+    "err_auroc_entropy": 0.5734,
+    "err_auroc_kinetic": 0.5405,
+    "err_auroc_combo": 0.5965,
+    "mean_pred_entropy": 0.9966,
+    "mean_mutual_info": 0.0006,
+    "gate_auroc": 0.3162,
+    "gate_auroc_he": 0.4769,
+    "T_by_class": {
+      "D1": {
+        "mean": 849.6,
+        "std": 20.3
+      },
+      "D2": {
+        "mean": 841.5,
+        "std": 28.2
+      },
+      "T1": {
+        "mean": 865.9,
+        "std": 28.7
+      },
+      "T2": {
+        "mean": 870.1,
+        "std": 12.5
+      },
+      "T3": {
+        "mean": 869.5,
+        "std": 21.0
+      },
+      "DT": {
+        "mean": 882.5,
+        "std": 0.0
+      }
+    }
+  },
+  "activation_energies": {
+    "oil_h2": {
+      "learned_kJ_mol": 180.0,
+      "interval": [
+        150.0,
+        210.0
+      ],
+      "t_half_K": 393.0
+    },
+    "oil_ch4": {
+      "learned_kJ_mol": 250.0,
+      "interval": [
+        210.0,
+        290.0
+      ],
+      "t_half_K": 473.0
+    },
+    "oil_c2h6": {
+      "learned_kJ_mol": 278.0,
+      "interval": [
+        250.0,
+        306.0
+      ],
+      "t_half_K": 523.0
+    },
+    "c2h6_c2h4": {
+      "learned_kJ_mol": 261.0,
+      "interval": [
+        216.0,
+        306.0
+      ],
+      "t_half_K": 623.0
+    },
+    "ch4_c2h6": {
+      "learned_kJ_mol": 400.0,
+      "interval": [
+        370.0,
+        430.0
+      ],
+      "t_half_K": 1273.0
+    },
+    "c2h4_c2h2": {
+      "learned_kJ_mol": 440.0,
+      "interval": [
+        410.0,
+        470.0
+      ],
+      "t_half_K": 1023.0
+    },
+    "cell_co": {
+      "learned_kJ_mol": 118.0,
+      "interval": [
+        111.0,
+        125.0
+      ],
+      "t_half_K": 378.0
+    },
+    "cell_co2": {
+      "learned_kJ_mol": 118.0,
+      "interval": [
+        111.0,
+        125.0
+      ],
+      "t_half_K": 378.0
+    }
+  }
+}

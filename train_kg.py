@@ -66,6 +66,7 @@ CV_SCALAR_KEYS = [
     "kappa", "brier", "ece", "pcr", "gate_auroc", "gate_auroc_he",
     "mean_pred_entropy", "mean_mutual_info",
     "flag_rate", "acc_consistent", "acc_flagged",
+    "err_auroc_entropy", "err_auroc_kinetic", "err_auroc_combo",
 ]
 
 
@@ -194,7 +195,7 @@ def evaluate_mc(model:       KGGNN,
                 ) -> Dict:
     model.eval()
     ys, probs, ents, mis = [], [], [], []
-    temps, kappa_c2h2, consistent = [], [], []
+    temps, kappa_c2h2, consistent, audit_scores = [], [], [], []
     for x, y in loader:
         x = x.to(DEVICE)
         mc = model.mc_dropout_predict(x, n_samples=n_samples)
@@ -205,8 +206,13 @@ def evaluate_mc(model:       KGGNN,
         ys.append(y.numpy())
         ents.append(mc["pred_entropy"].cpu().numpy())
         mis.append(mc["epistemic"].cpu().numpy())
-        consistent.append(model.pathway_consistent(p.argmax(dim=1),
-                                                   mc["kappa"]).cpu().numpy())
+        pred_t = p.argmax(dim=1)
+        consistent.append(model.pathway_consistent(pred_t, mc["kappa"]).cpu().numpy())
+        # continuous audit score: 1 - worst required gate opening for the
+        # predicted class (high = kinetically dubious prediction)
+        kap_req = mc["kappa"].clone()
+        kap_req[~model.pathway_mask[pred_t]] = 1.0
+        audit_scores.append((1.0 - kap_req.amin(dim=-1)).cpu().numpy())
         temps.append(mc["T"].squeeze(-1).cpu().numpy())
         kappa_c2h2.append(mc["kappa"][:, ACETYLENE_EDGE].cpu().numpy())
 
@@ -225,6 +231,19 @@ def evaluate_mc(model:       KGGNN,
                            if ok.any() else float("nan"))
     m["acc_flagged"] = (round(float(correct[~ok].mean()), 4)
                         if (~ok).any() else float("nan"))
+
+    # Error-detection AUROCs: does each score rank misclassifications higher?
+    errors = ~correct
+    ent_all = np.concatenate(ents)
+    aud_all = np.concatenate(audit_scores)
+
+    def _err_auroc(score):
+        return (round(float(roc_auc_score(errors, score)), 4)
+                if errors.any() and (~errors).any() else float("nan"))
+
+    m["err_auroc_entropy"] = _err_auroc(ent_all)
+    m["err_auroc_kinetic"] = _err_auroc(aud_all)
+    m["err_auroc_combo"] = _err_auroc(ent_all + aud_all)
     m["mean_pred_entropy"] = round(float(np.concatenate(ents).mean()), 4)
     m["mean_mutual_info"] = round(float(np.concatenate(mis).mean()), 4)
 
