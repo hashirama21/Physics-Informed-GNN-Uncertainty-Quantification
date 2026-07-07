@@ -267,7 +267,8 @@ def run_single(args,
 
     model = build_kg_model(hidden_dim=args.hidden, num_layers=args.layers,
                            dropout=args.dropout, learn_ea=not args.frozen_ea,
-                           use_gates=not args.no_gates).to(DEVICE)
+                           use_gates=not args.no_gates,
+                           gate_mode=args.gate_mode).to(DEVICE)
     optimizer = AdamW(model.parameters(), lr=args.lr,
                       weight_decay=TRAIN_CONFIG["weight_decay"])
     scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=100, T_mult=1, eta_min=1e-6)
@@ -405,6 +406,7 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=TRAIN_CONFIG["random_seed"])
     ap.add_argument("--cv-folds", type=int, default=0, help=">0 enables repeated k-fold")
     ap.add_argument("--cv-repeats", type=int, default=1)
+    ap.add_argument("--gate-mode", choices=["hard", "residual"], default="hard")
     ap.add_argument("--no-gates", action="store_true")
     ap.add_argument("--no-phys", action="store_true")
     ap.add_argument("--no-obs", action="store_true")
@@ -420,6 +422,7 @@ def main() -> None:
         "ea":     0.0 if args.free_ea else args.lambda_ea,
     }
     tag = ("kg_gnn"
+           + ("_resgate" if args.gate_mode == "residual" else "")
            + ("_nogates" if args.no_gates else "")
            + ("_nophys" if args.no_phys else "")
            + ("_noobs" if args.no_obs else "")

@@ -101,10 +101,16 @@ class KGGNN(nn.Module):
                  dropout:       float = 0.10,
                  num_classes:   int = NUM_CLASSES,
                  learn_ea:      bool = True,
-                 use_gates:     bool = True):
+                 use_gates:     bool = True,
+                 gate_mode:     str = "hard"):
         super().__init__()
         self.use_gates = use_gates
+        self.gate_mode = gate_mode
         self.num_classes = num_classes
+        # residual gating: kappa_eff = gamma + (1-gamma)*kappa — a closed channel
+        # still transmits a learned floor, so a wrong early T cannot strangle
+        # gradients; losses/PCR/explanations keep the raw Arrhenius kappa
+        self.gate_gamma = nn.Parameter(torch.full((NUM_EDGES,), -2.0))
 
         self.gas_proj = nn.Linear(node_feat_dim, hidden_dim)
         self.src_embed = nn.Parameter(torch.randn(len(SOURCE_NODE_IDX), hidden_dim) * 0.1)
@@ -142,12 +148,18 @@ class KGGNN(nn.Module):
         else:
             kappa = x.new_ones(B, NUM_EDGES)
 
+        if self.use_gates and self.gate_mode == "residual":
+            gamma = torch.sigmoid(self.gate_gamma).unsqueeze(0)
+            kappa_mp = gamma + (1.0 - gamma) * kappa
+        else:
+            kappa_mp = kappa
+
         h = x.new_zeros(B, N_NODES, self.gas_proj.out_features)
         h[:, self.gas_slots] = self.gas_proj(x)
         h[:, self.src_slots] = self.src_embed.unsqueeze(0).expand(B, -1, -1)
 
         for layer in self.layers:
-            h = layer(h, kappa, self.edge_src, self.edge_dst)
+            h = layer(h, kappa_mp, self.edge_src, self.edge_dst)
 
         h_gas = h[:, self.gas_slots]                                     # [B, 7, d]
         w = torch.softmax(self.pool_att(h_gas), dim=1)
